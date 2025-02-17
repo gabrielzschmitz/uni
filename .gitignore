@@ -1,6 +1,6 @@
-.aux
-./code/__pycache__
-./code/.venv
+.aux/
+./code/__pycache__/
+./code/.venv/
 *.aux
 *.bbl
 *.bcf
@@ -11,5 +11,5 @@
 *.pdfxref
 *.run.xml
 *.bbl-SAVE-ERROR
-*.bcf-SAVE-ERROR
-_minted-main
+*.bcf-SAVE-ERROR:wq
+_minted-main/
