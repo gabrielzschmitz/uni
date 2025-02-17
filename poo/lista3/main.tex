@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage{style}
+
+\begin{document}
+
+% University Logo, Course Name, Professor's Name, Date, Homework Title,
+% Homework Number, Student Name, Student Identifier, Source Code
+\cover{./UTFPR.png}{Fundamentos de Orientação à Objetos}{Leonardo Medeiros}{17/02/2025}
+{Lista de Exercícios}{3}{Gabriel dos Santos Schmitz}{2487438}
+{https://github.com/gabrielzschmitz/uni/tree/main/poo/lista3}
+
+\newpage
+\question{Escreva um programa C++ que use std::map}
+\answer{
+	\inputminted[frame=none, framesep=2mm, baselinestretch=1.2, bgcolor=whitesmoke,
+		fontsize=\footnotesize, linenos]{Cpp}{./code/1.cpp}
+}
+
+\newpage
+\question{Escreva um programa C++ que use std::multimap}
+\answer{
+	\inputminted[frame=none, framesep=2mm, baselinestretch=1.2, bgcolor=whitesmoke,
+		fontsize=\footnotesize, linenos]{Cpp}{./code/2.cpp}
+}
+
+\newpage
+\question{Escreva um programa C++ que use std::set}
+\answer{
+	\inputminted[frame=none, framesep=2mm, baselinestretch=1.2, bgcolor=whitesmoke,
+		fontsize=\footnotesize, linenos]{Cpp}{./code/3.cpp}
+}
+
+\newpage
+\question{Escreva um programa C++ que use std::set}
+\answer{
+	\inputminted[frame=none, framesep=2mm, baselinestretch=1.2, bgcolor=whitesmoke,
+		fontsize=\footnotesize, linenos]{Cpp}{./code/4.cpp}
+}
+
+\newpage
+\question{Escreva um programa C++ que use std::stack}
+\answer{
+	\inputminted[frame=none, framesep=2mm, baselinestretch=1.2, bgcolor=whitesmoke,
+		fontsize=\footnotesize, linenos]{Cpp}{./code/5.cpp}
+}
+
+\newpage
+\question{Escreva um programa C++ que use std::queue}
+\answer{
+	\inputminted[frame=none, framesep=2mm, baselinestretch=1.2, bgcolor=whitesmoke,
+		fontsize=\footnotesize, linenos]{Cpp}{./code/6.cpp}
+}
+
+\newpage
+\question{Escreva um programa C++ que use std::priority\_queue}
+\answer{
+	\inputminted[frame=none, framesep=2mm, baselinestretch=1.2, bgcolor=whitesmoke,
+		fontsize=\footnotesize, linenos]{Cpp}{./code/7.cpp}
+}
+
+\section*{Compilação e Execução dos Exercícios}
+
+Para compilar e executar os exercícios \( 1 - 7 \), siga os passos abaixo:
+
+\begin{enumerate}
+	\item \textbf{Torne o script \texttt{run\_tests.sh} executável}: \\ No
+	      terminal, execute o seguinte comando para tornar o script executável:
+	      \begin{minted}[frame=none, framesep=2mm, baselinestretch=1.2,
+          bgcolor=whitesmoke, fontsize=\footnotesize, linenos]{Bash}
+          $ chmod +x run_tests.sh
+        \end{minted}
+
+	\item \textbf{Execute o script para compilar e rodar os códigos}: \\ Em
+	      seguida, execute o script para compilar e rodar os códigos dos exercícios:
+	      \begin{minted}[frame=none, framesep=2mm, baselinestretch=0.2,
+        bgcolor=whitesmoke, fontsize=\footnotesize, linenos]{Bash}
+          $ ./run_tests.sh
+        \end{minted}
+\end{enumerate}
+
+Isso deve compilar os arquivos com \texttt{g++} e rodar os testes
+automaticamente. Se houver algum erro na compilação, o script irá mostrar as
+mensagens de erro.
+
+\end{document}
