@@ -1,0 +1,32 @@
+\documentclass[10pt,conference,twocolumn]{style}
+\input{config/includes.tex}
+\input{config/config.tex}
+\bibliography{ref.bib}
+
+\begin{document}
+
+\title{Circuítos Elétricos: Fundamentos}
+\author{
+	\IEEEauthorblockN{Gabriel dos Santos Schmitz}
+	\IEEEauthorblockA{RA 2487438, Engenharia de Computação, \\
+		\faEnvelope\ gabrielzschmitz@protonmail.com}
+}
+
+\maketitle
+\setlength{\textfloatsep}{0pt}  % Reduce space between figure and text
+\setlength{\intextsep}{0pt}     % Remove space above/below the figure when inline
+\setlength{\floatsep}{0pt}      % Remove space between floats
+\input{sections/01-introducao.tex}
+\input{sections/02-fundamentos.tex}
+\input{sections/03-corrente-eletrica.tex}
+\input{sections/04-tensao.tex}
+\input{sections/05-potencia-e-energia.tex}
+\input{sections/06-resistencia.tex}
+\input{sections/07-exercicios-1.tex}
+
+\setlength{\bibitemsep}{10pt}
+\clearpage
+\onecolumn
+\printbibliography\
+
+\end{document}
