@@ -4,8 +4,9 @@ Agora que tens todos os conceitos e exemplos expostos anteriormente até o
 momento, chega a hora de resolver exercícios referentes aos conteúdos!
 
 \begin{enumerate}
-	\item A corrente através de um elemento é ilustrada na Figura~\ref{fig:fig5}. Determine a carga total que passa pelo elemento em:
-	      (a) \( t = 1 \) s, (b) \( t = 3 \) s, (c) \( t = 5 \) s.
+	\item A corrente através de um elemento é ilustrada na Figura~\ref{fig:fig5}.
+	      Determine a carga total que passa pelo elemento em: (a) \( t = 1 \) s,
+	      (b) \( t = 3 \) s, (c) \( t = 5 \) s.
 
 	      \begin{figure}[H]
 		      \centering
@@ -13,17 +14,15 @@ momento, chega a hora de resolver exercícios referentes aos conteúdos!
 		      \caption{Forma de onda da corrente}
 		      \label{fig:fig5}
 	      \end{figure}
-
 	      \[
 		      i(t) =
 		      \begin{cases}
-			      10 \text{ A},              & 0 \leq t < 1 \text{ s}    \\
-			      10 - 2.5(t - 1) \text{ A}, & 1 \leq t < 2 \text{ s}    \\
-			      5 \text{ A},               & 2 \leq t < 4 \text{ s}    \\
-			      5 - 2.5(t - 4) \text{ A},  & 4 \leq t \leq 5 \text{ s} \\
+			      10 \text{ A},            & 0 \leq t < 1 \text{ s}    \\
+			      10 - 5(t - 1) \text{ A}, & 1 \leq t < 2 \text{ s}    \\
+			      5 \text{ A},             & 2 \leq t < 4 \text{ s}    \\
+			      5 - 6(t - 4) \text{ A},  & 4 \leq t \leq 5 \text{ s} \\
 		      \end{cases}
 	      \]
-
 	      \begin{align*}
 		      \text{(a)}\quad &
 		      \begin{aligned}[t]
@@ -32,17 +31,17 @@ momento, chega a hora de resolver exercícios referentes aos conteúdos!
 		      \\
 		      \text{(b)}\quad &
 		      \begin{aligned}[t]
-			      Q & = \int_{0}^{1} 10 \,dt + \int_{1}^{2} (10 - 2.5(t-1)) \,dt + \int_{2}^{3} 5 \,dt \\
-			        & = 10 + 8.75 + 5                                                                  \\
-			        & = 23.75 \,\text{C}
+			      Q & = \int_{0}^{1} 10 \,dt + \int_{1}^{2} (10 - 5(t-1)) \,dt + \int_{2}^{3} 5 \,dt \\
+			        & = 10 + 7.5 + 5                                                                 \\
+			        & = 22.5 \,\text{C}
 		      \end{aligned}
 		      \\
 		      \text{(c)}\quad &
 		      \begin{aligned}[t]
-			      Q & = \int_{0}^{1} 10 \,dt + \int_{1}^{2} (10 - 2.5(t-1)) \,dt     \\
-			        & \quad + \int_{2}^{4} 5 \,dt + \int_{4}^{5} (5 - 2.5(t-4)) \,dt \\
-			        & = 10 + 8.75 + 10 + 3.75                                        \\
-			        & = 32.5 \,\text{C}
+			      Q & = \int_{0}^{1} 10 \,dt + \int_{1}^{2} (10 - 5(t-1)) \,dt     \\
+			        & \quad + \int_{2}^{4} 5 \,dt + \int_{4}^{5} (5 - 5(t-4)) \,dt \\
+			        & = 10 + 7.5 + 10 + 2.5                                        \\
+			        & = 30 \,\text{C}
 		      \end{aligned}
 	      \end{align*}
 	\item A carga que entra em determinado elemento é mostrada na
@@ -123,12 +122,12 @@ momento, chega a hora de resolver exercícios referentes aos conteúdos!
 
 		            \begin{minipage}{\linewidth}
 			            \begin{align*}
-				            p(t)         & = v(t) \cdot i(t)                                                      \\
+				            \rho(t)      & = v(t) \cdot i(t)                                                      \\
 				            \text{Para } & 0 < t < 2 \text{ s:}                                                   \\
-				            p(t)         & = 5 \, \text{V} \times 30t \, \text{mA} = 150t \, \text{mW}            \\
+				            \rho(t)      & = 5 \, \text{V} \times 30t \, \text{mA} = 150t \, \text{mW}            \\
 				                         & \text{\quad Potência positiva e linear (dispositivo absorve energia).} \\
 				            \text{Para } & 2 \leq t \leq 4 \text{ s:}                                             \\
-				            p(t)         & = -5 \, \text{V} \times (120 - 30t) \, \text{mA}                       \\
+				            \rho(t)      & = -5 \, \text{V} \times (120 - 30t) \, \text{mA}                       \\
 				                         & = -600 + 150t \, \text{mW}                                             \\
 				                         & \text{\quad Potência negativa e linear (dispositivo fornece energia).} \\
 			            \end{align*}
@@ -136,7 +135,7 @@ momento, chega a hora de resolver exercícios referentes aos conteúdos!
 
 		            \begin{figure}[H]
 			            \centering
-			            \includegraphics[height=0.25\textwidth]{./fig/fig10.png}
+			            \includegraphics[height=0.325\textwidth]{./fig/fig10.png}
 			            \caption{}
 			            \label{fig:fig10}
 		            \end{figure}
