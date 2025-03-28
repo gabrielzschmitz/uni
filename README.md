@@ -11,6 +11,9 @@ This folder contains tasks related to object-oriented programming.
 ### **eng-soft** 💼
 This folder contains exercises related to software engineering course.
 
+### **circuitos-1** ⚡
+This folder contains exercises related to eletric circuits one course.
+
 ## 🛠️ How to Use
 
 1. **Compiling LaTeX Files**:  
