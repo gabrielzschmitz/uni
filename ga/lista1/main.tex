@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{style}
+
+\usepackage{url, hyperref}
+\usepackage{array}
+\usepackage[
+	style=numeric,
+	sorting=none,
+	maxbibnames=10]{biblatex}
+\addbibresource{ref.bib}
+\bibliography{ref.bib}
+
+\begin{document}
+
+% University Logo, Course Name, Professor's Name, Date, Homework Title,
+% Homework Number, Student Name, Student Identifier, Source Code
+\cover{./UTFPR.png}{Geometria Analítica}{Jahina Fagundes de Assis Hattori}
+{31/03/2025}{Lista de Exercícios}{1}{Gabriel dos Santos Schmitz}{2487438}
+{https://github.com/gabrielzschmitz/uni/tree/main/ga/lista1}
+
+\input{./sections/01-introducao.tex}
+\input{./sections/02-vetores.tex}
+\input{./sections/03-adicao-de-vetores.tex}
+\input{./sections/04-multiplicacao-por-escalar.tex}
+\input{./sections/05-angulo-de-dois-vetores.tex}
+\input{./sections/06-problemas.tex}
+
+\newpage
+\printbibliography\
+
+\end{document}
