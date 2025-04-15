@@ -8,6 +8,7 @@
 *.fdb_latexmk
 *.fls
 *.log
+*.out
 *.pdfxref
 *.run.xml
 *.bbl-SAVE-ERROR
