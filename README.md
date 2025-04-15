@@ -14,6 +14,9 @@ This folder contains exercises related to software engineering course.
 ### **circuitos-1** ⚡
 This folder contains exercises related to eletric circuits one course.
 
+### **ga** 📐
+This folder contains exercises related to analitic geometry course.
+
 ## 🛠️ How to Use
 
 1. **Compiling LaTeX Files**:  
