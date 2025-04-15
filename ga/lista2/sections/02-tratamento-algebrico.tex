@@ -245,7 +245,7 @@ expressão analítica:
   \overrightarrow{AB} = B - A = (x_2 - x_1, y_2 - y_1)
 \]
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \begin{minipage}{0.45\textwidth}
     \centering
@@ -263,7 +263,7 @@ expressão analítica:
 O representante canônico $\overrightarrow{OP}$ em $O(0,0)$ é o vetor posição que
 melhor caracteriza $\overrightarrow{AB}$.
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.6\textwidth]{./fig/fig1.46.png}
   \caption{Equivalência de vetores}\label{fig:fig1.46}
@@ -292,8 +292,351 @@ posição é irrelevante - importam apenas magnitude, direção e sentido.
     \end{align*}
 \end{itemize}
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.4\textwidth]{./fig/fig1.47.png}
   \caption{Vetores em triângulo}\label{fig:fig1.47}
 \end{figure}
+
+\newpage
+\subsection{Ponto Médio}
+
+Seja o segmento de extremos $A(x_1, y_1)$ e $B(x_2, y_2)$
+(Figura~\ref{fig:fig1.50}). Sendo $M(x, y)$ o ponto médio de $AB$, podemos
+expressar de forma vetorial como:
+
+\[
+  \overrightarrow{AM} = \overrightarrow{MB}
+\]
+
+ou
+
+\[
+  (x - x_1, y - y_1) = (x_2 - x, y_2 - y)
+\]
+
+então
+
+\[
+  x - x_1 = x_2 - x \quad \text{e} \quad y - y_1 = y_2 - y
+\]
+
+Resolvendo em relação a $x$ e $y$, temos:
+
+\[
+  2x = x_1 + x_2 \quad \text{e} \quad 2y = y_1 + y_2
+\]
+
+ou
+
+\[
+  x = \frac{x_1 + x_2}{2} \quad \text{e} \quad y = \frac{y_1 + y_2}{2}
+\]
+
+Portanto,
+
+\[
+  M\left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)
+\]
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{./fig/fig1.50.png}
+  \caption{Ponto médio de um segmento}\label{fig:fig1.50}
+\end{figure}
+
+\newpage
+\subsection{Paralelismo de Dois Vetores}
+
+Vimos que, se dois vetores $\vec{u} = (x_1, y_1)$ e $\vec{v} = (x_2, y_2)$ são
+paralelos, existe um número real $\alpha$ tal que $\vec{u} = \alpha\vec{v}$, ou
+seja,
+
+\[
+  (x_1, y_1) = \alpha(x_2, y_2)
+\]
+
+ou
+
+\[
+  (x_1, y_1) = (\alpha x_2, \alpha y_2)
+\]
+
+que pela condição de igualdade resulta em
+
+\[
+  x_1 = \alpha x_2 \quad \text{e} \quad y_1 = \alpha y_2
+\]
+
+donde
+
+\[
+  \frac{x_1}{x_2} = \frac{y_1}{y_2} = \alpha
+\]
+
+Essa é a condição de paralelismo de dois vetores, ou seja, dois vetores são
+paralelos quando suas componentes forem proporcionais.
+
+\subsection{Módulo de um Vetor}
+
+Seja o vetor $\vec{v} = (x, y)$ (Figura~\ref{fig:fig1.51}). Pelo teorema de
+Pitágoras, vem:
+
+\[
+ |\vec{v}| = \sqrt{x^2 + y^2}
+\]
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{./fig/fig1.51.png}
+  \caption{Módulo de um vetor}\label{fig:fig1.51}
+\end{figure}
+
+\textbf{Exemplo}: Se $\vec{v} = (2, -3)$, então:
+
+\[
+  |\vec{v}| = \sqrt{(2)^2 + (-3)^2} = \sqrt{4 + 9} = \sqrt{13} \text{ u.c.
+  (unidades de comprimento)}
+\]
+
+\subsection{Distância entre dois pontos}
+
+A distância entre dois pontos $A(x_1, y_1)$ e $B(x_2, y_2)$
+(Figura~\ref{fig:fig1.52}) é o comprimento (módulo) do vetor
+$\overrightarrow{AB}$, isto é:
+
+\[
+  d(A, B) = |\overrightarrow{AB}|
+\]
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{./fig/fig1.52.png}
+  \caption{Distância entre pontos}\label{fig:fig1.52}
+\end{figure}
+
+Como $\overrightarrow{AB} = B - A = (x_2 - x_1, y_2 - y_1)$, temos:
+
+\[
+  d(A, B) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+\]
+
+\textbf{Exemplo}: Se $A(1, 2)$ e $B(4, 6)$, então:
+
+\[
+  d(A, B) = \sqrt{(4-1)^2 + (6-2)^2} = \sqrt{9 + 16} = \sqrt{25} = 5 \text{
+  unidades}
+\]
+
+\section{Vetores no Espaço}
+
+\subsection{Base Canônica e Sistema de Coordenadas}
+
+A base canônica $\{\vec{i}, \vec{j}, \vec{k}\}$ determina o sistema cartesiano
+ortogonal $Oxyz$ (Figura~\ref{fig:fig1.53}), onde:
+
+\begin{itemize}
+  \item Eixo $Ox$ (abscissas): vetor $\vec{i} = (1,0,0)$
+  \item Eixo $Oy$ (ordenadas): vetor $\vec{j} = (0,1,0)$
+  \item Eixo $Oz$ (cotas): vetor $\vec{k} = (0,0,1)$
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{./fig/fig1.53.png}
+  \caption{Sistema de coordenadas no espaço}\label{fig:fig1.53}
+\end{figure}
+
+\subsection{Planos Coordenados}
+
+Temos três planos coordenados (Figuras~\ref{fig:fig1.54a} e~\ref{fig:fig1.54b}):
+
+\begin{itemize}
+  \item Plano $xy$: $z=0$
+  \item Plano $xz$: $y=0$
+  \item Plano $yz$: $x=0$
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{./fig/fig1.54a.png}
+    \caption{Plano $xy$}
+    \label{fig:fig1.54a}
+  \end{subfigure}
+  \hfill
+  \centering
+  \begin{subfigure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{./fig/fig1.54b.png}
+    \caption{Plano $xz$}
+    \label{fig:fig1.54b}
+  \end{subfigure}
+\end{figure}
+
+\subsection{Representação de Vetores}
+
+Para qualquer ponto $P(x,y,z)$, o vetor posição é:
+
+\[
+  \overrightarrow{OP} = x\vec{i} + y\vec{j} + z\vec{k} = (x,y,z)
+\]
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{./fig/fig1.55a.png}\label{fig:fig1.55a}
+  \end{subfigure}
+  \hfill
+  \centering
+  \begin{subfigure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{./fig/fig1.55b.png}\label{fig:fig1.55b}
+  \end{subfigure}
+  \caption{Paralelepípedo e projeções}
+\end{figure}
+
+\subsection{Exemplos e Casos Especiais}
+
+\begin{itemize}
+  \item $2\vec{i} - 3\vec{j} + \vec{k} = (2,-3,1)$
+  \item $-\vec{j} + 4\vec{k} = (0,-1,4)$
+  \item Vetores canônicos: $\vec{i}=(1,0,0)$, $\vec{j}=(0,1,0)$,
+    $\vec{k}=(0,0,1)$
+\end{itemize}
+
+\subsection{Localização de Pontos}
+
+Para o paralelepípedo com $P(2,4,3)$ (Figura~\ref{fig:fig1.56}):
+
+\begin{itemize}
+  \item Eixo $x$: $A(2,0,0)$
+  \item Eixo $y$: $C(0,4,0)$
+  \item Eixo $z$: $E(0,0,3)$
+  \item Plano $xy$: $B(2,4,0)$
+  \item Plano $xz$: $F(2,0,3)$
+  \item Plano $yz$: $D(0,4,3)$
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{./fig/fig1.56.png}
+  \caption{Paralelepípedo e projeções}
+  \label{fig:fig1.56}
+\end{figure}
+
+\subsection{Octantes}
+
+O espaço é dividido em 8 octantes (Figura~\ref{fig:fig1.59}):
+
+\begin{itemize}
+  \item 1º octante: $(+,+,+)$
+  \item 2º octante: $(-,+,+)$
+  \item 3º octante: $(-,-,+)$
+  \item 4º octante: $(+,-,+)$
+  \item 5º octante: $(+,+,-)$
+  \item 6º octante: $(-,+,-)$
+  \item 7º octante: $(-,-,-)$
+  \item 8º octante: $(+,-,-)$
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{./fig/fig1.59.png}
+  \caption{Octantes do espaço}
+  \label{fig:fig1.59}
+\end{figure}
+
+\subsection{Exemplos de Pontos}
+
+\begin{itemize}
+  \item Acima do plano $xy$ (cota $+2$):
+    \begin{itemize}
+      \item $A(6,4,2)$ - 1º octante
+      \item $B(-5,3,2)$ - 2º octante
+      \item $C(-6,-5,2)$ - 3º octante
+      \item $D(5,-3,2)$ - 4º octante
+    \end{itemize}
+
+  \item Abaixo do plano $xy$ (cota $-2$):
+    \begin{itemize}
+      \item $A'(6,4,-2)$ - 5º octante
+      \item $B'(-5,3,-2)$ - 6º octante
+      \item $C'(-6,-5,-2)$ - 7º octante
+      \item $D'(5,-3,-2)$ - 8º octante
+    \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{./fig/fig1.60.png}
+  \caption{Pontos em diferentes octantes}
+  \label{fig:fig1.60}
+\end{figure}
+
+\subsection{Propriedades dos Vetores no Espaço}
+
+As definições e conclusões no espaço são análogas às do plano:
+
+\begin{enumerate}
+  \item \textbf{Igualdade de vetores}: Dois vetores $\vec{u} = (x_1, y_1, z_1)$
+    e $\vec{v} = (x_2, y_2, z_2)$ são iguais se, e somente se:
+    \[
+      x_1 = x_2, \quad y_1 = y_2 \quad \text{e} \quad z_1 = z_2
+    \]
+
+  \item \textbf{Operações básicas}: Para $\vec{u} = (x_1, y_1, z_1)$, $\vec{v} =
+    (x_2, y_2, z_2)$ e $\alpha \in \mathbb{R}$:
+    \[
+      \vec{u} + \vec{v} = (x_1 + x_2, y_1 + y_2, z_1 + z_2)
+    \]
+    \[
+      \alpha\vec{u} = (\alpha x_1, \alpha y_1, \alpha z_1)
+    \]
+
+  \item \textbf{Vetor definido por dois pontos}: Para $A(x_1,y_1,z_1)$ e
+    $B(x_2,y_2,z_2)$:
+    \[
+      \overrightarrow{AB} = B - A = (x_2 - x_1, y_2 - y_1, z_2 - z_1)
+    \]
+    Se $\vec{v} = B - A$, então $B = A + \vec{v}$ (Figura~\ref{fig:fig1.61}).
+
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.4\textwidth]{./fig/fig1.61.png}
+      \caption{Soma de ponto com vetor}\label{fig:fig1.61}
+    \end{figure}
+
+  \item \textbf{Ponto médio}: O ponto médio $M$ de $AB$ é:
+    \[
+      M\left(\frac{x_1+x_2}{2}, \frac{y_1+y_2}{2}, \frac{z_1+z_2}{2}\right)
+    \]
+
+  \item \textbf{Vetores paralelos}: Se $\vec{u} \parallel \vec{v}$, então:
+    \[
+      \vec{u} = \alpha\vec{v} \quad \text{ou} \quad \frac{x_1}{x_2} =
+      \frac{y_1}{y_2} = \frac{z_1}{z_2}
+    \]
+
+  \item \textbf{Módulo de um vetor}: Para $\vec{v} = (x,y,z)$:
+    \[
+      |\vec{v}| = \sqrt{x^2 + y^2 + z^2}
+    \]
+    \textbf{Dedução:} O vetor $\vec{v} = (x, y, z)$ pode ser interpretado como
+    um ponto no espaço tridimensional com coordenadas $(x, y, z)$, partindo da
+    origem $(0,0,0)$. O módulo de $\vec{v}$ é a distância da origem até esse
+    ponto.
+
+    Utilizando a fórmula da distância euclidiana no $\mathbb{R}^3$, temos:
+    \[
+      |\vec{v}| = \sqrt{(x - 0)^2 + (y - 0)^2 + (z - 0)^2} = \sqrt{x^2 + y^2 +
+      z^2}
+    \]
+
+    Portanto, o módulo de $\vec{v}$ é dado por:
+    \[
+      |\vec{v}| = \sqrt{x^2 + y^2 + z^2}
+    \]
+\end{enumerate}
