@@ -1,41 +1,65 @@
-import numpy as np
 import matplotlib.pyplot as plt
 
-# Definição dos vértices do triângulo
-A = np.array([0, 0])
-B = np.array([6, 0])
-C = np.array([3, 5])
+# Pontos A e B
+A = (-5, 1)
+B = (1, 3)
 
-# Cálculo dos pontos médios
-M = (A + C) / 2
-N = (B + C) / 2
+# Subquestão (a): B = A + 2v → v = (3, 1)
+v_a = (3, 1)
 
-# Criar a figura
-fig, ax = plt.subplots(figsize=(5,5))
+# Subquestão (b): A = B + 3v → v = (-2, -2/3)
+v_b = (-2, -2/3)
 
-# Plotar o triângulo
-triangle = np.array([A, B, C, A])
-ax.plot(triangle[:, 0], triangle[:, 1], 'k-', label='Triângulo ABC')
+# fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+#
+# # Plot (a)
+# axes[0].quiver(*A, *v_a, angles='xy', scale_units='xy', scale=1, color='blue', label='v')
+# axes[0].scatter(*A, color='black')
+# axes[0].scatter(*B, color='red')
+# axes[0].text(*A, 'A', fontsize=12, ha='right')
+# axes[0].text(*B, 'B', fontsize=12, ha='left')
+# axes[0].set_title("(a) $\\vec{v} = (3, 1)$")
+# axes[0].set_xlim(-6, 3)
+# axes[0].set_ylim(0, 5)
+# axes[0].grid(True)
+# axes[0].set_aspect('equal')
+#
+# # Plot (b)
+# axes[1].quiver(*B, *v_b, angles='xy', scale_units='xy', scale=1, color='green', label='v')
+# axes[1].scatter(*A, color='black')
+# axes[1].scatter(*B, color='red')
+# axes[1].text(*A, 'A', fontsize=12, ha='right')
+# axes[1].text(*B, 'B', fontsize=12, ha='left')
+# axes[1].set_title("(b) $\\vec{v} = (-2, -\\frac{2}{3})$")
+# axes[1].set_xlim(-7, 3)
+# axes[1].set_ylim(-1, 5)
+# axes[1].grid(True)
+# axes[1].set_aspect('equal')
 
-# Plotar o segmento médio
-ax.plot([M[0], N[0]], [M[1], N[1]], 'k-', linewidth=2)  # Segmento MN
+fig, ax = plt.subplots()
 
-# Marcar pontos médios
-ax.scatter(*M, color='black', s=50)
-ax.scatter(*N, color='black', s=50)
+# # Plot (a)
+# ax.quiver(*A, *v_a, angles='xy', scale_units='xy', scale=1, color='blue', label='v')
+# ax.scatter(*A, color='black')
+# ax.scatter(*B, color='red')
+# ax.text(*A, 'A', fontsize=12, ha='right')
+# ax.text(*B, 'B', fontsize=12, ha='left')
+# ax.set_title("(a) $\\vec{v} = (3, 1)$")
+# ax.set_xlim(-6, 3)
+# ax.set_ylim(0, 5)
+# ax.grid(True)
+# ax.set_aspect('equal')
 
-# Adicionar rótulos aos pontos
-ax.text(A[0]-0.3, A[1]-0.2, 'A', fontsize=12, ha='center')
-ax.text(B[0]+0.3, B[1]-0.2, 'B', fontsize=12, ha='center')
-ax.text(C[0], C[1]+0.3, 'C', fontsize=12, ha='center')
-ax.text(M[0]-0.3, M[1], 'M', fontsize=12, ha='center')
-ax.text(N[0]+0.3, N[1], 'N', fontsize=12, ha='center')
-
-# Ajustes visuais
-ax.set_xticks([])
-ax.set_yticks([])
-ax.set_frame_on(False)
-ax.set_xlim(-1, 7)
-ax.set_ylim(-1, 6)
+# Plot (b)
+ax.quiver(*B, *v_b, angles='xy', scale_units='xy', scale=1, color='green', label='v')
+ax.scatter(*A, color='black')
+ax.scatter(*B, color='red')
+ax.text(*A, 'A', fontsize=12, ha='right')
+ax.text(*B, 'B', fontsize=12, ha='left')
+ax.set_title("(b) $\\vec{v} = (-2, -\\frac{2}{3})$")
+ax.set_xlim(-7, 3)
+ax.set_ylim(-1, 5)
+ax.grid(True)
+ax.set_aspect('equal')
 
 plt.show()

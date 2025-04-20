@@ -1,41 +1,40 @@
 import matplotlib.pyplot as plt
-import numpy as np
 
-# Função para desenhar vetores com origem em (0,0)
-def draw_vector(ax, origin, vec, color='black', label=None):
-    ax.quiver(*origin, *vec, angles='xy', scale_units='xy', scale=1, color=color)
-    if label:
-        ax.text(*(origin + vec + 0.1), label, fontsize=12)
+# Define points
+A = (-3, 2)
+B = (5, -2)
 
-# Configurações dos vetores u e v para cada caso com base na imagem
-cases = {
-    'a': {'u': np.array([1, 1.5]), 'v': np.array([-1, 1.5])},
-    'b': {'u': np.array([1.5, 0]), 'v': np.array([1, 1.5])},
-    'c': {'u': np.array([1, 1]), 'v': np.array([2, 0])},
-    'd': {'u': np.array([1, -1]), 'v': np.array([1, 1.5])},
-}
+# Vector AB
+AB = (B[0] - A[0], B[1] - A[1])
 
-# Plotagem dos vetores u, v e u-v para cada caso
-fig, axs = plt.subplots(2, 2, figsize=(10, 8))
-axs = axs.flatten()
+# Points M, N, and P
+M = (A[0] + 0.5 * AB[0], A[1] + 0.5 * AB[1])
+print(M)
+N = (A[0] + 2/3 * AB[0], A[1] + 2/3 * AB[1])
+print(N)
+P = (A[0] + 1.5 * AB[0], A[1] + 1.5 * AB[1])
+print(P)
 
-for i, (label, vectors) in enumerate(cases.items()):
-    u = vectors['u']
-    v = vectors['v']
-    u_minus_v = u - v
+# Plotting
+fig, ax = plt.subplots(figsize=(7, 5))
+ax.plot([A[0], B[0]], [A[1], B[1]], 'k--')  # Segment AB
+ax.plot(A[0], A[1], 'ro')
+ax.plot(B[0], B[1], 'bo')
+ax.plot(M[0], M[1], 'go')
+ax.plot(N[0], N[1], 'mo')
+ax.plot(P[0], P[1], 'co')
 
-    ax = axs[i]
-    ax.set_title(f'Caso ({label})')
+# Annotate points
+ax.text(A[0] - 0.5, A[1] + 0.3, 'A')
+ax.text(B[0] + 0.2, B[1], 'B')
+ax.text(M[0] + 0.2, M[1], 'M')
+ax.text(N[0] + 0.2, N[1], 'N')
+ax.text(P[0] + 0.2, P[1], 'P')
 
-    # Vetores u e v a partir da origem
-    draw_vector(ax, np.array([0, 0]), u, 'blue', r'$\vec{u}$')
-    draw_vector(ax, np.array([0, 0]), v, 'green', r'$\vec{v}$')
-    draw_vector(ax, np.array([0, 0]), u_minus_v, 'red', r'$\vec{u} - \vec{v}$')
-
-    ax.set_xlim(-3, 3)
-    ax.set_ylim(-3, 3)
-    ax.set_aspect('equal')
-    ax.grid(True)
-
+# Set axis limits
+ax.set_xlim(-5, 11)
+ax.set_ylim(-6, 4)
+ax.set_aspect('equal')
+ax.grid(True)
 plt.tight_layout()
 plt.show()
