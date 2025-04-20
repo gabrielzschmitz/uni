@@ -14,3 +14,4 @@
 *.bbl-SAVE-ERROR
 *.bcf-SAVE-ERROR:wq
 _minted-main/
+_minted/
