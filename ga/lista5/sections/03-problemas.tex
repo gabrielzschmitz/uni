@@ -1,0 +1,228 @@
+\newpage
+\section{Problemas}
+
+\question{
+  Dados os vetores $\vec{u} = \left( 3, -1, 1 \right)$, $\vec{v} = \left( 1, 2,
+  2 \right)$ e $\vec{w} = \left( 2, 0, -3 \right)$, calcular:
+}
+\begin{itemize}
+  \item \subquestion{$(\vec{u}, \vec{v}, \vec{w})$}
+    \answer{
+      O produto misto pode ser calculado como o determinante da matriz formada pelos vetores $\vec{u}$, $\vec{v}$ e $\vec{w}$:
+      \[
+      (\vec{u}, \vec{v}, \vec{w}) = \begin{vmatrix}
+      3 & -1 & 1 \\
+      1 & 2 & 2 \\
+      2 & 0 & -3
+      \end{vmatrix}
+      \]
+      Calculando o determinante:
+      \[
+      = 3 \begin{vmatrix} 2 & 2 \\ 0 & -3 \end{vmatrix} - (-1) \begin{vmatrix} 1 & 2 \\ 2 & -3 \end{vmatrix} + 1 \begin{vmatrix} 1 & 2 \\ 2 & 0 \end{vmatrix}
+      \]
+      \[
+      = 3 \left( 2(-3) - 2(0) \right) + 1 \left( 1(-3) - 2(2) \right) + 1 \left( 1(0) - 2(2) \right)
+      \]
+      \[
+      = 3 \left( -6 \right) + 1 \left( -3 - 4 \right) + 1 \left( 0 - 4 \right)
+      \]
+      \[
+      = -18 + (-7) + (-4) = -29
+      \]
+      Portanto:
+      \[
+      (\vec{u}, \vec{v}, \vec{w}) = -29
+      \]
+    }
+
+  \item \subquestion{$(\vec{w}, \vec{u}, \vec{v})$}
+    \answer{
+      O produto misto $(\vec{w}, \vec{u}, \vec{v})$ é dado por:
+      \[
+      (\vec{w}, \vec{u}, \vec{v}) = \begin{vmatrix}
+      2 & 0 & -3 \\
+      3 & -1 & 1 \\
+      1 & 2 & 2
+      \end{vmatrix}
+      \]
+      Calculando o determinante:
+      \[
+      = 2 \begin{vmatrix} -1 & 1 \\ 2 & 2 \end{vmatrix} - 0 \begin{vmatrix} 3 & 1 \\ 1 & 2 \end{vmatrix} + (-3) \begin{vmatrix} 3 & -1 \\ 1 & 2 \end{vmatrix}
+      \]
+      \[
+      = 2 \left( (-1)(2) - (1)(2) \right) + (-3) \left( (3)(2) - (-1)(1) \right)
+      \]
+      \[
+      = 2 \left( -2 - 2 \right) + (-3) \left( 6 + 1 \right)
+      \]
+      \[
+      = 2 \left( -4 \right) + (-3) \left( 7 \right)
+      \]
+      \[
+      = -8 - 21 = -29
+      \]
+      Portanto:
+      \[
+      (\vec{w}, \vec{u}, \vec{v}) = -29
+      \]
+    }
+\end{itemize}
+
+\question{
+  Sabendo que $(\vec{u}, \vec{v}, \vec{w}) = -5$, calcular:
+}
+\begin{itemize}
+  \item \subquestion{$(\vec{w}, \vec{v}, \vec{u})$}
+    \answer{
+      O produto misto $(\vec{w}, \vec{v}, \vec{u})$ é igual ao produto misto $(\vec{u}, \vec{v}, \vec{w})$ com os vetores permutados. Como a permutação dos vetores inverte o sinal do produto misto, temos:
+      \[
+      (\vec{w}, \vec{v}, \vec{u}) = -(\vec{u}, \vec{v}, \vec{w}) = -(-5) = 5
+      \]
+    }
+
+  \item \subquestion{$(\vec{v}, \vec{u}, \vec{w})$}
+    \answer{
+      Da mesma forma, a permutação dos vetores $(\vec{v}, \vec{u}, \vec{w})$ é a mesma que $(\vec{u}, \vec{v}, \vec{w})$ trocando a posição de dois vetores, o que também resulta na inversão do sinal. Portanto:
+      \[
+      (\vec{v}, \vec{u}, \vec{w}) = -(\vec{u}, \vec{v}, \vec{w}) = 5
+      \]
+    }
+
+  \item \subquestion{$(\vec{w}, \vec{u}, \vec{v})$}
+    \answer{
+      A permutação dos vetores no produto misto $(\vec{w}, \vec{u}, \vec{v})$ inverte o sinal do produto misto original $(\vec{u}, \vec{v}, \vec{w})$. Logo:
+      \[
+      (\vec{w}, \vec{u}, \vec{v}) = -(\vec{u}, \vec{v}, \vec{w}) = -(-5) = -5
+      \]
+    }
+
+  \item \subquestion{$\vec{v} \cdot (\vec{w} \times \vec{u})$}
+    \answer{
+      O produto escalar $\vec{v} \cdot (\vec{w} \times \vec{u})$ é equivalente ao produto misto $(\vec{v}, \vec{w}, \vec{u})$. Logo, temos:
+      \[
+      \vec{v} \cdot (\vec{w} \times \vec{u}) = (\vec{v}, \vec{w}, \vec{u}) = -5
+      \]
+    }
+\end{itemize}
+
+\question{
+  Sabendo que $\vec{u} \cdot (\vec{v} \times \vec{w}) = 2$, calcular:
+}
+\begin{itemize}
+  \item \subquestion{$\vec{u} \cdot (\vec{w} \times \vec{v})$}
+    \answer{
+      \[
+      \vec{u} \cdot (\vec{w} \times \vec{v}) = - \vec{u} \cdot (\vec{v} \times \vec{w}) = -2
+      \]
+    }
+
+  \item \subquestion{$\vec{v} \cdot (\vec{w} \times \vec{u})$}
+    \answer{
+      \[
+      \vec{v} \cdot (\vec{w} \times \vec{u}) = \vec{v} \cdot (\vec{u} \times \vec{w}) = 2
+      \]
+    }
+
+  \item \subquestion{$(\vec{v} \times \vec{w}) \cdot (\vec{u})$}
+    \answer{
+      \[
+      (\vec{v} \times \vec{w}) \cdot (\vec{u}) = 2
+      \]
+    }
+
+  \item \subquestion{$(\vec{u} \times \vec{w}) \cdot (3\vec{v})$}
+    \answer{
+      \[
+      (\vec{u} \times \vec{w}) \cdot (3\vec{v}) = 3 \cdot (\vec{u} \times \vec{w}) \cdot \vec{v} = 3 \cdot (-2) = -6
+      \]
+    }
+
+  \item \subquestion{$\vec{u} \cdot (2\vec{w} \times \vec{v})$}
+    \answer{
+      \[
+      \vec{u} \cdot (2\vec{w} \times \vec{v}) = 2 \cdot \vec{u} \cdot (\vec{w} \times \vec{v}) = 2 \cdot (-2) = -4
+      \]
+    }
+  
+  \newpage
+  \item \subquestion{$(\vec{u} + \vec{v}) \cdot (\vec{u} \times \vec{w})$}
+    \answer{
+      \begin{align*}
+        (\vec{u} + \vec{v}) \cdot (\vec{u} \times \vec{w}) &= \vec{u} \cdot
+        (\vec{u} \times \vec{w}) + \vec{v} \cdot (\vec{u} \times \vec{w}) \\
+        \vec{u} \cdot (\vec{u} \times \vec{w}) &= 0 \\
+        (\vec{u} + \vec{v}) \cdot (\vec{u} \times \vec{w}) &= \vec{v} \cdot
+        (\vec{u} \times \vec{w}) = -2 \\
+      \end{align*}
+    }
+\end{itemize}
+
+\question{
+  Sabendo que $(\vec{u}, \vec{w}, \vec{x}) = 2$ e $(\vec{v}, \vec{w}, \vec{x}) = 5$, calcular:
+}
+\begin{itemize}
+  \item \subquestion{$(\vec{u}, \vec{x}, -\vec{w})$}
+    \answer{
+      \[
+      (\vec{u}, \vec{x}, -\vec{w}) = - (\vec{u}, \vec{w}, \vec{x}) = -2
+      \]
+    }
+
+  \item \subquestion{$(3\vec{u}, 3\vec{w}, -2\vec{x})$}
+    \answer{
+      \[
+      (3\vec{u}, 3\vec{w}, -2\vec{x}) = 3 \cdot (\vec{u}, \vec{w}, \vec{x}) - 2 \cdot (\vec{v}, \vec{w}, \vec{x}) = 3 \cdot 2 - 2 \cdot 5 = 6 - 10 = -36
+      \]
+    }
+
+  \item \subquestion{$(2\vec{u} + 4\vec{v}, \vec{w}, \vec{x})$}
+    \answer{
+      \[
+      (2\vec{u} + 4\vec{v}, \vec{w}, \vec{x}) = 2 \cdot (\vec{u}, \vec{w}, \vec{x}) + 4 \cdot (\vec{v}, \vec{w}, \vec{x}) = 2 \cdot 2 + 4 \cdot 5 = 4 + 20 = 24
+      \]
+    }
+
+  \item \subquestion{$(5\vec{u} - 3\vec{v}, 2\vec{w}, \vec{x})$}
+    \answer{
+      \[
+      (5\vec{u} - 3\vec{v}, 2\vec{w}, \vec{x}) = 5 \cdot (\vec{u}, \vec{w}, \vec{x}) - 3 \cdot (\vec{v}, \vec{w}, \vec{x}) = 5 \cdot 2 - 3 \cdot 5 = 10 - 15 = -10
+      \]
+    }
+\end{itemize}
+
+\newpage
+\question{
+  Verificar se são coplanares os vetores:
+}
+\begin{itemize}
+  \item \subquestion{$\vec{u} = \left( 1, -1, 2 \right)$, $\vec{v} = \left( 2,
+    2, 1 \right)$ e $\vec{w} = \left( -2, 0, -4 \right)$}
+    \answer{
+      O produto vetorial entre $\vec{v}$ e $\vec{w}$ é:
+      \[
+      \vec{v} \times \vec{w} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 2 & 2 & 1 \\ -2 & 0 & -4 \end{vmatrix}
+      = -8 \hat{i} + 6 \hat{j} + 4 \hat{k}
+      \]
+      O produto escalar de $\vec{u}$ com $\vec{v} \times \vec{w}$ é:
+      \[
+      \vec{u} \cdot (\vec{v} \times \vec{w}) = (1, -1, 2) \cdot (-8, 6, 4) = -8 - 6 + 8 = -6
+      \]
+      Como o produto misto não é zero, os vetores \textbf{não são coplanares}.
+    }
+  
+  \item \subquestion{$\vec{u} = \left( 2, -1, 3 \right)$, $\vec{v} = \left( 3,
+    1, -2 \right)$ e $\vec{w} = \left( 7,- 1, 4 \right)$}
+    \answer{
+      O produto vetorial entre $\vec{v}$ e $\vec{w}$ é:
+      \[
+      \vec{v} \times \vec{w} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ 3 & 1 & -2 \\ 7 & -1 & 4 \end{vmatrix}
+      = 2 \hat{i} - 26 \hat{j} - 10 \hat{k}
+      \]
+      O produto escalar de $\vec{u}$ com $\vec{v} \times \vec{w}$ é:
+      \[
+      \vec{u} \cdot (\vec{v} \times \vec{w}) = (2, -1, 3) \cdot (2, -26, -10) = 4 + 26 - 30 = 0
+      \]
+      Como o produto misto é zero, os vetores \textbf{são coplanares}.
+    }
+\end{itemize}
+
