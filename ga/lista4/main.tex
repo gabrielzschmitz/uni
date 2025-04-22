@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{style}
+
+\usepackage{url, hyperref}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{paralist}
+\usepackage{enumitem}
+\usepackage[
+	style=numeric,
+	sorting=none,
+	maxbibnames=10]{biblatex}
+\addbibresource{ref.bib}
+\bibliography{ref.bib}
+
+\begin{document}
+
+% University Logo, Course Name, Professor's Name, Date, Homework Title,
+% Homework Number, Student Name, Student Identifier, Source Code
+\cover{./UTFPR.png}{Geometria Analítica}{Jahina Fagundes de Assis Hattori}
+{21/04/2025}{Lista de Exercícios}{4}{Gabriel dos Santos Schmitz}{2487438}
+{https://github.com/gabrielzschmitz/uni/tree/main/ga/lista4}
+
+\input{./sections/01-introducao.tex}
+\input{./sections/02-produto-vetorial.tex}
+\input{./sections/03-problemas.tex}
+
+\newpage
+\printbibliography\
+
+\end{document}
