@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{style}
+
+\usepackage{url, hyperref}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{paralist}
+\usepackage[
+	style=numeric,
+	sorting=none,
+	maxbibnames=10]{biblatex}
+\addbibresource{ref.bib}
+\bibliography{ref.bib}
+
+\begin{document}
+
+% University Logo, Course Name, Professor's Name, Date, Homework Title,
+% Homework Number, Student Name, Student Identifier, Source Code
+\cover{./UTFPR.png}{Circuitos Elétricos 1}{Juliano Scholz Slongo}{10/06/2025}
+{Laboratório}{2}{Gabriel dos Santos Schmitz \& Henrique Acaio de Souza Farias}{2487438 \& 2399040}
+{https://github.com/gabrielzschmitz/uni/tree/main/circuitos-1/lab2}
+
+\input{./sections/01-introducao.tex}
+\input{./sections/02-analise-teorica.tex}
+\input{./sections/03-simulacao-computacional.tex}
+\input{./sections/04-experimento-laboratorial.tex}
+\input{./sections/05-resultados.tex}
+\input{./sections/06-analise-resultados.tex}
+\input{./sections/07-conclusao.tex}
+
+\newpage
+
+\printbibliography[title=Referências]
+
+\end{document}

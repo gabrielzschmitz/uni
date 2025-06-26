@@ -1,0 +1,65 @@
+\section{Simulação Computacional}
+
+Com o objetivo de validar os resultados teóricos obtidos por meio da análise dos
+circuitos, foi realizada uma simulação computacional utilizando o ambiente
+Simulink do MATLAB. Essa etapa visa não apenas verificar a coerência dos valores
+calculados, mas também proporcionar maior familiaridade com ferramentas de
+simulação amplamente utilizadas na engenharia elétrica.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{fig/lab2simcircuit1.jpeg}
+  \caption{Circuito 1 recreado no Matlab}
+  \label{fig:circuit1-simulink}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{fig/lab2simcircuit2.jpeg}
+  \caption{Circuito 2 recreado no Matlab}
+  \label{fig:circuit2-simulink}
+\end{figure}
+
+Inicialmente, os circuitos foram remontados no Simulink de forma a refletir
+fielmente o arranjo teórico. Foram utilizados componentes eletrônicos como
+resistores, fontes de tensão, amplificadores operacionais e referência elétrica,
+todos configurados de acordo com os parâmetros estabelecidos. As
+Figuras~\ref{fig:circuit1-simulink} e~\ref{fig:circuit2-simulink} apresentam a
+montagem dos circuitos no ambiente de simulação.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.99\linewidth]{fig/lab2simcircuit1display1k.jpeg}
+  \caption{Circuito 1 (R4=1k) com a adição de amperímetros e voltímetros ligados à displays}
+  \label{fig:simulink-results-circuit1-1k}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.99\linewidth]{fig/lab2simcircuit1display47k.jpeg}
+  \caption{Circuito 1 (R4=4.7k) com a adição de amperímetros e voltímetros ligados à displays}
+  \label{fig:simulink-results-circuit1-47k}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.99\linewidth]{fig/lab2simcircuit1display10k.jpeg}
+  \caption{Circuito 1 (R4=10k) com a adição de amperímetros e voltímetros ligados à displays}
+  \label{fig:simulink-results-circuit1-10k}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{fig/lab2simcircuit2display.jpeg}
+  \caption{Circuito 2 com a adição de amperímetros e voltímetros ligados à displays}
+  \label{fig:simulink-results-circuit2}
+\end{figure}
+
+Após a simulação, os resultados obtidos para as tensões, correntes e potências
+nos diversos elementos do circuito foram registrados, conforme ilustrado nas
+Figuras~\ref{fig:simulink-results-circuit1-1k},
+\ref{fig:simulink-results-circuit1-47k} e
+\ref{fig:simulink-results-circuit1-10k} para R4 igual a 1k, 4.7k e 10k
+respectivamente no circuito 1 e na Figura~\ref{fig:simulink-results-circuit2}
+para o circuito 2. Esses valores foram posteriormente organizados em tabelas
+comparativas com os dados teóricos e os dados obtidos em medições reais. A boa
+concordância entre os resultados simulados e teóricos reforça a consistência da
+análise e evidencia a confiabilidade da simulação como ferramenta de apoio ao
+estudo de circuitos elétricos, além da assertividade da análise realizada por
+nós.

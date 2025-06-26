@@ -1,0 +1,30 @@
+\section{Resultados}\label{sec:resultados}
+
+Nesta seção, são apresentados os resultados obtidos a partir da análise teórica, da simulação computacional e da montagem prática dos circuitos propostos. 
+
+Os dados estão organizados em tabelas comparativas, permitindo observar as diferenças e semelhanças entre os valores teóricos, simulados e reais, tanto das tensões nos nós principais quanto das correntes no resistor de carga. Essa comparação é fundamental para validar a análise teórica frente aos comportamentos prático e simulado dos circuitos.
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{0.9\textwidth}{l *{9}{>{\centering\arraybackslash}X}}
+\textbf{Resistor} & \multicolumn{3}{c}{\textbf{Resultado Teórico}} & \multicolumn{3}{c}{\textbf{Resultado Simulado}} & \multicolumn{3}{c}{\textbf{Resultado Real}} \\
+ & VA (V) & V3 (V) & IL (A) & VA (V) & V3 (V) & IL (A) & VA (V) & V3 (V) & IL (A) \\
+\hline
+R4 = 4,7k$\Omega$ & 4,1226 & 2,256 & 0,02256 & 4,123 & 2,256 & 0,02256 & 4,05312 & 2,332 & 0,02313 \\
+R4 = 1k$\Omega$   & 2,5    & -2,810 & -0,028 & 2,5 & -2,819 & -0,028 & 2,6231 & -2,703 & -0,027 \\
+R4 = 10k$\Omega$  & 4,5454 & 3,5778 & 0,03577 & 4,545 & 3,578 & 0,03678 & 4,6130 & 3,4532 & 0,03443 \\
+\end{tabularx}
+\caption{Comparação dos resultados teóricos, simulados e reais das tensões \(V_a\), \(V_3\) e corrente \(I_L\) do circuito 1.}
+\end{table}
+ 
+\begin{table}[H]
+\centering
+\begin{tabularx}{0.7\textwidth}{*{6}{>{\centering\arraybackslash}X}}
+\multicolumn{2}{c}{\textbf{Resultado Teórico}} & \multicolumn{2}{c}{\textbf{Resultado Simulado}} & \multicolumn{2}{c}{\textbf{Resultado Real}} \\
+VS (V) & IL (A) & VS (V) & IL (A) & VS (V) & IL (A) \\
+\hline
+-3,9688 & -0,0396 & -3,97 & -0,0397 & -4,0532 & -0,04134 \\
+\end{tabularx}
+\caption{Comparação dos resultados teóricos, simulados e reais da tensão \(V_S\) e corrente \(I_L\) do circuito 2.}
+\end{table}
+
