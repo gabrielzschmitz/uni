@@ -1,0 +1,92 @@
+\section{Atividades}
+
+\question[Atividade 1.1]{Comparando integridade de arquivos de texto no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig1.1.png}
+  \caption{Verificação de integridade entre arquivos de texto utilizando o
+  comando \texttt{diff}}
+  \label{fig:fig1.1}
+\end{figure}
+\answer{
+Nesta atividade, utilizou-se o comando \texttt{diff} no Kali Linux para
+verificar a integridade de arquivos de texto. Após a criação e cópia de um
+arquivo, a comparação inicial não indicou diferenças. Em seguida, uma
+modificação foi realizada no arquivo copiado, e o comando \texttt{diff}
+identificou corretamente a alteração na primeira linha, demonstrando sua
+eficácia na detecção de mudanças em arquivos de texto.
+}
+
+\newpage
+\question[Atividade 1.2]{Comparando integridade de arquivos genéricos no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig1.2.png}
+  \caption{Verificação de integridade entre arquivos binários utilizando o
+  comando \texttt{cmp}}
+  \label{fig:fig1.2}
+\end{figure}
+\answer{
+Nesta atividade, utilizou-se o comando \texttt{cmp} no Kali Linux para
+verificar a integridade de arquivos genéricos, como imagens. Inicialmente, dois
+arquivos idênticos foram comparados sem que houvesse retorno, confirmando a
+igualdade entre eles. Em seguida, após uma modificação em um dos arquivos, o
+comando \texttt{cmp} identificou corretamente a diferença, indicando o byte em
+que a alteração ocorreu, demonstrando sua eficácia na detecção de mudanças em
+arquivos binários.
+}
+
+\newpage
+\question[Atividade 1.3]{Verificando integridade de arquivos com função Hash no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig1.3.png}
+  \caption{Verificação de integridade de arquivos utilizando função hash por
+  meio do comando \texttt{md5sum}}
+  \label{fig:fig1.3}
+\end{figure}
+\answer{
+Nesta atividade, utilizou-se o comando \texttt{md5sum} no Kali Linux para
+verificar a integridade de arquivos por meio de funções hash. Arquivos
+idênticos apresentaram o mesmo valor de hash MD5, enquanto arquivos modificados
+ou diferentes geraram hashes distintos. Dessa forma, foi demonstrada a eficácia
+do uso de funções hash na identificação de alterações e na verificação de
+integridade de arquivos.
+}
+
+\newpage
+\question[Atividade 1.4]{Cifrando texto para proteger a confidencialidade no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig1.4.png}
+  \caption{Aplicação das cifras ROT13 e César para cifrar e decifrar mensagens
+  no Kali Linux}
+  \label{fig:fig1.4}
+\end{figure}
+\answer{
+Nesta atividade, foram aplicadas técnicas de cifragem para proteger a
+confidencialidade de textos no Kali Linux. Inicialmente, utilizou-se o
+algoritmo ROT13 para cifrar e decifrar uma mensagem de forma simétrica. Em
+seguida, foi implementada a Cifra de César por meio de um script em Python,
+permitindo a cifragem e a decifragem de textos com diferentes deslocamentos.
+Assim, foi demonstrado o uso de cifras clássicas na proteção básica da
+informação.
+}
+
+\newpage
+\question[Atividade 1.5]{Controlando fluxo de trabalho via linha de comando no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig1.5.png}
+  \caption{Gerenciamento de tarefas via linha de comando utilizando a
+  ferramenta Taskwarrior}
+  \label{fig:fig1.5}
+\end{figure}
+\answer{
+Nesta atividade, utilizou-se a ferramenta Taskwarrior no Kali Linux para o
+gerenciamento de tarefas via linha de comando. Foram criadas e listadas
+tarefas, aplicadas marcações de urgência, definidos prazos e concluídas
+atividades. Dessa forma, demonstrou-se o uso do Taskwarrior como uma solução
+eficiente para o controle de fluxo de trabalho em ambientes baseados em
+terminal.
+}
