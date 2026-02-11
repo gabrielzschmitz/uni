@@ -1,0 +1,167 @@
+\section{Atividades}
+
+\question[Atividade 1.6]{Conhecendo a ferramenta de Phishing ShellPhish no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig1.6.png}
+  \caption{Simulação de ataque de phishing utilizando a ferramenta
+  ShellPhish no Kali Linux}
+  \label{fig:fig1.6}
+\end{figure}
+\answer{
+Nesta atividade, foi utilizada a ferramenta ShellPhish para simular um ataque
+de phishing em ambiente controlado no Kali Linux. A aplicação foi configurada
+para hospedar localmente uma página falsa de login do Facebook, permitindo a
+captura de credenciais inseridas para fins de demonstração.
+
+Após o acesso à página hospedada em \texttt{localhost}, as credenciais
+digitadas foram registradas no terminal, evidenciando o funcionamento da
+ferramenta e demonstrando, de forma prática, o princípio básico de ataques de
+phishing voltados à captura de informações sensíveis.
+}
+
+\newpage
+\question[Atividade 1.7]{Explorando a Ferramenta WHOIS no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig1.7.png}
+  \caption{Consulta de informações públicas de domínios utilizando a ferramenta
+  WHOIS no Kali Linux}
+  \label{fig:fig1.7}
+\end{figure}
+\answer{
+Nesta atividade, foi explorada a ferramenta \texttt{whois}, nativa do Kali
+Linux, com o objetivo de coletar informações públicas associadas a registros de
+domínios na Internet. Após a elevação de privilégios para superusuário
+(\texttt{sudo -i}), foram realizadas consultas aos domínios \texttt{rnp.br},
+\texttt{guanambi.ba.gov.br} e \texttt{itapaje.ce.gov.br}.
+
+A análise das respostas permitiu identificar informações relevantes como:
+
+\begin{itemize}
+    \item Nome do domínio registrado (\texttt{domain});
+    \item Entidade proprietária (\texttt{owner});
+    \item Identificador do proprietário no Registro.br (\texttt{owner-c});
+    \item Responsável técnico pelo domínio (\texttt{tech-c});
+    \item Servidores de nomes (DNS) associados (\texttt{nserver});
+    \item Datas de criação, alteração e status do domínio;
+    \item Registros de segurança DNSSEC (\texttt{dsrecord} e
+      \texttt{dsstatus}).
+\end{itemize}
+
+Observou-se que domínios governamentais estaduais e municipais utilizam
+infraestruturas centralizadas de TI (como PRODEB e ETICE), evidenciando modelos
+de gestão tecnológica compartilhada.
+}
+
+\newpage
+\question[Atividade 1.8]{Explorando a Ferramenta de Engenharia Social Maltego no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig1.8.png}
+  \caption{Configuração inicial e exploração da aba Transforms no Maltego Data
+  Hub}
+  \label{fig:fig1.8}
+\end{figure}
+\answer{
+Nesta atividade, foi realizada a configuração inicial e exploração da
+ferramenta \textit{Maltego}, disponível nativamente no Kali Linux, com foco na
+utilização de recursos de \textit{OSINT} (Open Source Intelligence).
+
+Inicialmente, foi criada uma conta gratuita no site oficial do Maltego. Em
+seguida, na máquina virtual Kali Linux, o software foi iniciado pelo terminal
+com o comando \texttt{maltego}. Durante o processo de ativação, foram
+selecionadas as opções \textit{Maltego ID} e \textit{Online Activation},
+realizado o login via navegador (Browser Login) e aceitos os termos de uso
+(\textit{Data Sources T\&Cs}).
+
+Após a conclusão da configuração, o ambiente principal do Maltego foi acessado.
+Foi então explorada a aba \textbf{Transforms} e o \textbf{Maltego Data Hub},
+onde estão disponíveis diversas integrações e fontes de dados OSINT, utilizadas
+para coleta e correlação de informações públicas, como domínios, endereços IP,
+e-mails, organizações e perfis digitais.
+}
+
+\newpage
+\question[Atividade 1.9]{Reconhecimento Passivo OSINT com Maltego no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig1.9.png}
+  \caption{Execução de Transforms no domínio ufc.br e identificação de
+  servidores MX}
+  \label{fig:fig1.9}
+\end{figure}
+\answer{
+Nesta atividade, foi realizado reconhecimento passivo utilizando a ferramenta
+\textit{Maltego}, com foco em técnicas de \textit{OSINT} (Open Source
+Intelligence) aplicadas a um domínio institucional.
+
+Após iniciar o Maltego no Kali Linux, foi criada uma nova análise
+(\textit{New}) e adicionada a entidade \textbf{Website}, disponível no grupo
+\textit{Infrastructure}. O domínio configurado foi \texttt{ufc.br}, pertencente
+à Universidade Federal do Ceará.
+
+Foram executadas diversas \textit{Transforms} para extração de informações
+públicas associadas ao domínio:
+
+\begin{itemize}
+    \item \textbf{To Domains [within Properties]}: identificação do domínio
+      relacionado;
+    \item \textbf{To DNSNames [within Properties]}: levantamento de registros
+      DNS associados;
+    \item \textbf{To Person [PGP]}: identificação de possíveis pessoas
+      vinculadas ao domínio;
+    \item \textbf{To Email Addresses [PGP]}: coleta de endereços de e-mail
+      institucionais expostos;
+    \item \textbf{To DNS Name – MX (mail server)}: identificação dos servidores
+      de e-mail utilizados pela instituição.
+\end{itemize}
+
+Como resultado, foi possível observar a associação do domínio \texttt{ufc.br} a
+diversos registros DNS, endereços de e-mail institucionais e servidores de
+e-mail (MX), identificando a utilização de infraestrutura de serviços do Google
+para correio eletrônico.
+}
+
+\newpage
+\question[Atividade 1.10]{Conhecendo Ataques Contra Aprendizagem de Máquinas (Adversarial Machine Learning)}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig1.10.png}
+  \caption{Execução de ataque adversarial no modelo GTSRB e erro de
+  classificação após perturbação}
+  \label{fig:fig1.10}
+\end{figure}
+\answer{
+Nesta atividade, foi explorado o conceito de \textit{Adversarial Machine
+Learning}, que estuda vulnerabilidades em modelos de aprendizado de máquina
+quando submetidos a entradas maliciosamente manipuladas.
+
+Foi utilizada a plataforma interativa \texttt{adversarial.js}, acessada via
+navegador, permitindo visualizar o comportamento de uma rede neural treinada
+para reconhecimento de placas de trânsito (\textbf{GTSRB – German Traffic Sign
+Recognition Benchmark}).
+
+Inicialmente, foi selecionado o modelo \textbf{GTSRB (street sign
+recognition)}. Na seção \textit{Original Image}, ao executar a opção
+\textbf{RUN NEURAL NETWORK}, observou-se que a imagem da placa de trânsito
+“STOP” foi corretamente classificada pelo modelo, com alta confiança na
+predição.
+
+Em seguida, na seção \textit{Adversarial Image}, foi acionada a opção
+\textbf{GENERATE}, que aplicou pequenas perturbações matematicamente calculadas
+à imagem original. Essas alterações são praticamente imperceptíveis ao olho
+humano, porém são suficientes para modificar os padrões de ativação interna da
+rede neural.
+
+Após executar novamente a opção \textbf{RUN NEURAL NETWORK} na imagem
+adversarial, verificou-se que o modelo passou a classificar a imagem
+incorretamente, demonstrando que o sistema foi enganado com sucesso.
+
+Esse experimento evidencia que modelos de aprendizado de máquina, especialmente
+redes neurais profundas, podem ser altamente sensíveis a pequenas perturbações
+nos dados de entrada. Em contextos críticos, como veículos autônomos, sistemas
+biométricos ou diagnósticos médicos, essas vulnerabilidades podem representar
+riscos significativos.
+}
+
