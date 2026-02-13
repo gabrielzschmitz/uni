@@ -1,0 +1,256 @@
+\section{Atividades}
+
+\question[Atividade 2.6]{Explorando o controle técnico de criptografia de dados
+com Ccrypt no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig2.6.png}
+  \caption{Arquivo mensagem.txt convertido para mensagem.txt.cpt após
+  criptografia com Ccrypt}
+  \label{fig:fig2.6}
+\end{figure}
+\answer{
+Nesta atividade, foi explorada a ferramenta \texttt{ccrypt}, utilizada para
+implementação de controle técnico de proteção de dados por meio de criptografia
+simétrica no Kali Linux.
+
+Inicialmente, foi criado o arquivo \texttt{mensagem.txt} no diretório
+\texttt{/home/aluno/Documentos/}, contendo o texto “Hackers do bem!”. Após
+confirmar sua criação com o comando \texttt{ls}, foram consultadas as opções da
+ferramenta por meio do comando \texttt{ccrypt -h}, a fim de compreender seus
+modos de operação e parâmetros disponíveis.
+
+Para aplicar a criptografia, foi executado o comando \texttt{ccrypt -e
+mensagem.txt}. O parâmetro \texttt{-e} indica a operação de cifragem
+(\textit{encryption}), convertendo automaticamente o arquivo original para
+\texttt{mensagem.txt.cpt}. Ao listar o diretório novamente e visualizar o
+conteúdo com \texttt{cat mensagem.txt.cpt}, verificou-se que os dados passaram
+a apresentar caracteres ilegíveis, evidenciando a aplicação da criptografia.
+
+Em seguida, realizou-se o processo de descriptografia por meio do comando
+\texttt{ccrypt -d mensagem.txt.cpt}. O parâmetro \texttt{-d} indica a operação
+de decifragem (\textit{decryption}). Após a inserção da mesma chave utilizada
+na etapa anterior, o arquivo original \texttt{mensagem.txt} foi restaurado com
+seu conteúdo íntegro.
+
+Por fim, o arquivo foi removido com o comando \texttt{rm mensagem.txt},
+encerrando a atividade.
+}
+
+\newpage
+\question[Atividade 2.7]{Explorando os eventos de sistema com o Logcheck no Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig2.7.png}
+  \caption{Execução do Logcheck em modo workstation exibindo eventos de
+  segurança e sistema}
+  \label{fig:fig2.7}
+\end{figure}
+\answer{
+Nesta atividade, foi explorada a ferramenta \texttt{Logcheck}, utilizada como
+mecanismo de controle detectivo para análise automatizada de logs no Kali
+Linux. O objetivo foi identificar eventos relevantes de segurança e sistema a
+partir da filtragem das mensagens registradas pelo kernel e serviços ativos.
+
+Inicialmente, foi executado o comando \texttt{sudo -u logcheck logcheck -o -t},
+permitindo que o Logcheck operasse no modo online (\texttt{-o}) e exibisse os
+relatórios em formato texto simples (\texttt{-t}), sob o contexto do usuário
+específico \texttt{logcheck}. A saída apresentou eventos classificados em
+\textit{Security Events} e \textit{System Events}.
+
+Entre os eventos de segurança, destacaram-se registros relacionados ao
+\texttt{sudo}, indicando abertura e encerramento de sessões privilegiadas para
+o usuário root, evidenciando monitoramento de atividades com elevação de
+privilégios.
+
+Nos eventos de sistema, foram observadas mensagens do \texttt{dhclient}
+relativas a solicitações DHCP na interface \texttt{eth0}, bem como erros do
+serviço \texttt{xrdp-chansrv} associados à área de transferência durante
+sessões RDP. Esses registros demonstram a capacidade da ferramenta em
+identificar tanto eventos operacionais quanto possíveis anomalias.
+
+Posteriormente, foi acessado o arquivo de configuração
+\texttt{/etc/logcheck/logcheck.conf} com privilégios administrativos, alterando
+o parâmetro \texttt{REPORTLEVEL} para \texttt{"workstation"}, definindo um
+nível de filtragem adequado para estações protegidas. Opcionalmente, foi
+configurado o parâmetro \texttt{SENDMAILTO} e \texttt{MAILASATTACH} para envio
+de relatórios por e-mail.
+
+Após a modificação, o comando foi executado novamente, sendo exibida uma nova
+saída contendo registros adicionais de abertura e encerramento de sessões sudo,
+bem como novos eventos DHCP e erros do serviço XRDP. Foram capturadas as 20
+primeiras linhas conforme solicitado.
+}
+
+\newpage
+\question[Atividade 2.8]{Explorando o navegador Tor no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig2.8.png}
+  \caption{Verificação do endereço IP no Tor Browser demonstrando uso de nó de
+  saída da rede Tor}
+  \label{fig:fig2.8}
+\end{figure}
+\answer{
+Nesta atividade, foi explorado o navegador \textit{Tor Browser} no Kali Linux,
+com o objetivo de compreender seu funcionamento e verificar, na prática, o
+mascaramento de endereço IP por meio da rede Tor.
+
+Inicialmente, o navegador foi iniciado com o comando
+\texttt{torbrowser-launcher}, responsável por baixar, verificar assinatura
+digital e executar a versão mais recente do Tor Browser. Após a abertura, foi
+selecionada a opção “Conectar”, permitindo o estabelecimento de uma conexão com
+a rede Tor. Em caso de falha inicial, foi utilizada a opção “Try a bridge” para
+contornar possíveis restrições de rede.
+
+Com o navegador conectado, foi acessado o site
+\texttt{https://duckduckgo.com/}, confirmando a navegação funcional. Em
+seguida, foi aberto o site \texttt{https://whatismyipaddress.com/} para
+identificação do endereço IP público e da localização aparente.
+
+Os dados apresentados indicaram um endereço IP associado a um \textit{Tor Exit
+Node}, com provedor identificado como \textit{Stiftung Erneuerbare Freiheit} e
+localização em Frankfurt, Alemanha. Essa informação confirma que o tráfego
+estava sendo roteado pela rede Tor, ocultando o endereço IP real da máquina.
+
+Para fins comparativos, o mesmo site foi acessado utilizando o Mozilla Firefox
+(fora da rede Tor). Nesse caso, o IP identificado correspondia a um provedor
+distinto (Amazon.com Inc.), com localização nos Estados Unidos, evidenciando
+navegação convencional sem anonimização.
+
+A diferença entre os endereços IP e localizações demonstrou, de forma prática,
+o funcionamento do Tor como mecanismo de anonimização, encaminhando o tráfego
+por múltiplos nós distribuídos globalmente.
+}
+
+\newpage
+\question[Atividade 2.9]{Navegando na DeepWeb pelo navegador Tor no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig2.9.png}
+  \caption{Acesso a serviço .onion no Tor Browser demonstrando navegação na
+  rede Tor}
+  \label{fig:fig2.9}
+\end{figure}
+\answer{
+Nesta atividade, foi realizada a navegação em serviços hospedados na rede Tor,
+dando continuidade à configuração realizada na atividade anterior. O objetivo
+foi compreender o funcionamento de endereços \texttt{.onion} e observar, na
+prática, o acesso a conteúdos disponíveis exclusivamente dentro da rede Tor.
+
+Inicialmente, utilizando o navegador convencional (Firefox), foi acessado um
+diretório público que lista endereços da rede Tor. Observou-se que os serviços
+da DeepWeb possuem como característica principal a utilização da extensão
+\texttt{.onion}, a qual não é resolvida pelo DNS tradicional e exige o uso do
+Tor Browser para roteamento adequado.
+
+Em seguida, no Tor Browser já conectado à rede Tor, foi acessado um endereço
+\texttt{.onion} de teste. Após alguns instantes de carregamento, o serviço foi
+exibido com sucesso, confirmando que o tráfego estava sendo encaminhado por
+circuitos da rede Tor até o respectivo serviço oculto. A mensagem apresentada
+indicava tratar-se de um serviço na versão v3, modelo atualmente adotado devido
+a melhorias criptográficas e de segurança em relação aos antigos serviços v2.
+
+Posteriormente, foram testados outros endereços \texttt{.onion}
+disponibilizados na página de referência. Constatou-se que alguns serviços
+podem estar temporariamente indisponíveis. Essa indisponibilidade pode ocorrer
+por diversos fatores, como instabilidade do serviço, encerramento voluntário,
+medidas judiciais ou ataques cibernéticos.
+
+A atividade permitiu observar que:
+\begin{itemize}
+    \item Serviços \texttt{.onion} só são acessíveis por meio da rede Tor;
+    \item O tempo de carregamento tende a ser superior ao da navegação
+      convencional, devido ao roteamento por múltiplos nós;
+    \item A disponibilidade dos serviços pode variar significativamente;
+    \item A navegação deve ser realizada com cautela e responsabilidade.
+\end{itemize}
+
+Por fim, todas as janelas dos navegadores (Tor e Firefox ESR) e o Terminal
+foram encerradas, concluindo a atividade.
+}
+
+\newpage
+\question[Atividade 2.10]{Explorando as Políticas Locais e de Conta nas
+Configurações de Segurança do Windows Server 2022}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig2.10.png}
+  \caption{Interface do Local Security Policy (secpol.msc) no Windows Server
+  2022}
+  \label{fig:fig2.10}
+\end{figure}
+\answer{
+Nesta atividade, foi analisado o console \texttt{Local Security Policy}
+(\texttt{secpol.msc}) no Windows Server 2022, com foco na compreensão das
+políticas locais e de conta como mecanismos de controle gerencial e técnico de
+segurança.
+
+Após o acesso remoto ao servidor via RDP, foi utilizado o campo de busca para
+executar o comando \texttt{secpol}, abrindo o console de gerenciamento de
+políticas de segurança locais.
+
+\textbf{1. Account Policies}
+
+Dentro de \textit{Account Policies}, foram examinadas duas categorias
+principais:
+
+\textit{Password Policy} — Define os critérios aplicáveis às senhas das contas
+locais. Entre os parâmetros observados destacam-se:
+\begin{itemize}
+    \item Histórico de senhas, impedindo reutilização recente;
+    \item Idade máxima e mínima da senha, controlando periodicidade de troca;
+    \item Comprimento mínimo, fortalecendo a robustez das credenciais;
+    \item Requisitos de complexidade, exigindo combinação de caracteres variados.
+\end{itemize}
+
+Essas configurações contribuem diretamente para mitigar ataques de força bruta
+e reutilização de credenciais.
+
+\textit{Account Lockout Policy} — Responsável por definir regras de bloqueio
+após tentativas consecutivas de autenticação malsucedidas. Foram analisados:
+\begin{itemize}
+    \item Limite de tentativas inválidas;
+    \item Tempo de bloqueio da conta;
+    \item Intervalo para redefinição do contador.
+\end{itemize}
+
+Essas definições atuam como proteção contra ataques de tentativa e erro
+(\textit{brute force}).
+
+\textbf{2. Local Policies}
+
+No menu \textit{Local Policies}, foi explorada a seção \textit{Audit Policy},
+que permite configurar o registro de eventos de segurança no \textit{Event
+Viewer}. Entre as categorias avaliadas:
+\begin{itemize}
+    \item Auditoria de logon de conta;
+    \item Auditoria de gerenciamento de contas;
+    \item Auditoria de acesso a objetos;
+    \item Auditoria de alterações de política;
+    \item Auditoria de uso de privilégios;
+    \item Auditoria de eventos do sistema.
+\end{itemize}
+
+Essas configurações estabelecem controles detectivos fundamentais para
+monitoramento e rastreabilidade de ações realizadas no servidor.
+
+Ainda em \textit{Local Policies}, foi analisado o item \textit{User Rights
+Assignment}, que permite atribuir permissões específicas a usuários ou grupos,
+como direito de logon local, logon via RDP, desligamento do sistema, entre
+outros.
+
+\textbf{3. Security Options}
+
+Na seção \textit{Security Options}, foram observadas configurações críticas
+relacionadas à postura de segurança do sistema, incluindo:
+\begin{itemize}
+    \item Status das contas Administrator e Guest;
+    \item Configurações de canal seguro para membros de domínio;
+    \item Controle de exibição do último usuário na tela de logon;
+    \item Exigência de combinação CTRL+ALT+DEL para autenticação.
+\end{itemize}
+
+Essas opções permitem endurecer a superfície de ataque do sistema operacional
+por meio de ajustes administrativos.
+}
