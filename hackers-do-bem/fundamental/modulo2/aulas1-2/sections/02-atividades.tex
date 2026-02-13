@@ -1,0 +1,176 @@
+\section{Atividades}
+
+\question[Atividade 2.1]{Criando um Trojan de Acesso Remoto com o
+Social-Engineer Toolkit no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig2.1.png}
+  \caption{Geração do payload com SEToolkit e detecção de malware no Kaspersky
+  Threat Intelligence Portal}
+  \label{fig:fig2.1}
+\end{figure}
+\answer{
+Nesta atividade, foi utilizada a ferramenta \textit{Social-Engineer Toolkit
+(SET)}, nativa do Kali Linux, para gerar um \textit{payload} do tipo
+\textbf{Windows Meterpreter Reverse\_TCP X64}, simulando a criação de um Trojan
+de Acesso Remoto (RAT) para fins exclusivamente acadêmicos.
+
+Após a execução do comando \texttt{setoolkit} com privilégios de superusuário,
+foram selecionadas as opções:
+\begin{itemize}
+    \item \textbf{Social-Engineering Attacks};
+    \item \textbf{Create a Payload and Listener};
+    \item \textbf{Windows Meterpreter Reverse\_TCP X64}.
+\end{itemize}
+
+Foi configurado o endereço IP local (\texttt{LHOST 192.168.98.40}) e a porta de
+escuta reversa (\texttt{LPORT 7777}). O SET gerou automaticamente o arquivo
+executável \texttt{payload.exe}, armazenado no diretório \texttt{/root/.set/}.
+
+Em seguida, o \textit{listener} foi iniciado via integração com o
+\textit{Metasploit Framework}, utilizando o módulo \texttt{multi/handler},
+responsável por aguardar conexões reversas provenientes da máquina alvo.
+
+Para fins de análise de segurança, o arquivo \texttt{payload.exe} foi submetido
+ao \textit{Kaspersky Threat Intelligence Portal}, onde foi detectado como
+malware (nível de detecção 6), confirmando seu comportamento potencialmente
+malicioso.
+}
+
+\question[Atividade 2.2]{Explorando o Keylogger XSPY no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig2.2.png}
+  \caption{Captura de teclas utilizando o XSPY e visualização do arquivo
+  teste.log}
+  \label{fig:fig2.2}
+\end{figure}
+\answer{
+Nesta atividade, foi explorada a ferramenta \texttt{xspy}, disponível no Kali
+Linux, para demonstrar o funcionamento de um \textit{keylogger}, programa capaz
+de registrar teclas digitadas no sistema.
+
+Inicialmente, foi acessada a pasta \texttt{/home/aluno/Documentos}, confirmando
+que estava vazia. Em seguida, o keylogger foi executado com o redirecionamento
+de saída para o arquivo \texttt{teste.log} por meio do comando:
+
+\begin{center}
+\texttt{xspy >> teste.log}
+\end{center}
+
+Após a inicialização da ferramenta, foi aberto o Editor de Texto e digitada
+manualmente a frase \textit{“Hacker do bem!”}. Posteriormente, a execução do
+\texttt{xspy} foi encerrada com \texttt{Ctrl + C}.
+
+Ao visualizar o conteúdo do arquivo \texttt{teste.log} utilizando o comando
+\texttt{cat teste.log}, foi possível observar o registro das teclas capturadas
+durante a execução do keylogger, comprovando o funcionamento da ferramenta.
+
+Por fim, o arquivo foi removido com o comando \texttt{rm teste.log},
+restabelecendo o ambiente inicial.
+}
+
+\newpage
+\question[Atividade 2.3]{Explorando Ransomwares no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig2.3.png}
+  \caption{Criação do Ransomware WannaCry e visualização do arquivo executável
+  gerado}
+  \label{fig:fig2.3}
+\end{figure}
+\answer{
+Nesta atividade, foi explorado um repositório educacional de criação de
+Ransomwares no Kali Linux, com foco na compreensão teórica do funcionamento
+dessas ameaças. Ressalta-se que todos os procedimentos foram realizados
+exclusivamente para fins acadêmicos, sem execução do código malicioso.
+
+Após acessar o diretório \texttt{/curso/Ransomware} e executar o programa
+\texttt{python3 Ransomware}, foi possível visualizar o menu interativo com
+diferentes famílias de ransomware disponíveis para geração.
+
+Por meio do comando \texttt{show}, foram listadas diversas variantes, incluindo
+Cerber, Locky, Petya e WannaCry. Em seguida, foi selecionada a opção \textbf{14
+– Ransomware.WannaCry}, resultando na criação de um arquivo compactado
+protegido por senha (\texttt{infected}), salvo como \texttt{sdcard} no
+diretório raiz.
+
+Ao acessar o arquivo pelo gerenciador de arquivos, verificou-se que seu
+conteúdo incluía um executável (\texttt{.exe}) com aproximadamente 3.5MB,
+correspondente ao ransomware gerado. O arquivo não foi executado, mantendo-se a
+atividade apenas no âmbito de análise estrutural.
+
+Por fim, o arquivo \texttt{sdcard} foi removido do sistema, restaurando o
+ambiente inicial.
+}
+
+\newpage
+\question[Atividade 2.4]{Explorando múltiplos Payloads de Malware no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig2.4.png}
+  \caption{Execução do Brutal.sh e geração do payload
+  Screen-Rotation-Pranks.ino}
+  \label{fig:fig2.4}
+\end{figure}
+\answer{
+Nesta atividade, foi explorado o repositório educacional \texttt{Brutal},
+disponível no diretório \texttt{/curso/Brutal}, com o objetivo de compreender a
+estrutura e o funcionamento de múltiplos payloads de malware. Todas as ações
+foram realizadas exclusivamente para fins acadêmicos, sem execução dos arquivos
+gerados em ambiente Windows.
+
+Inicialmente, foi realizado acesso ao Kali Linux via RDP e, no terminal, foi
+utilizado o comando \texttt{sudo -i} para obtenção de privilégios de
+superusuário. Em seguida, acessou-se o diretório do projeto por meio do comando
+\texttt{cd /curso/Brutal}, sendo confirmado seu conteúdo com \texttt{ls}.
+
+O script principal \texttt{Brutal.sh} recebeu permissão de execução com
+\texttt{chmod +x Brutal.sh} e foi executado com \texttt{./Brutal.sh}, exibindo
+o menu interativo com diversas categorias de payloads.
+
+Foi selecionada a opção \textbf{05 – Payload Prank for attack computer},
+acessando o submenu de “brincadeiras” (hoaxes). Em seguida, foi escolhida
+novamente a opção \textbf{05 – Screen Rotation Prank}, resultando na criação do
+payload \texttt{Screen-Rotation-Pranks.ino}, conforme indicado pela mensagem de
+sucesso exibida no terminal (passo solicitado para print).
+
+Posteriormente, utilizando o gerenciador de arquivos Thunar, foi acessado o
+diretório \\\texttt{/curso/Brutal/src/prank/}, onde foram visualizados os
+arquivos com extensão \texttt{.ino}. Esses arquivos correspondem a scripts que
+podem ser utilizados de forma maliciosa quando aplicados a dispositivos HID
+programáveis.
+}
+
+\newpage
+\question[Atividade 2.5]{Explorando como o Windows Defender detecta um
+Keylogger como programa malicioso}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig2.5.png}
+  \caption{Download do StupidKeylogger bloqueado pelo Microsoft Defender
+  SmartScreen e visualização do arquivo na pasta Downloads}
+  \label{fig:fig2.5}
+\end{figure}
+\answer{
+Nesta atividade, foi analisado o funcionamento dos mecanismos de proteção do
+Microsoft Defender SmartScreen ao tentar realizar o download de um Keylogger
+disponível publicamente no GitHub.
+
+Após acessar o Windows Server 2022 (cliente) via RDP, foi utilizado o navegador
+Microsoft Edge para acessar o repositório \texttt{StupidKeylogger}, no qual é
+disponibilizado um exemplo de Keylogger para fins educacionais. A leitura da
+documentação permitiu compreender que o programa tem como finalidade capturar e
+registrar teclas digitadas no sistema operacional Windows.
+
+Ao tentar baixar o arquivo compactado \texttt{StupidKeylogger-application.zip},
+o Microsoft Defender SmartScreen bloqueou automaticamente o download,
+classificando-o como inseguro. Mesmo após selecionar as opções “Keep” e
+posteriormente “Keep anyway”, o sistema apresentou alertas adicionais indicando
+que o aplicativo era considerado potencialmente malicioso.
+
+O arquivo foi então visualizado na pasta \texttt{Downloads} do Explorador de
+Arquivos, conforme solicitado no enunciado da atividade. Ressalta-se que o
+objetivo do procedimento foi exclusivamente observar o comportamento do
+mecanismo de defesa do Windows diante de um software potencialmente malicioso.
+}
