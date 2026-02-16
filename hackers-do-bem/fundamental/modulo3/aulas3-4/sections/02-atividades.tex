@@ -1,0 +1,242 @@
+\section{Atividades}
+
+\question[Atividade 3.6]{Explorando ferramentas de diagnóstico de rede no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig3.6.png}
+  \caption{Visualização das conexões de rede ativas utilizando o comando
+  netstat}
+  \label{fig:fig3.6}
+\end{figure}
+\answer{
+Nesta atividade, foram exploradas ferramentas nativas do sistema Linux para
+diagnóstico e análise de rede no ambiente Kali Linux, com o objetivo de
+compreender o funcionamento das interfaces, conectividade e comunicação entre
+hosts em uma rede.
+
+Inicialmente, foi realizado o acesso remoto ao sistema Kali Linux e, em
+seguida, obtidos privilégios de superusuário por meio do comando \texttt{sudo
+-i}, permitindo a execução de comandos administrativos.
+
+O comando \texttt{ifconfig} foi utilizado para identificar as interfaces de
+rede disponíveis no sistema, bem como seus respectivos endereços IP, máscaras
+de sub-rede e estatísticas de transmissão. Foram observadas interfaces como
+\textit{eth0}, responsável pela comunicação com a rede, \textit{lo} (loopback)
+e interfaces virtuais como \textit{docker0}.
+
+Em seguida, foi empregado o comando \texttt{ping} para verificar a
+conectividade com um servidor externo, permitindo avaliar a disponibilidade do
+destino e medir o tempo de resposta (latência). Essa ferramenta também
+possibilitou a resolução de nomes de domínio em endereços IP.
+
+O comando \texttt{traceroute} foi utilizado para mapear o caminho percorrido
+pelos pacotes até um destino específico. A análise dos saltos intermediários
+(\textit{hops}) permitiu compreender a rota utilizada na comunicação, bem como
+identificar possíveis pontos de latência ou filtragem de pacotes.
+
+Posteriormente, foi explorado o comando \texttt{netstat}, que fornece
+informações detalhadas sobre o estado das conexões de rede. A opção \texttt{-i}
+permitiu visualizar estatísticas das interfaces, como pacotes transmitidos e
+recebidos, além de erros e descartes.
+
+Com o uso de \texttt{netstat -rn}, foi possível analisar a tabela de roteamento
+do sistema, identificando a rota padrão, gateways e redes diretamente
+conectadas, o que é essencial para entender como o tráfego é direcionado.
+
+A opção \texttt{netstat -s} foi utilizada para obter estatísticas detalhadas
+dos protocolos de rede, incluindo IP, TCP, UDP e ICMP, permitindo uma visão
+mais aprofundada do comportamento da comunicação no sistema.
+
+Por fim, o comando \texttt{netstat -anptu} possibilitou a visualização das
+conexões ativas e portas em escuta, associando cada conexão a processos
+específicos. Essa análise é fundamental para identificar serviços em execução e
+monitorar possíveis atividades suspeitas.
+}
+
+\newpage
+\question[Atividade 3.7]{Criação e teste de um Honeypot com PentBox no Kali
+Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig3.7.png}
+  \caption{Registro de tentativa de acesso capturada pelo Honeypot no PentBox}
+  \label{fig:fig3.7}
+\end{figure}
+\answer{
+Nesta atividade, foi implementado um honeypot no ambiente Kali Linux com o
+objetivo de simular um serviço vulnerável e registrar tentativas de acesso,
+permitindo a observação de possíveis comportamentos maliciosos em rede.
+
+Inicialmente, foi realizado o acesso remoto ao sistema Kali Linux e obtidos
+privilégios de superusuário por meio do comando \texttt{sudo -i}. Em seguida,
+foi identificado o endereço IP da máquina utilizando o comando
+\texttt{ifconfig}, necessário para a realização dos testes de acesso a partir
+de outro host.
+
+Posteriormente, foi acessado o diretório da ferramenta PentBox e executado o
+script \texttt{pentbox.rb}. No menu principal, foram selecionadas as opções de
+ferramentas de rede e, em seguida, o módulo de honeypot.
+
+Foi escolhida a configuração automática (\textit{Fast Auto Configuration}), que
+inicializa rapidamente o serviço honeypot na porta 80, permitindo a simulação
+de um servidor web e o monitoramento de conexões recebidas.
+
+Após a ativação do honeypot, foi realizado um teste de acesso a partir de uma
+máquina com Windows Server 2022, utilizando um navegador web para acessar o
+endereço IP do Kali Linux. Ao tentar estabelecer a conexão, foi exibida uma
+mensagem de acesso negado, indicando que a requisição foi interceptada pelo
+honeypot.
+
+Retornando ao Kali Linux, foi possível observar no terminal o registro da
+tentativa de acesso, incluindo o endereço IP de origem, a porta utilizada e os
+detalhes da requisição HTTP, como método, cabeçalhos e agente do usuário. Essas
+informações são fundamentais para análise de possíveis atividades suspeitas.
+}
+
+\newpage
+\question[Atividade 3.8]{Enumeração DNS com a ferramenta host no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig3.8.png}
+  \caption{Consulta DNS utilizando a ferramenta host para obtenção de
+  registros}
+  \label{fig:fig3.8}
+\end{figure}
+\answer{
+Nesta atividade, foi realizada a enumeração de informações DNS utilizando a
+ferramenta \texttt{host} no ambiente Kali Linux, com o objetivo de identificar
+registros associados a domínios e compreender sua estrutura de resolução de
+nomes.
+
+Inicialmente, foi acessado o sistema Kali Linux e obtidos privilégios de
+superusuário por meio do comando \texttt{sudo -i}. Em seguida, foi executada
+uma consulta completa ao domínio \textit{grancursos.com.br}, permitindo a
+visualização de diferentes tipos de registros DNS.
+
+Foram identificados registros do tipo A (endereços IPv4) e AAAA (endereços
+IPv6), evidenciando que o domínio utiliza múltiplos endereços IP, o que pode
+indicar balanceamento de carga e alta disponibilidade. Observou-se também a
+presença de registros MX, responsáveis pela definição dos servidores de e-mail
+do domínio, apontando para a infraestrutura do Google Workspace.
+
+Adicionalmente, foi possível observar registros avançados do tipo SVCB/HTTPS,
+que fornecem informações sobre protocolos suportados (como HTTP/2 e HTTP/3) e
+recursos de segurança, como o uso de Encrypted Client Hello (ECH).
+
+Na sequência, foram realizadas consultas específicas utilizando a opção
+\texttt{-t} da ferramenta \texttt{host}. A consulta do tipo NS permitiu
+verificar os servidores de nomes associados a diferentes domínios, sendo
+possível identificar casos em que não há registros explícitos e outros em que
+há utilização de provedores externos de DNS, como serviços de CDN.
+
+Por fim, foi realizada a consulta de registros MX de um domínio, evidenciando a
+priorização entre servidores de e-mail e a existência de mecanismos de
+redundância, garantindo maior confiabilidade na entrega de mensagens.
+
+A atividade demonstrou, de forma prática, como a enumeração DNS pode fornecer
+informações relevantes sobre a infraestrutura de um domínio, sendo uma etapa
+fundamental em processos de análise de rede e reconhecimento em segurança da
+informação.
+}
+
+\newpage
+\question[Atividade 3.9]{Enumeração DNS com nslookup no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig3.9.png}
+  \caption{Consultas DNS utilizando a ferramenta nslookup}
+  \label{fig:fig3.9}
+\end{figure}
+\answer{
+Nesta atividade, foi realizada a enumeração de informações DNS utilizando a
+ferramenta \texttt{nslookup} no ambiente Kali Linux, com o objetivo de
+identificar registros associados a domínios e compreender sua infraestrutura de
+resolução de nomes.
+
+Inicialmente, foi acessado o sistema Kali Linux e obtidos privilégios de
+superusuário por meio do comando \texttt{sudo -i}. Em seguida, foi executada
+uma consulta ao domínio \textit{grancursosonline.com.br}, permitindo a obtenção
+de informações básicas de resolução DNS.
+
+A saída apresentou o servidor DNS utilizado na consulta (192.168.98.2), bem
+como a porta padrão do serviço (53). A resposta foi classificada como
+\textit{non-authoritative}, indicando que as informações retornadas não foram
+fornecidas diretamente por um servidor autoritativo do domínio.
+
+Foram identificados múltiplos endereços IP associados ao domínio, incluindo
+endereços IPv4 (registros A) e IPv6 (registros AAAA). A presença de múltiplos
+endereços sugere o uso de balanceamento de carga e alta disponibilidade. Além
+disso, os blocos de IP indicam a utilização de serviços de CDN e proteção, como
+os oferecidos pela Cloudflare.
+
+Na sequência, foi realizada a consulta de servidores de nomes (NS) utilizando o
+modo interativo do \texttt{nslookup}, por meio do comando \texttt{set type=ns}.
+A saída apresentou os servidores de nomes associados ao domínio, evidenciando o
+uso de provedores externos de DNS. Essas informações são essenciais para
+compreender como o domínio gerencia sua resolução de nomes.
+
+Posteriormente, foi realizada a consulta de registros MX (Mail Exchange),
+utilizando o comando \texttt{set type=mx}. Foram identificados diversos
+servidores de e-mail com diferentes prioridades, indicando a existência de
+mecanismos de redundância e alta disponibilidade. Observou-se também que os
+servidores de e-mail pertencem ao Google Workspace, evidenciando a utilização
+de serviços terceirizados para gerenciamento de correio eletrônico.
+
+Por fim, foram consultados os registros TXT do domínio utilizando o comando
+\texttt{nslookup -type=txt}. A saída apresentou diversos registros utilizados
+para verificação de domínio e configuração de serviços, incluindo verificações
+de plataformas externas e políticas de segurança como SPF (Sender Policy
+Framework). O SPF define quais servidores estão autorizados a enviar e-mails em
+nome do domínio, sendo uma medida importante para prevenção de spoofing.
+}
+
+\newpage
+\question[Atividade 3.10]{Enumeração DNS com dig no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig3.10.png}
+  \caption{Consultas DNS utilizando a ferramenta dig}
+  \label{fig:fig3.10}
+\end{figure}
+\answer{
+Nesta atividade, foi realizada a enumeração de informações DNS utilizando a
+ferramenta \texttt{dig} (Domain Information Groper) no ambiente Kali Linux, com
+o objetivo de analisar registros DNS de um domínio e compreender sua estrutura
+de resolução de nomes.
+
+Inicialmente, foi acessado o sistema Kali Linux e obtidos privilégios de
+superusuário por meio do comando \texttt{sudo -i}. Em seguida, foi verificada a
+sintaxe do comando \texttt{dig}, permitindo compreender suas opções e
+parâmetros para consultas DNS específicas.
+
+A primeira consulta foi realizada ao domínio \textit{grancursosonline.com.br},
+resultando na obtenção de registros do tipo A (endereços IPv4). A saída do
+comando apresentou informações detalhadas do protocolo DNS, incluindo o
+cabeçalho da resposta, flags, tempo de consulta, servidor utilizado e seções de
+pergunta e resposta. Foram identificados múltiplos endereços IP associados ao
+domínio, indicando o uso de balanceamento de carga e alta disponibilidade,
+característicos de serviços de CDN.
+
+Na sequência, foi realizada a consulta de servidores de nomes (NS) utilizando o
+parâmetro \texttt{-t ns}. A saída apresentou os servidores responsáveis pela
+resolução do domínio, evidenciando o uso de infraestrutura externa de DNS.
+Esses registros são fundamentais para compreender a delegação do domínio.
+
+Posteriormente, foi realizada a consulta de registros MX (Mail Exchange),
+utilizando o parâmetro \texttt{-t mx}. Foram identificados diversos servidores
+de e-mail com diferentes prioridades, indicando a existência de redundância no
+serviço de correio eletrônico. Observou-se que os servidores pertencem ao
+Google Workspace, evidenciando a utilização de serviços terceirizados para
+gerenciamento de e-mails.
+
+Em seguida, foram consultados os registros AAAA, responsáveis por mapear
+endereços IPv6 do domínio. A presença de múltiplos endereços IPv6 reforça a
+adoção de boas práticas de disponibilidade e distribuição de carga, além da
+compatibilidade com redes modernas.
+
+Por fim, foi realizada a consulta de registros CNAME. A ausência de respostas
+nesta seção indica que o domínio consultado não possui um nome canônico
+associado. No entanto, a seção de autoridade (SOA) foi apresentada, contendo
+informações sobre o servidor DNS primário, o responsável pelo domínio e
+parâmetros de controle de cache e sincronização entre servidores.
+}

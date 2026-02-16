@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{style}
+
+\usepackage{url, hyperref}
+\usepackage{array}
+\usepackage{paralist}
+\usepackage[
+	style=numeric,
+	sorting=none,
+	maxbibnames=10]{biblatex}
+\addbibresource{ref.bib}
+\bibliography{ref.bib}
+
+\begin{document}
+
+% University Logo, Course Name, Professor's Name, Date, Homework Title,
+% Homework Number, Student Name, Student Identifier, Source Code
+\cover{./HACKERSDOBEM.png}{Hackers do Bem -- Fundamental}
+{Fábio Carneiro de Castro}
+{16/02/2026}
+{Atividade Prática -- Módulo 3}
+{Aulas 3 e 4}
+{Gabriel dos Santos Schmitz}
+{https://github.com/gabrielzschmitz/uni/tree/main/hackers-do-bem/fundamental/modulo3/aulas3-4}
+
+\input{./sections/01-introducao.tex}
+\input{./sections/02-atividades.tex}
+
+\newpage
+\printbibliography[title=Referências]
+
+\end{document}
