@@ -1,0 +1,217 @@
+\section{Atividades}
+
+\question[Atividade 4.1]{Modificando os parâmetros de Controle de Autenticação
+no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig4.1.png}
+  \caption{Alteração da senha do usuário no Kali Linux e autenticação com a
+  nova credencial}
+  \label{fig:fig4.1}
+\end{figure}
+\answer{
+Nesta atividade, foi realizado o processo de modificação de credenciais de
+autenticação no sistema Kali Linux, demonstrando o funcionamento do controle de
+acesso baseado em senha em ambientes Linux.
+
+Inicialmente, foi verificado o usuário logado e o diretório de trabalho atual
+por meio dos comandos \texttt{whoami} e \texttt{pwd}, confirmando o contexto de
+execução do usuário \texttt{aluno} no diretório \texttt{/home/aluno}.
+
+Em seguida, foram analisados os arquivos de configuração \texttt{/etc/passwd} e
+\texttt{/etc/group}, responsáveis por armazenar informações sobre usuários e
+grupos no sistema. Observou-se que o arquivo \texttt{/etc/passwd} contém dados
+estruturados em campos, como nome de usuário, UID, GID, diretório pessoal e
+shell padrão, enquanto o arquivo \texttt{/etc/group} define os grupos
+existentes e seus respectivos membros.
+
+Posteriormente, foi realizada a alteração da senha do usuário \texttt{aluno}
+por meio da elevação de privilégios com o comando \texttt{sudo -i}, seguido do
+comando \texttt{passwd aluno}, definindo uma nova senha de autenticação.
+
+Após a alteração, foi efetuado o encerramento da sessão e realizado novo acesso
+ao sistema via RDP, utilizando a senha atualizada, validando o sucesso do
+processo de modificação de credenciais.
+
+Por fim, a senha foi restaurada ao valor original, garantindo a manutenção do
+ambiente conforme o estado inicial. Este procedimento evidenciou o controle de
+autenticação baseado em senha no Kali Linux e a importância da gestão segura de
+credenciais em sistemas operacionais.
+}
+
+\newpage
+\question[Atividade 4.2]{Explorando a ferramenta SELinux no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig4.2.png}
+  \caption{Verificação do status do SELinux no Kali Linux}
+  \label{fig:fig4.2}
+\end{figure}
+\answer{
+Nesta atividade, foi realizada a exploração do SELinux (Security-Enhanced
+Linux), um mecanismo de segurança que implementa controle de acesso obrigatório
+(MAC) em sistemas Linux, permitindo a definição de políticas de segurança mais
+granulares sobre processos, arquivos e recursos do sistema.
+
+Inicialmente, foi efetuada a elevação de privilégios utilizando o comando
+\texttt{sudo -i}, possibilitando a execução de tarefas administrativas. Em
+seguida, procedeu-se com a ativação do SELinux por meio do comando
+\texttt{selinux-activate}, que realizou a geração do arquivo de configuração do
+GRUB, responsável pelo carregamento do kernel com suporte às políticas de
+segurança do SELinux.
+
+Após a ativação, o sistema foi reiniciado para aplicação das alterações.
+Durante o processo de inicialização, ocorre a etapa de \textit{relabeling}, na
+qual os arquivos do sistema recebem rótulos de segurança apropriados,
+permitindo a aplicação correta das políticas definidas.
+
+Com o sistema em execução, foi verificado o estado do SELinux utilizando o
+comando \texttt{sestatus}, confirmando que o mecanismo estava habilitado e
+operando em modo \textit{permissive}, no qual as violações de política são
+registradas em log, sem bloqueio efetivo das ações.
+
+Em seguida, foram analisadas as configurações de usuários do SELinux por meio
+do comando \texttt{semanage user -l}, que apresenta os rótulos de segurança,
+funções e níveis associados a cada usuário. Também foram verificadas as
+associações de login com o comando \texttt{semanage login -l}, evidenciando o
+mapeamento entre usuários do sistema e identidades do SELinux.
+
+Posteriormente, foi examinada a lista de variáveis booleanas do SELinux com
+\texttt{semanage boolean -l}, permitindo identificar parâmetros que controlam o
+comportamento de diferentes serviços e aplicações. Além disso, foram listadas
+as definições de portas com o comando \texttt{semanage port -l}, relacionando
+tipos de políticas, protocolos e números de portas.
+
+Por fim, foi realizada a desativação do SELinux por meio da edição do arquivo
+de configuração \texttt{/etc/selinux/config}, alterando o modo para
+\texttt{disabled}, seguida de reinicialização do sistema. A verificação final
+com o comando \texttt{sestatus} confirmou a desativação do mecanismo.
+
+Esta atividade demonstrou o funcionamento do SELinux, suas configurações
+principais e a importância do controle de acesso baseado em políticas para o
+aumento da segurança em sistemas Linux.
+}
+
+\newpage
+\question[Atividade 4.3]{Criando um cofre de senhas com o KeePassXC no Kali
+Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig4.3.png}
+  \caption{Criação e gerenciamento de credenciais no KeePassXC}
+  \label{fig:fig4.3}
+\end{figure}
+\answer{
+Nesta atividade, foi realizada a criação e manipulação de um cofre de senhas
+utilizando o KeePassXC, um gerenciador de senhas de código aberto que permite
+armazenar credenciais de forma segura por meio de criptografia avançada.
+
+Inicialmente, o aplicativo foi executado no Kali Linux por meio do comando
+\texttt{keepassxc}, utilizando o usuário padrão do sistema, conforme
+recomendado. Em seguida, foi criado um novo banco de dados, denominado
+\textit{Pessoal}, destinado ao armazenamento de credenciais.
+
+Durante a configuração do banco de dados, foi verificado o uso do algoritmo de
+criptografia AES de 256 bits, reconhecido por oferecer alto nível de segurança
+na proteção dos dados armazenados. Foi então definida uma senha mestra para o
+cofre, responsável por controlar o acesso às informações armazenadas.
+
+Após a criação do banco de dados, o arquivo foi salvo no diretório
+\texttt{Documentos} com o nome \texttt{Senhas.kdbx}. Na interface do KeePassXC,
+foi adicionada uma nova entrada contendo informações de acesso, como título,
+nome de usuário, senha e URL, demonstrando o processo de armazenamento de
+credenciais.
+
+Posteriormente, foi realizada a exclusão da entrada criada, evidenciando a
+capacidade de gerenciamento dos dados armazenados no cofre. Ao final, o arquivo
+do banco de dados foi removido do sistema por meio do comando \texttt{rm},
+garantindo a limpeza do ambiente de testes.
+
+Esta atividade demonstrou a utilização do KeePassXC para criação de cofres de
+senhas seguros, destacando a importância do uso de gerenciadores de credenciais
+para a proteção de informações sensíveis em ambientes digitais.
+}
+
+\newpage
+\question[Atividade 4.4]{Ataque de Dicionário Off-line contra credenciais no
+Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig4.4.png}
+  \caption{Execução do ataque de dicionário com John the Ripper}
+  \label{fig:fig4.4}
+\end{figure}
+\answer{
+Nesta atividade, foi realizada a exploração da ferramenta John the Ripper no
+Kali Linux, com o objetivo de demonstrar a execução de um ataque de dicionário
+off-line para descoberta de senhas a partir de hashes.
+
+Inicialmente, foi obtido acesso privilegiado ao sistema utilizando o comando
+\texttt{sudo -i}. Em seguida, foi realizada a leitura do arquivo
+\texttt{/etc/shadow}, que armazena os hashes das senhas dos usuários do
+sistema, evidenciando a importância do controle de acesso a este arquivo por
+conter informações sensíveis.
+
+Posteriormente, foi criado um novo usuário denominado \textit{teste1}, com a
+senha previamente definida, utilizando o comando \texttt{useradd} associado à
+geração de hash por meio do \texttt{openssl}. Após a criação, foi possível
+visualizar o hash correspondente ao usuário no arquivo \texttt{/etc/shadow}.
+
+O hash do usuário criado foi então copiado e armazenado em um arquivo
+\texttt{credencial.txt}, localizado no diretório \texttt{Documentos}, com o
+objetivo de utilizá-lo como entrada para o processo de quebra de senha.
+
+Na etapa seguinte, foi executada a ferramenta John the Ripper com o comando \\
+\texttt{john -format=crypt credencial.txt}, que realizou um ataque de
+dicionário utilizando listas de palavras para tentar descobrir a senha
+correspondente ao hash informado.
+
+Ao final da execução, a ferramenta foi capaz de identificar corretamente a
+senha associada ao usuário \textit{teste1}, demonstrando a eficácia de ataques
+de dicionário contra senhas fracas ou previsíveis.
+
+Por fim, o arquivo \texttt{credencial.txt} foi removido do sistema, finalizando
+o experimento. Esta atividade evidenciou a importância da adoção de senhas
+fortes e do uso de boas práticas de segurança para evitar a exposição de
+credenciais a ataques de quebra de senha.
+}
+
+\newpage
+\question[Atividade 4.5]{Gerenciando credenciais no Windows Server 2022}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig4.5.png}
+  \caption{Backup das credenciais realizado no Credential Manager}
+  \label{fig:fig4.5}
+\end{figure}
+\answer{
+Nesta atividade, foi explorada a ferramenta Credential Manager do Windows
+Server 2022, utilizada para o gerenciamento seguro de credenciais armazenadas
+no sistema operacional.
+
+Inicialmente, o acesso ao sistema foi realizado via RDP com as credenciais
+fornecidas. Em seguida, a ferramenta Credential Manager foi acessada por meio
+da barra de pesquisa do sistema.
+
+Dentro da interface da ferramenta, foram analisadas as seções de credenciais
+disponíveis. Na aba \textit{Web Credentials}, foi possível visualizar as
+credenciais relacionadas a acessos em páginas web, que podem incluir usuários e
+senhas salvos no sistema. Já na aba \textit{Windows Credentials}, foram
+observadas diferentes categorias de credenciais, como credenciais do Windows,
+baseadas em certificado e genéricas, utilizadas para autenticação em serviços,
+aplicações e redes.
+
+Posteriormente, foi realizado o processo de backup das credenciais armazenadas.
+Para isso, utilizou-se a opção \textit{Back up Credentials}, definindo o
+diretório Desktop como local de destino e atribuindo o nome \textit{backup} ao
+arquivo gerado.
+
+Durante o procedimento, foi necessário confirmar a operação utilizando a
+sequência de segurança \textit{Ctrl + Alt + Delete}, além de definir uma senha
+de proteção para o arquivo de backup. Após a confirmação, o sistema indicou que
+o backup foi concluído com sucesso.
+
+Ao final, verificou-se a criação do arquivo \texttt{backup.cdr} na área de
+trabalho, evidenciando a conclusão do processo. Por questões de segurança, o
+arquivo foi removido do sistema, finalizando a atividade.
+}
