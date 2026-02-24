@@ -1,0 +1,252 @@
+\section{Atividades}
+
+\question[Atividade 5.1]{Criando o Active Directory no Windows Server 2022}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig5.1.png}
+  \caption{Instalação da função Active Directory Domain Services no Windows
+  Server 2022}
+  \label{fig:fig5.1}
+\end{figure}
+\answer{
+Nesta atividade, foi realizado o processo de criação de um Active Directory no
+Windows Server 2022, evidenciando a configuração inicial de um controlador de
+domínio em um ambiente corporativo.
+
+Inicialmente, foi estabelecida a conexão remota ao servidor por meio do RDP,
+utilizando as credenciais administrativas. Em seguida, foi acessado o
+utilitário \textit{Server Manager}, responsável pelo gerenciamento centralizado
+das funções e recursos do sistema.
+
+Posteriormente, foi realizada a alteração do nome do servidor para
+\texttt{DC01}, com o objetivo de padronizar a nomenclatura do controlador de
+domínio. Após a modificação, o sistema foi reiniciado para aplicar as
+alterações, sendo validada a mudança ao acessar novamente o \textit{Server
+Manager}.
+
+Na sequência, foi iniciado o assistente de instalação de funções e recursos por
+meio da opção \textit{Add Roles and Features}. Durante esse processo, foram
+selecionadas as funções \textit{Active Directory Domain Services} e \textit{DNS
+Server}, essenciais para a implementação de um domínio e resolução de nomes na
+rede.
+
+Também foram incluídos automaticamente recursos complementares, como
+\textit{Group Policy Management} e \textit{Remote Server Administration Tools},
+necessários para o gerenciamento do ambiente.
+
+Por fim, a instalação foi confirmada e executada, sendo possível acompanhar o
+progresso até sua conclusão. Este procedimento demonstrou a configuração
+inicial de um serviço de diretório, fundamental para o gerenciamento
+centralizado de usuários, grupos e políticas de segurança em redes
+corporativas.
+}
+
+\newpage
+\question[Atividade 5.2]{Criando o Domain Controller no Active Directory}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig5.2.png}
+  \caption{Configuração do Domain Controller e verificação do DNS no Windows
+  Server 2022}
+  \label{fig:fig5.2}
+\end{figure}
+\answer{
+Nesta atividade, foi realizada a promoção do servidor previamente configurado a
+um Controlador de Domínio (\textit{Domain Controller}), consolidando a
+implantação do Active Directory no ambiente.
+
+Inicialmente, por meio do \textit{Server Manager}, foi acessado o alerta de
+configuração pendente, representado por uma bandeira com indicação de atenção.
+A partir dessa notificação, foi iniciada a promoção do servidor utilizando a
+opção \textit{Promote this server to a domain controller}.
+
+Durante o assistente de configuração, foi selecionada a opção de criação de uma
+nova floresta (\textit{Add a new forest}), sendo definido o domínio raiz como
+\texttt{aluno.hacker.com}. Em seguida, foram configuradas as credenciais de
+segurança do modo de restauração de serviços de diretório (DSRM), garantindo a
+proteção administrativa do ambiente.
+
+Na etapa de validação, foi confirmado que o nome NetBIOS foi automaticamente
+definido como \texttt{ALUNO}. Após a verificação dos pré-requisitos, que foram
+atendidos com sucesso, a instalação foi iniciada, culminando na reinicialização
+automática do servidor para aplicação das configurações.
+
+Após o reinício, foi estabelecida uma nova conexão remota via RDP, sendo
+realizado o acesso com a conta administrativa do domínio. Caso solicitado pelo
+sistema, a senha foi atualizada conforme as políticas de segurança.
+
+Posteriormente, foi verificado no \textit{Server Manager} que os serviços
+\textit{Active Directory Domain Services (AD DS)}, \textit{DNS} e \textit{File
+and Storage Services} estavam devidamente instalados e ativos.
+
+Na sequência, foi acessado o gerenciador de DNS, onde foram analisadas as zonas
+de pesquisa direta (\textit{Forward Lookup Zones}), confirmando a criação do
+domínio \texttt{aluno.hacker.com}.
+
+Em seguida, foi criada uma zona de pesquisa reversa (\textit{Reverse Lookup
+Zone}), associada à rede \texttt{192.168.98.0/24}, permitindo a resolução de
+nomes a partir de endereços IP. Foi verificada a autoridade da zona (SOA) e a
+correta resolução de nomes, evidenciada por indicadores positivos no sistema.
+
+Além disso, foi habilitada a atualização automática do registro PTR para o
+servidor, garantindo a correspondência entre nome e endereço IP. Após a
+atualização, foi confirmada a presença do registro na zona reversa, validando o
+funcionamento do DNS bidirecional.
+
+Ao final, observou-se que o ambiente de domínio estava plenamente funcional,
+com serviços de diretório e resolução de nomes corretamente configurados,
+caracterizando a conclusão bem-sucedida da promoção do servidor a Domain
+Controller.
+}
+
+\newpage
+\question[Atividade 5.3]{Inserindo um usuário no Domínio do Active Directory}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig5.3.png}
+  \caption{Criação de usuário no Active Directory e aplicação de políticas de
+  grupo}
+  \label{fig:fig5.3}
+\end{figure}
+\answer{
+Nesta atividade, foi realizada a criação de um novo usuário no domínio do
+Active Directory, bem como a configuração de permissões e políticas de acesso
+por meio de Group Policy, garantindo a autenticação e o acesso remoto ao
+ambiente.
+
+Inicialmente, por meio do \textit{Server Manager}, foi acessada a ferramenta
+\textit{Active Directory Users and Computers}. Dentro do domínio
+\texttt{aluno.hacker.com}, na pasta \textit{Users}, foi criado um novo usuário
+com os seguintes dados: nome \texttt{Nome1 Sobrenome1} e login \texttt{nome1}.
+Durante a criação, foi definida uma senha segura e ajustadas as configurações
+para que a senha não expirasse, além de desabilitar a exigência de alteração no
+primeiro acesso.
+
+Após a criação, foram configuradas permissões adicionais para o usuário,
+incluindo sua inserção no grupo \textit{Remote Desktop Users}, permitindo o
+acesso remoto ao servidor via protocolo RDP.
+
+Em seguida, foi realizada a configuração de políticas de grupo utilizando a
+ferramenta \textit{Group Policy Management}. Foi criada uma nova Unidade
+Organizacional (OU) denominada \texttt{Rede1}, com o objetivo de organizar os
+objetos do domínio e aplicar políticas específicas.
+
+Dentro dessa OU, foi criado um novo Objeto de Política de Grupo (GPO) chamado
+\texttt{Alunos}, que foi posteriormente editado para definir permissões de
+acesso remoto. No editor de políticas, foi configurada a diretiva \textit{Allow
+log on through Remote Desktop Services}, adicionando os grupos \textit{Domain
+Users} e \textit{Authenticated Users}, garantindo que usuários do domínio
+possam realizar login remoto.
+
+Por fim, foi executado o comando \texttt{gpupdate /force} no prompt de comando,
+forçando a atualização das políticas de grupo no sistema. A mensagem de sucesso
+confirmou que tanto as políticas de computador quanto as de usuário foram
+aplicadas corretamente.
+
+Com isso, o ambiente passou a permitir a autenticação de usuários do domínio e
+o acesso remoto controlado, evidenciando a correta configuração do Active
+Directory e das políticas de segurança associadas.
+}
+
+\newpage
+\question[Atividade 5.4]{Configurando um cliente para ingressar no domínio do Active Directory}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig5.4.png}
+  \caption{Configuração do cliente no domínio e autenticação via Active
+  Directory}
+  \label{fig:fig5.4}
+\end{figure}
+\answer{
+Nesta atividade, foi realizada a configuração de um cliente Windows Server 2022
+para ingressar no domínio do Active Directory previamente criado, permitindo a
+autenticação centralizada de usuários.
+
+Inicialmente, no servidor, foi utilizado o comando \texttt{ipconfig} para
+identificar o endereço IP da máquina, sendo este \texttt{192.168.98.20}, que
+será utilizado como servidor DNS para os demais dispositivos da rede.
+
+Em seguida, foi estabelecida uma conexão RDP com a máquina cliente
+(\texttt{192.168.98.30}), onde foram realizadas as configurações necessárias.
+Primeiramente, foi verificada a conectividade com o servidor por meio do
+comando \texttt{ping 192.168.98.20}, confirmando a comunicação entre as
+máquinas.
+
+Posteriormente, foi configurado manualmente o servidor DNS do cliente,
+definindo o endereço \texttt{192.168.98.20} como servidor DNS preferencial.
+Essa etapa é essencial para que o cliente consiga localizar o controlador de
+domínio na rede.
+
+Na sequência, foi acessado o \textit{Server Manager} para instalar o recurso
+\textit{Remote Assistance}, garantindo suporte remoto ao sistema. Em seguida,
+nas configurações avançadas do sistema, o cliente foi associado ao domínio
+\texttt{aluno.hacker.com}, utilizando as credenciais do usuário previamente
+criado no Active Directory.
+
+Após a autenticação, o sistema confirmou a inclusão no domínio e foi realizada
+a reinicialização da máquina para aplicar as alterações.
+
+Após o reinício, foram configuradas as permissões de acesso remoto, habilitando
+conexões RDP e adicionando o usuário do domínio \texttt{nome1} à lista de
+usuários autorizados para acesso remoto.
+
+Por fim, foi realizada a autenticação no cliente utilizando as credenciais do
+domínio (\texttt{ALUNO\textbackslash nome1}), validando que o computador foi
+corretamente integrado ao Active Directory e que o usuário possui permissão de
+acesso ao sistema.
+
+Este procedimento demonstra o processo de integração de um cliente a um domínio
+Active Directory, evidenciando a centralização da autenticação e o controle de
+acesso em ambientes corporativos.
+}
+
+\newpage
+\question[Atividade 5.5]{Configurando política de senhas no GPO do Windows Server 2022}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig5.5.png}
+  \caption{Aplicação da política de senhas via Group Policy no domínio}
+  \label{fig:fig5.5}
+\end{figure}
+\answer{
+Nesta atividade, foi realizada a configuração de uma política de senhas no
+Active Directory por meio do Group Policy Object (GPO), com o objetivo de
+reforçar a segurança das credenciais utilizadas no domínio.
+
+Inicialmente, foi acessado o \textit{Server Manager} no Windows Server 2022 e,
+por meio da opção \textit{Tools}, foi aberta a ferramenta \textit{Group Policy
+Management}. Em seguida, navegou-se até o domínio \texttt{aluno.hacker.com},
+onde foi criada uma nova política denominada \texttt{Politica de senhas} dentro
+da pasta \textit{Group Policy Objects}.
+
+Após a criação, a política foi editada utilizando o \textit{Group Policy
+Management Editor}, onde foram configuradas as diretrizes de senha localizadas
+em \textit{Computer Configuration > Policies > Windows Settings > Security
+Settings > Account Policies > Password Policy}.
+
+Foram definidos os seguintes parâmetros de segurança:
+
+\begin{itemize}
+  \item Idade mínima da senha configurada para 120 dias, garantindo a expiração
+    periódica das credenciais;
+  \item Comprimento mínimo da senha definido em 9 caracteres, aumentando a
+    resistência contra ataques de força bruta;
+  \item Habilitação da complexidade de senha, exigindo a combinação de
+    diferentes tipos de caracteres;
+  \item Histórico de senhas configurado para armazenar as últimas 3 senhas,
+    prevenindo a reutilização imediata.
+\end{itemize}
+
+Após a configuração, a política foi vinculada ao domínio
+\texttt{aluno.hacker.com}, garantindo que todos os computadores e usuários do
+domínio estejam sujeitos às regras estabelecidas.
+
+Por fim, foi utilizado o comando \texttt{gpupdate /force} no \textit{Command
+Prompt} para forçar a atualização das políticas no sistema, confirmando a
+aplicação das configurações definidas.
+
+Este procedimento evidencia a utilização de políticas de grupo para o
+fortalecimento da segurança em ambientes corporativos, promovendo boas práticas
+de gerenciamento de credenciais e mitigando riscos relacionados a senhas fracas
+ou reutilizadas.
+}
