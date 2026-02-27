@@ -1,0 +1,250 @@
+\section{Atividades}
+
+\question[Atividade 5.6]{Implementando o Controle de Acesso Discricionário
+(DAC) no Windows Server 2022}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig5.6.png}
+  \caption{Configuração de permissões de acesso em arquivos no Windows Server
+  2022}
+  \label{fig:fig5.6}
+\end{figure}
+\answer{
+Nesta atividade, foi realizado o processo de implementação do Controle de
+Acesso Discricionário (DAC) no Windows Server 2022, demonstrando a aplicação de
+permissões de segurança em arquivos e diretórios.
+
+Inicialmente, foi estabelecida uma conexão remota ao Windows Server 2022
+(cliente) por meio do protocolo RDP, utilizando um usuário de domínio com
+permissões padrão. Em seguida, foi criado um arquivo de teste por meio do
+\textit{Notepad}, denominado \texttt{Arquivo1.txt}, armazenado na pasta
+\texttt{Documents} do usuário.
+
+Posteriormente, por meio do \textit{File Explorer}, foram acessadas as
+propriedades da pasta \\\texttt{Documents}, especificamente a aba de segurança
+(\textit{Security}), onde são exibidos os usuários e grupos com permissões
+associadas ao recurso.
+
+Na etapa seguinte, foi realizada a análise das permissões existentes,
+verificando que o grupo \textit{Administrators} possui controle total sobre o
+diretório. Tentou-se remover esse grupo, porém o sistema impediu a ação,
+evidenciando a proteção aplicada às contas administrativas.
+
+Em seguida, foram modificadas as permissões do usuário \textit{Nome1},
+aplicando-se a negação (\textit{Deny}) de controle total sobre a pasta. Após a
+confirmação das alterações, o acesso ao diretório foi imediatamente
+restringido, impedindo a visualização e manipulação dos arquivos.
+
+Ao tentar acessar novamente a pasta \texttt{Documents}, o sistema apresentou
+mensagens de negação de acesso, sendo necessário fornecer credenciais
+administrativas para prosseguir, o que demonstra a hierarquia de privilégios no
+sistema operacional.
+
+Por fim, as permissões de negação foram removidas, restaurando o acesso do
+usuário ao diretório. A validação foi realizada ao acessar novamente a pasta,
+confirmando que o conteúdo estava disponível.
+}
+
+\newpage
+\question[Atividade 5.7]{Criando uma Organizational Unit (OU) no Windows Server
+2022}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig5.7.png}
+  \caption{Criação de uma Unidade Organizacional (OU) e de um usuário no Active
+  Directory}
+  \label{fig:fig5.7}
+\end{figure}
+\answer{
+Nesta atividade, foi realizado o processo de criação de uma Unidade
+Organizacional (\textit{Organizational Unit -- OU}) no Windows Server 2022, bem
+como a adição de um usuário ao domínio, evidenciando a organização hierárquica
+de objetos no Active Directory.
+
+Inicialmente, foi estabelecida a conexão remota ao servidor por meio do
+protocolo RDP, utilizando credenciais administrativas. Em seguida, foi acessada
+a ferramenta \textit{Active Directory Users and Computers}, responsável pelo
+gerenciamento de objetos no diretório.
+
+Posteriormente, no domínio previamente configurado \texttt{aluno.hacker.com},
+foi criada uma nova Unidade Organizacional denominada \texttt{TI}, com o
+objetivo de estruturar logicamente os recursos e facilitar a aplicação de
+políticas e administração de usuários.
+
+Na sequência, foi realizada a criação de um novo usuário dentro da OU
+\texttt{TI}, por meio da opção de inclusão de novos objetos do tipo
+\textit{User}. Foram definidos os atributos do usuário, incluindo nome,
+sobrenome e o \textit{User logon name}, que corresponde ao identificador de
+login (também conhecido como \textit{Common Name}).
+
+Em seguida, foi configurada uma senha de acesso para o usuário, sendo
+desabilitada a obrigatoriedade de alteração no primeiro logon e ativada a opção
+de senha sem expiração, garantindo a continuidade do acesso para fins de
+laboratório.
+
+Após a finalização do assistente, foi possível verificar a criação do novo
+usuário dentro da OU \texttt{TI}, confirmando o sucesso da operação.
+}
+
+\newpage
+\question[Atividade 5.8]{Implementando o Controle de Acesso Discricionário
+(DAC) no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig5.8.png}
+  \caption{Alteração das permissões do arquivo texto.txt utilizando o comando
+  chmod no Kali Linux}
+  \label{fig:fig5.8}
+\end{figure}
+\answer{
+Nesta atividade, foi realizado o processo de implementação do Controle de
+Acesso Discricionário (DAC) no Kali Linux, por meio da manipulação de
+permissões de arquivos no sistema de arquivos.
+
+Inicialmente, foi estabelecida a conexão com a máquina virtual Kali Linux via
+RDP, utilizando as credenciais fornecidas. Em seguida, foi realizada a elevação
+de privilégios com o comando \texttt{sudo -i}, permitindo a execução de
+operações administrativas no sistema.
+
+Posteriormente, foi acessado o diretório \texttt{/home/aluno/Documentos}, onde
+foi criado um arquivo de texto denominado \texttt{texto.txt} por meio do editor
+\texttt{nano}. No arquivo, foi inserido um conteúdo simples para fins de teste,
+e em seguida o arquivo foi salvo.
+
+Na sequência, foi utilizado o comando \texttt{ls} para listar os arquivos
+presentes no diretório, confirmando a criação do arquivo. Em seguida, foi
+executado o comando \texttt{ls -l}, que permite visualizar as permissões
+associadas ao arquivo, bem como informações como proprietário, grupo, tamanho e
+data de modificação.
+
+Foi observado que, inicialmente, o arquivo possuía permissões
+\texttt{-rw-r--r--}, indicando que o proprietário possuía permissões de leitura
+e escrita, enquanto o grupo e os demais usuários possuíam apenas permissão de
+leitura.
+
+Posteriormente, foi aplicado o comando \texttt{chmod u+rwx texto.txt}, com o
+objetivo de conceder ao usuário proprietário permissões completas de leitura,
+escrita e execução sobre o arquivo. Esse comando é fundamental no modelo DAC,
+pois permite que o proprietário do arquivo determine quem pode acessá-lo e de
+que forma.
+
+Após a alteração, foi novamente utilizado o comando \texttt{ls -l} para
+verificar as mudanças, sendo possível observar que as permissões do arquivo
+foram atualizadas para \texttt{-rwxr--r--}, indicando que o proprietário agora
+possui controle total sobre o arquivo.
+}
+
+\newpage
+\question[Atividade 5.9]{Implementando o Acesso Baseado em Função (RBAC) no
+Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig5.9.png}
+  \caption{Configuração de grupo e permissões do arquivo texto.txt para
+  controle de acesso baseado em função no Kali Linux}
+  \label{fig:fig5.9}
+\end{figure}
+\answer{
+Nesta atividade, foi realizado o processo de implementação do modelo de Acesso
+Baseado em Função (RBAC) no Kali Linux, por meio da utilização de grupos e
+permissões de arquivos.
+
+Inicialmente, foi estabelecida a conexão com o sistema Kali Linux via RDP,
+seguida da elevação de privilégios com o comando \texttt{sudo -i}, permitindo a
+execução de tarefas administrativas.
+
+Em seguida, foi acessado o diretório \texttt{/home/aluno/Documentos}, onde se
+encontrava o arquivo \texttt{texto.txt}, previamente criado. Foi realizada a
+listagem dos usuários e grupos existentes no sistema por meio dos comandos
+\texttt{getent passwd} e \texttt{getent group}, evidenciando a estrutura de
+contas e grupos do sistema operacional.
+
+Posteriormente, foi criado um novo grupo denominado \texttt{contabilidade}
+utilizando o comando \texttt{groupadd}, representando uma função específica no
+modelo RBAC. Após a criação, foi confirmada a presença do grupo na lista de
+grupos do sistema.
+
+Na sequência, o usuário \texttt{teste1} foi associado ao grupo
+\texttt{contabilidade} por meio do comando \texttt{usermod -aG}, atribuindo a
+esse usuário a função correspondente ao grupo criado.
+
+Em seguida, foi alterado o grupo proprietário do arquivo \texttt{texto.txt}
+utilizando o comando \texttt{chown :contabilidade texto.txt}, vinculando o
+recurso ao grupo responsável pelo acesso.
+
+Posteriormente, foram definidas as permissões do arquivo com o comando
+\\\texttt{chmod 770 texto.txt}, concedendo permissões completas de leitura,
+gravação e execução ao proprietário e ao grupo, enquanto restringe totalmente o
+acesso a outros usuários.
+
+Essa configuração demonstra o modelo RBAC, no qual o acesso aos recursos é
+controlado com base em funções representadas por grupos, e não diretamente por
+usuários individuais, facilitando a administração de permissões em ambientes
+com múltiplos usuários.
+
+Por fim, o arquivo \texttt{texto.txt} foi removido, concluindo a atividade.
+Este procedimento evidenciou como o uso de grupos e permissões no Linux pode
+ser empregado para implementar controle de acesso baseado em função, promovendo
+maior organização e segurança no gerenciamento de recursos.
+}
+
+\newpage
+\question[Atividade 5.10]{Implementando a Rotação de Senha no Kali Linux}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{./fig/fig5.10.png}
+  \caption{Edição do arquivo /etc/login.defs para configuração de políticas de
+  rotação de senha no Kali Linux}
+  \label{fig:fig5.10}
+\end{figure}
+\answer{
+Nesta atividade, foi realizada a implementação de políticas de rotação de
+senhas no sistema Kali Linux, com o objetivo de aumentar a segurança das contas
+de usuário por meio da definição de regras de validade e troca periódica de
+senhas.
+
+Inicialmente, foi estabelecida a conexão com o sistema via RDP, seguida da
+abertura do terminal e da elevação de privilégios utilizando o comando
+\texttt{sudo -i}, permitindo a execução de tarefas administrativas.
+
+Em seguida, foram verificados os parâmetros atuais da senha do usuário
+\texttt{root} por meio do comando \texttt{passwd -S}, observando informações
+como status da senha, data da última alteração, período mínimo e máximo de
+validade, tempo de aviso antes do vencimento e política de desativação da
+conta. Foi possível identificar que a senha possuía um tempo de validade muito
+elevado, configurado em \texttt{99999} dias.
+
+Posteriormente, foram analisados os parâmetros da senha do usuário
+\texttt{aluno}, utilizando o mesmo comando, verificando que as configurações
+também apresentavam valores padrão com validade extensa e pouca restrição para
+troca de senha.
+
+Na sequência, foi realizada a edição do arquivo de configuração
+\texttt{/etc/login.defs} utilizando o editor \texttt{nano}, com o objetivo de
+ajustar as políticas globais de senha do sistema.
+
+Os parâmetros foram modificados de:
+
+\begin{itemize}
+  \item \texttt{PASS\_MAX\_DAYS 99999}
+  \item \texttt{PASS\_MIN\_DAYS 0}
+  \item \texttt{PASS\_WARN\_AGE 7}
+\end{itemize}
+
+para:
+
+\begin{itemize}
+  \item \texttt{PASS\_MAX\_DAYS 270}
+  \item \texttt{PASS\_MIN\_DAYS 90}
+  \item \texttt{PASS\_WARN\_AGE 10}
+\end{itemize}
+
+Essas alterações estabelecem que a senha passa a ter validade máxima de 270
+dias, não podendo ser alterada antes de 90 dias após a última mudança, além
+de notificar o usuário com 10 dias de antecedência sobre o vencimento da
+senha.
+
+Após realizar as modificações, o arquivo foi salvo e o editor encerrado. Com
+isso, as novas políticas passam a ser aplicadas para novos usuários e para
+configurações futuras de senha.
+}
