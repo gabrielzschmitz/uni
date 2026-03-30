@@ -1,0 +1,590 @@
+\section{Problemas}
+
+\question{
+  Denotar a matriz $A = (a_{ij})$ do tipo $2 \times 2$ sabendo que
+  $a_{ij} = i + j$.
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+  A &=
+  \begin{bmatrix}
+  a_{11} & a_{12} \\
+  a_{21} & a_{22}
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+  1+1 & 1+2 \\
+  2+1 & 2+2
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+  2 & 3 \\
+  3 & 4
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+}
+
+\question{
+  Escreva a matriz $B = (b_{ij})$ do tipo $2 \times 4$, sendo que
+  $b_{ij} = 3i - j$ se $i = j$ e $b_{ij} = i - 2j$ se $i \neq j$.
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+  A &=
+  \begin{bmatrix}
+  a_{11} & a_{12} \\
+  a_{21} & a_{22} \\
+  a_{31} & a_{32} \\
+  a_{41} & a_{42}
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+  3 \times 1 - 1 & 1 - 2 \times 2 \\
+  2 - 2 \times 1 & 3 \times 2 - 2 \\
+  3 - 2 \times 1 & 3 - 2 \times 2 \\
+  4 - 2 \times 1 & 4 - 2 \times 2 
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+  2 & -3 \\
+  0 & 4  \\
+  1 & -1 \\
+  2 & 0  
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+}
+
+\question{
+  Escreva a matriz linha $D = (d_{ij})$ do tipo $1 \times 4$, tal que
+  $d_{ij} = i + 4j$.
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+  D &=
+  \begin{bmatrix}
+  a_{11} \\
+  a_{21} \\
+  a_{31} \\
+  a_{41} 
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+  1 + 4 \times 1 \\
+  2 + 4 \times 1 \\
+  3 + 4 \times 1 \\
+  4 + 4 \times 1 
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+  5 \\
+  6 \\
+  7 \\
+  8 
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+}
+
+\question{
+  Dadas as matrizes
+  \[
+  A =
+  \begin{bmatrix}
+  2 & 3  & 8 \\
+  4 & -1 & 6
+  \end{bmatrix}
+  \quad \text{e} \quad
+  B =
+  \begin{bmatrix}
+  5 & -7 & -9 \\
+  0 & 4  & 1
+  \end{bmatrix}.
+  \]
+  Determine $A + B$.
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+  A + B &=
+  \begin{bmatrix}
+    2 + 5 & 3 + (-7) & 8 + (-9) \\
+    4 + 0 & -1 + 4 & 6 + 1
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+    7 & -4 & -1 \\
+    4 & 3 & 7
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+}
+
+\question{
+  Dadas as matrizes
+  \[
+  B =
+  \begin{bmatrix}
+  5 & -7 & -9 \\
+  0 & 4  & 1
+  \end{bmatrix}
+  \quad \text{e} \quad
+  C =
+  \begin{bmatrix}
+  -1 \\
+  2  \\
+  1
+  \end{bmatrix}.
+  \]
+  Determine $B * C$.
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+  B*C &=
+  \begin{bmatrix}
+    5 & -7 & -9 \\
+    0 & 4  & 1
+  \end{bmatrix}
+  \begin{bmatrix}
+    -1 \\
+    2 \\
+    1
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+    5(-1) + (-7)(2) + (-9)(1) \\
+    0(-1) + 4(2) + 1(1)
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+    -28 \\
+    9
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+}
+
+\question{
+  Dadas as matrizes
+  \[
+  A =
+  \begin{bmatrix}
+  2 & 3  & 8 \\
+  4 & -1 & 6
+  \end{bmatrix}
+  \quad \text{e} \quad
+  B =
+  \begin{bmatrix}
+  5 & -7 & -9 \\
+  0 & 4  & 1
+  \end{bmatrix}.
+  \]
+  Determine $B - A$.
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+  B - A &=
+  \begin{bmatrix}
+    5 - 2 & -7 - 3 & -9 - 8 \\
+    0 - 4 & 4 - (-1) & 1 - 6
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+    3 & -10 & -17 \\
+    -4 & 5 & -5
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+}
+
+\question{
+  Dada a matriz
+  \[
+  A =
+  \begin{bmatrix}
+  2 & 3  & 8 \\
+  4 & -1 & 6
+  \end{bmatrix}.
+  \]
+  Determine $-2A$.
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+  -2A &=
+  -2
+  \begin{bmatrix}
+    2 & 3 & 8 \\
+    4 & -1 & 6
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+    -4 & -6 & -16 \\
+    -8 & 2 & -12
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+}
+
+\newpage
+\question{
+  Dada a matriz
+  \[
+  C =
+  \begin{bmatrix}
+  -1 \\
+  2  \\
+  1
+  \end{bmatrix}.
+  \]
+  Determine $-C$.
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+  -C &=
+  -1
+  \begin{bmatrix}
+    -1 \\
+    2 \\
+    1
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+    1 \\
+    -2 \\
+    -1
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+}
+
+\question{
+  Calcule os valores de $m$ e $n$ para que as matrizes
+  \[
+  A =
+  \begin{bmatrix}
+  8      & 15n \\
+  12 + m & 3 
+  \end{bmatrix}
+  \quad \text{e} \quad
+  B =
+  \begin{bmatrix}
+  8 & 75  \\
+  6 & 3 
+  \end{bmatrix}
+  \]
+  sejam iguais.
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+  A = B &\Rightarrow
+  \begin{cases}
+    15n = 75 \\
+    12 + m = 6
+  \end{cases}
+  \\
+  &\Rightarrow
+  \begin{cases}
+    n = 5 \\
+    m = -6
+  \end{cases}
+  \end{aligned}
+  \end{equation}
+}
+
+\question{
+  Calcule os valores de $x$ para que as matrizes
+  \[
+  A =
+  \begin{bmatrix}
+  7 & 8 \\
+  4 & x^2
+  \end{bmatrix}
+  \quad \text{e} \quad
+  B =
+  \begin{bmatrix}
+  7 & 8 \\
+  4 & 10x - 25
+  \end{bmatrix}
+  \]
+  sejam iguais.
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+  A = B &\Rightarrow x^2 = 10x - 25
+  \\
+  &\Rightarrow x^2 - 10x + 25 = 0
+  \\
+  &\Rightarrow (x - 5)^2 = 0
+  \\
+  &\Rightarrow x = 5
+  \end{aligned}
+  \end{equation}
+}
+
+\question{
+  Dadas as matrizes
+  \[
+  A =
+  \begin{bmatrix}
+  1  & 2  & 3 \\
+  -2 & -5 & 7 \\
+  3  & 9  & -8
+  \end{bmatrix}
+  \quad \text{e} \quad
+  X =
+  \begin{bmatrix}
+  x_1 \\
+  x_2 \\
+  x_3
+  \end{bmatrix},
+  \]
+  efetue a multiplicação das matrizes $A$ e $X$.
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+  AX &=
+  \begin{bmatrix}
+    1 & 2 & 3 \\
+    -2 & -5 & 7 \\
+    3 & 9 & -8
+  \end{bmatrix}
+  \begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    x_3
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+    x_1 + 2x_2 + 3x_3 \\
+    -2x_1 - 5x_2 + 7x_3 \\
+    3x_1 + 9x_2 - 8x_3
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+}
+
+\question{
+  Dadas as matrizes
+  \[
+  A =
+  \begin{bmatrix}
+  5  & 0  & 6 \\
+  -8 & 0  & 3 \\
+  -2 & 2  & 7 \\
+  1  & -1 & -5
+  \end{bmatrix},
+  \quad
+  B =
+  \begin{bmatrix}
+  1 & -3 & -2 & 4  \\
+  7 & 8  & 5  & 9  \\
+  0 & 6  & 3  & -8
+  \end{bmatrix},
+  \]
+  determine $(AB)^T$.
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+  AB &=
+  \begin{bmatrix}
+    5 & 0 & 6 \\
+    -8 & 0 & 3 \\
+    -2 & 2 & 7 \\
+    1 & -1 & -5
+  \end{bmatrix}
+  \begin{bmatrix}
+    1 & -3 & -2 & 4 \\
+    7 & 8 & 5 & 9 \\
+    0 & 6 & 3 & -8
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+    5 & -15+36 & -10+18 & 20-48 \\
+    -8 & 24+18 & 16+9 & -32-24 \\
+    -2+14 & 6+16+42 & 4+10+21 & -8+18-56 \\
+    1-7 & -3-8-30 & -2-5-15 & 4-9+40
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+    5 & 21 & 8 & -28 \\
+    -8 & 42 & 25 & -56 \\
+    12 & 64 & 35 & -46 \\
+    -6 & -41 & -22 & 35
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+
+  \begin{equation}
+  \begin{aligned}
+  (AB)^T &=
+  \begin{bmatrix}
+    5 & -8 & 12 & -6 \\
+    21 & 42 & 64 & -41 \\
+    8 & 25 & 35 & -22 \\
+    -28 & -56 & -46 & 35
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+}
+
+\question{
+  Dada a matriz
+  \[
+  A =
+  \begin{bmatrix}
+  2 & -7 & 1 \\
+  3 & 4  & 2 \\
+  5 & -9 & 6
+  \end{bmatrix},
+  \]
+  determine $A + A^T$.
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+  A^T &=
+  \begin{bmatrix}
+    2 & 3 & 5 \\
+    -7 & 4 & -9 \\
+    1 & 2 & 6
+  \end{bmatrix}
+  \\
+  A + A^T &=
+  \begin{bmatrix}
+    2 & -7 & 1 \\
+    3 & 4 & 2 \\
+    5 & -9 & 6
+  \end{bmatrix}
+  +
+  \begin{bmatrix}
+    2 & 3 & 5 \\
+    -7 & 4 & -9 \\
+    1 & 2 & 6
+  \end{bmatrix}
+  \\
+  &=
+  \begin{bmatrix}
+    4 & -4 & 6 \\
+    -4 & 8 & -7 \\
+    6 & -7 & 12
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+}
+
+\newpage
+\question{
+  Calcular $m$ e $n$ para que a matriz $B$ seja inversa da matriz $A$.
+  \[
+  A =
+  \begin{bmatrix}
+  m  & -22 \\
+  -2 & n
+  \end{bmatrix}
+  \quad \text{e} \quad
+  B =
+  \begin{bmatrix}
+  5 & 22 \\
+  2 & 9
+  \end{bmatrix}.
+  \]
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+  AB &=
+  \begin{bmatrix}
+    m & -22 \\
+    -2 & n
+  \end{bmatrix}
+  \begin{bmatrix}
+    5 & 22 \\
+    2 & 9
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    5m - 44 & 22m - 198 \\
+    -10 + 2n & -44 + 9n
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+
+  Como $B = A^{-1}$, então $AB = I$:
+
+  \begin{equation}
+  \begin{aligned}
+  \begin{bmatrix}
+    5m - 44 & 22m - 198 \\
+    -10 + 2n & -44 + 9n
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+
+  \begin{equation}
+  \begin{aligned}
+  5m - 44 &= 1 \\
+  9n - 44 &= 1
+  \end{aligned}
+  \qquad
+  \Rightarrow
+  \qquad
+  \begin{aligned}
+  m &= 9 \\
+  n &= 5
+  \end{aligned}
+  \end{equation}
+}
+
+\question{
+  Responda:
+  \begin{enumerate}
+    \item[(a)] Se $A$ é uma matriz simétrica, então $A - A^T$ é?
+    \item[(b)] Se $A$ é uma matriz triangular superior, então $A^T$ é?
+    \item[(c)] Se $A$ é uma matriz diagonal, então $A^T$ é?
+  \end{enumerate}
+}
+\answer{
+  \begin{enumerate}
+    \item[(a)] Como $A$ é simétrica, então $A = A^T$. Logo:
+    \[
+    A - A^T = A - A = 0
+    \]
+    portanto, resulta em uma matriz nula.
+
+    \item[(b)] Se $A$ é triangular superior, então $A^T$ é triangular inferior.
+
+    \item[(c)] Se $A$ é diagonal, então $A^T$ continua sendo diagonal.
+  \end{enumerate}
+}
