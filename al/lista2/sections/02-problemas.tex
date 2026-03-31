@@ -1,0 +1,459 @@
+\section{Problemas}
+
+\question{
+Dadas as matrizes
+\[
+A =
+\begin{bmatrix}
+1 & 2 \\
+1 & 0
+\end{bmatrix}
+\quad \text{e} \quad
+B =
+\begin{bmatrix}
+3 & -1 \\
+0 & 1
+\end{bmatrix},
+\]
+calcule:
+\begin{enumerate}
+    \item[(a)] $\det A + \det B$
+    \item[(b)] $\det (A+B)$
+\end{enumerate}
+}
+\answer{
+  \item[(a)] $\det A + \det B$
+  \begin{equation}
+  \begin{aligned}
+    \det A &= 
+    \begin{vmatrix}
+    1 & 2 \\
+    1 & 0
+    \end{vmatrix} \\
+    &= (1)(0) - (2)(1) \\
+    &= -2
+  \end{aligned}
+  \end{equation}
+
+  \begin{equation}
+  \begin{aligned}
+    \det B &= 
+    \begin{vmatrix}
+    3 & -1 \\
+    0 & 1
+    \end{vmatrix} \\
+    &= (3)(1) - (-1)(0) \\
+    &= 3
+  \end{aligned}
+  \end{equation}
+
+  \begin{equation}
+  \begin{aligned}
+    \det A + \det B &= -2 + 3 \\
+                    &= 1
+  \end{aligned}
+  \end{equation}
+
+  \item[(b)] $\det (A+B)$
+  \begin{equation}
+  \begin{aligned}
+    A+B &=
+    \begin{bmatrix}
+    1+3 & 2+(-1) \\
+    1+0 & 0+1
+    \end{bmatrix} \\
+    &=
+    \begin{bmatrix}
+    4 & 1 \\
+    1 & 1
+    \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+
+  \begin{equation}
+  \begin{aligned}
+    \det(A+B) &=
+    \begin{vmatrix}
+    4 & 1 \\
+    1 & 1
+    \end{vmatrix} \\
+    &= (4)(1) - (1)(1) \\
+    &= 3
+  \end{aligned}
+  \end{equation}
+}
+
+\newpage
+\question{
+Calcule:
+\begin{enumerate}
+    \item[(a)]
+    \[
+    A = \det
+    \begin{bmatrix}
+    3 & -1 & 5 \\
+    0 & 2 & 0 \\
+    0 & 10 & 0
+    \end{bmatrix}
+    \]
+
+    \item[(b)]
+    \[
+    A = \det
+    \begin{bmatrix}
+    3 & 0 & 0 \\
+    19 & 18 & 0 \\
+    -6 & \pi & -5
+    \end{bmatrix}
+    \]
+
+    \item[(c)]
+    \[
+    A = \det
+    \begin{bmatrix}
+    -1 & 3 & 2 \\
+    3 & -1 & 1 \\
+    2 & 1 & -1
+    \end{bmatrix}
+    \]
+
+    \item[(d)]
+    \[
+    A = \det
+    \begin{bmatrix}
+    2 & 3 & 1 \\
+    5 & 3 & 1 \\
+    0 & 1 & 2
+    \end{bmatrix}
+    \]
+\end{enumerate}
+}
+\answer{
+  \item[(a)]
+  \begin{equation}
+  \begin{aligned}
+    A &= \det
+    \begin{bmatrix}
+    3 & -1 & 5 \\
+    0 & 2 & 0 \\
+    0 & 10 & 0
+    \end{bmatrix} \\[1em]
+    &= 3
+    \begin{vmatrix}
+    2 & 0 \\
+    10 & 0
+    \end{vmatrix}
+    - (-1)
+    \begin{vmatrix}
+    0 & 0 \\
+    0 & 0
+    \end{vmatrix}
+    + 5
+    \begin{vmatrix}
+    0 & 2 \\
+    0 & 10
+    \end{vmatrix} \\[1em]
+    &= 3(0) + 1(0) + 5(0) \\[1em]
+    &= 0
+  \end{aligned}
+  \end{equation}
+
+  \item[(b)]
+  \begin{equation}
+  \begin{aligned}
+    A &= \det
+    \begin{bmatrix}
+    3 & 0 & 0 \\
+    19 & 18 & 0 \\
+    -6 & \pi & -5
+    \end{bmatrix}
+  \end{aligned}
+  \end{equation}
+
+  Como a matriz é triangular inferior:
+  \begin{equation}
+  \begin{aligned}
+    A &= (3)(18)(-5) \\
+      &= -270
+  \end{aligned}
+  \end{equation}
+
+  \item[(c)]
+  \begin{equation}
+  \begin{aligned}
+    A &= \det
+    \begin{bmatrix}
+    -1 & 3 & 2 \\
+    3 & -1 & 1 \\
+    2 & 1 & -1
+    \end{bmatrix} \\[1em]
+    &= (-1)
+    \begin{vmatrix}
+    -1 & 1 \\
+    1 & -1
+    \end{vmatrix}
+    - 3
+    \begin{vmatrix}
+    3 & 1 \\
+    2 & -1
+    \end{vmatrix}
+    + 2
+    \begin{vmatrix}
+    3 & -1 \\
+    2 & 1
+    \end{vmatrix} \\[1em]
+    &= (-1)[(-1)(-1)-(1)(1)]
+    - 3[(3)(-1)-(1)(2)]
+    + 2[(3)(1)-(-1)(2)] \\[1em]
+    &= (-1)(1-1)
+    - 3(-3-2)
+    + 2(3+2) \\[1em]
+    &= 0 + 15 + 10 \\[1em]
+    &= 25
+  \end{aligned}
+  \end{equation}
+
+  \item[(d)]
+  \begin{equation}
+  \begin{aligned}
+    A &= \det
+    \begin{bmatrix}
+    2 & 3 & 1 \\
+    5 & 3 & 1 \\
+    0 & 1 & 2
+    \end{bmatrix} \\[1em]
+    &= 2
+    \begin{vmatrix}
+    3 & 1 \\
+    1 & 2
+    \end{vmatrix}
+    - 3
+    \begin{vmatrix}
+    5 & 1 \\
+    0 & 2
+    \end{vmatrix}
+    + 1
+    \begin{vmatrix}
+    5 & 3 \\
+    0 & 1
+    \end{vmatrix} \\[1em]
+    &= 2[(3)(2)-(1)(1)]
+    - 3[(5)(2)-(1)(0)]
+    + 1[(5)(1)-(3)(0)] \\[1em]
+    &= 2(5)-3(10)+5 \\[1em]
+    &= 10-30+5 \\[1em]
+    &= -15
+  \end{aligned}
+  \end{equation}
+}
+
+\question{
+Dadas as matrizes
+\[
+A =
+\begin{bmatrix}
+a & c+2a \\
+b & d+2b
+\end{bmatrix}
+\quad \text{e} \quad
+B =
+\begin{bmatrix}
+a & c \\
+b & d
+\end{bmatrix},
+\]
+mostre que $\det A = \det B$.
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+    \det A &=
+    \begin{vmatrix}
+    a & c+2a \\
+    b & d+2b
+    \end{vmatrix} \\[1em]
+    &= a(d+2b) - b(c+2a) \\[1em]
+    &= ad + 2ab - bc - 2ab \\[1em]
+    &= ad - bc
+  \end{aligned}
+  \end{equation}
+
+  \begin{equation}
+  \begin{aligned}
+    \det B &=
+    \begin{vmatrix}
+    a & c \\
+    b & d
+    \end{vmatrix} \\[1em]
+    &= ad - bc
+  \end{aligned}
+  \end{equation}
+
+  Portanto:
+  \begin{equation}
+  \begin{aligned}
+    \det A &= \det B
+  \end{aligned}
+  \end{equation}
+}
+
+\newpage
+\question{
+Mostre que
+\[
+\begin{vmatrix}
+a & b & c \\
+d & e & f \\
+d & b+e & c+f
+\end{vmatrix}
+=
+-a
+\begin{vmatrix}
+b & c \\
+e & f
+\end{vmatrix}.
+\]
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+  &
+  \begin{vmatrix}
+  a & b & c \\
+  d & e & f \\
+  d & b+e & c+f
+  \end{vmatrix}
+  \\[1em]
+  &= 
+  a
+  \begin{vmatrix}
+  e & f \\
+  b+e & c+f
+  \end{vmatrix}
+  -
+  b
+  \begin{vmatrix}
+  d & f \\
+  d & c+f
+  \end{vmatrix}
+  +
+  c
+  \begin{vmatrix}
+  d & e \\
+  d & b+e
+  \end{vmatrix}
+  \\[1em]
+  &=
+  a\,[e(c+f)-f(b+e)]
+  -
+  b\,[d(c+f)-fd]
+  +
+  c\,[d(b+e)-ed]
+  \\[1em]
+  &=
+  a(ec+ef-fb-fe)
+  -
+  b(dc)
+  +
+  c(db)
+  \\[1em]
+  &=
+  a(ec-fb) - bdc + cdb
+  \\[1em]
+  &=
+  a(ec-fb)
+  \\[1em]
+  &=
+  -a(bf-ce)
+  \\[1em]
+  &=
+  -a
+  \begin{vmatrix}
+  b & c \\
+  e & f
+  \end{vmatrix}
+  \end{aligned}
+  \end{equation}
+}
+
+\newpage
+\question{
+O determinante da matriz
+\[
+A =
+\begin{bmatrix}
+1 & 0 & -1 \\
+0 & x & 0 \\
+x & 0 & -1
+\end{bmatrix}
+\]
+é positivo em qual intervalo de $x \in \mathbb{R}$?
+}
+\answer{
+  \begin{equation}
+  \begin{aligned}
+    \det A &=
+    \begin{vmatrix}
+    1 & 0 & -1 \\
+    0 & x & 0 \\
+    x & 0 & -1
+    \end{vmatrix}
+    \\[1em]
+    &=
+    1
+    \begin{vmatrix}
+    x & 0 \\
+    0 & -1
+    \end{vmatrix}
+    -
+    0
+    \begin{vmatrix}
+    0 & 0 \\
+    x & -1
+    \end{vmatrix}
+    +
+    (-1)
+    \begin{vmatrix}
+    0 & x \\
+    x & 0
+    \end{vmatrix}
+    \\[1em]
+    &=
+    1[(x)(-1)-(0)(0)]
+    +
+    (-1)[(0)(0)-(x)(x)]
+    \\[1em]
+    &=
+    -x + x^2
+    \\[1em]
+    &=
+    x^2-x
+    \\[1em]
+    &=
+    x(x-1)
+  \end{aligned}
+  \end{equation}
+
+  Para que o determinante seja positivo:
+  \begin{equation}
+  \begin{aligned}
+    x(x-1) &> 0
+  \end{aligned}
+  \end{equation}
+
+  O produto é positivo quando os fatores têm o mesmo sinal:
+  \begin{equation}
+  \begin{aligned}
+    x<0
+    \quad \text{ou} \quad
+    x>1
+  \end{aligned}
+  \end{equation}
+
+  Portanto:
+  \begin{equation}
+  \begin{aligned}
+    x \in (-\infty,0)\cup(1,+\infty)
+  \end{aligned}
+  \end{equation}
+}
