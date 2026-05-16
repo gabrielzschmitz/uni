@@ -1,0 +1,513 @@
+\section{Atividades}
+
+\question[Atividade 1]{Varredura de vulnerabilidades no alvo}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.99\textwidth]{./fig/fig1.png}
+  \caption{Varredura da ferramenta ZAP 2.17.0 na página
+  http://testasp.vulnweb.com}
+  \label{fig:fig1}
+\end{figure}
+
+A atividade iniciou com acesso remoto via \textit{Cliente RDP}.
+
+Foi utilizado o IP \texttt{192.168.98.12} com usuário \texttt{aluno} e senha
+\texttt{rnpesr}.
+
+Após o acesso, foi aberta a ferramenta \textit{OWASP ZAP} pelo menu:
+
+\begin{itemize}
+  \item \textbf{03 - Web Application Analysis}
+  \item \textbf{Web Application Proxies}
+  \item \textbf{zap}
+\end{itemize}
+
+Na primeira execução, os \textit{Add-ons} foram atualizados pela opção
+\textit{Update All}.
+
+Em seguida, foi iniciado um \textit{Automated Scan} com os parâmetros:
+
+\begin{itemize}
+  \item URL: \texttt{http://testasp.vulnweb.com/}
+  \item \textit{Use traditional spider}: habilitado
+  \item \textit{Use Ajax spider}: habilitado
+  \item Agente: \textit{Firefox Headless}
+\end{itemize}
+
+O scan foi iniciado pelo botão \textit{Attack}.
+
+O progresso foi acompanhado pela guia \textit{Active Scan} e os resultados
+pelas seção \textit{Alertas}.
+
+Ao final da análise, o OWASP ZAP realizou o mapeamento da aplicação e
+identificou vulnerabilidades automaticamente.
+
+As vulnerabilidades apresentaram descrição, impacto, severidade e recomendações
+de mitigação.
+
+\newpage
+
+\question[Atividade 2]{Associação da metodologia OWASP Top 10 2021}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.99\textwidth]{./fig/fig2.png}
+  \caption{Vulnerabilidades associadas ao Top 10 do OWASP 2021 presentes no
+  relatório gerado pela ferramente ZAP 2.17.0 na página
+  http://testasp.vulnweb.com}
+  \label{fig:fig2}
+\end{figure}
+
+Com base nos resultados do scan realizado no \textit{OWASP ZAP}, foram
+identificadas quatro vulnerabilidades relacionadas ao \textit{OWASP Top 10
+2021}.
+
+\section*{Cross Site Scripting (Reflected)}
+
+\textbf{Exploração resumida:}
+
+A vulnerabilidade foi encontrada na rota \texttt{/showthread.asp?id=29}. Um
+atacante pode enviar código JavaScript malicioso no parâmetro \texttt{tfText},
+que é refletido pela aplicação sem tratamento adequado.
+
+\textbf{Impacto provável:}
+
+Roubo de sessão, execução de JavaScript arbitrário, captura de cookies e
+redirecionamento do usuário para páginas maliciosas.
+
+\textbf{Evidência mínima:}
+
+\begin{itemize}
+  \item Alerta ZAP: Cross Site Scripting (Reflected)
+  \item CWE: CWE-79
+  \item OWASP: A03:2021 - Injection
+  \item URL:
+    \texttt{http://testasp.vulnweb.com/showthread.asp?id=29}
+\end{itemize}
+
+\section*{SQL Injection}
+
+\textbf{Exploração resumida:}
+
+A aplicação aceita entradas sem validação adequada em consultas SQL. Um
+atacante pode inserir comandos SQL maliciosos para manipular o banco de dados
+da aplicação.
+
+\textbf{Impacto provável:}
+
+Leitura, alteração ou exclusão de dados sensíveis, além de possível
+comprometimento completo do banco de dados.
+
+\textbf{Evidência mínima:}
+
+\begin{itemize}
+  \item Alerta ZAP: SQL Injection
+  \item OWASP: A03:2021 - Injection
+  \item URL: \texttt{http://testasp.vulnweb.com/Search.asp?tfSearch=ZAP\%27}
+\end{itemize}
+
+\section*{Path Traversal}
+
+\textbf{Exploração resumida:}
+
+A vulnerabilidade permite manipular caminhos de arquivos enviados à aplicação.
+Um atacante pode utilizar sequências como \texttt{../} para acessar diretórios
+internos do servidor.
+
+\textbf{Impacto provável:}
+
+Leitura de arquivos sensíveis, exposição de configurações internas e possível
+obtenção de credenciais do sistema.
+
+\textbf{Evidência mínima:}
+
+\begin{itemize}
+  \item Alerta ZAP: Path Traversal
+  \item OWASP: A01:2021 - Broken Access Control
+  \item URL:
+    \texttt{http://testasp.vulnweb.com/Templatize.asp?item=..\%2F..\%2F..\%2F..\%2F..\%2F..\%2F..\%2F..\%2F..\%2F..\%2F..\%2F..\%2F..\%2F..\%2F..\%2F..\%2FWindows\%2Fsystem.ini}
+\end{itemize}
+
+\section*{External Redirect}
+
+\textbf{Exploração resumida:}
+
+A aplicação permite redirecionamentos externos sem validação adequada da URL de
+destino. Um atacante pode criar links maliciosos utilizando o domínio legítimo
+da aplicação para redirecionar usuários para sites fraudulentos.
+
+\textbf{Impacto provável:}
+
+Phishing, roubo de credenciais, distribuição de malware e perda de confiança na
+aplicação.
+
+\textbf{Evidência mínima:}
+
+\begin{itemize}
+  \item Alerta ZAP: External Redirect
+  \item OWASP: A01:2021 -- Broken Access Control
+  \item URL:
+    \texttt{http://testasp.vulnweb.com/Login.asp?RetURL=https\%3A\%2F\%2F8195536245220199150.owasp.org}
+\end{itemize}
+
+\newpage
+
+\question[Atividade 3]{Associação das Metodologias de Pentest}
+
+A atividade consistiu em associar as vulnerabilidades encontradas no
+\textit{OWASP ZAP} com as categorias do \textit{OWASP Top 10 2021} e com as
+táticas e técnicas do framework \textit{MITRE ATT\&CK}.
+
+Inicialmente, foram analisadas as vulnerabilidades identificadas durante o
+\textit{Automated Scan} realizado no site \texttt{http://testasp.vulnweb.com/}.
+
+As vulnerabilidades selecionadas foram:
+
+\begin{itemize}
+  \item Cross Site Scripting (Reflected)
+  \item SQL Injection
+  \item Path Traversal
+  \item External Redirect
+\end{itemize}
+
+Cada vulnerabilidade foi relacionada à categoria correspondente do
+\textit{OWASP Top 10 2021}, considerando o tipo de risco apresentado pela
+aplicação.
+
+Em seguida, foi realizada a associação com o framework \textit{MITRE ATT\&CK},
+identificando as táticas e técnicas mais prováveis utilizadas por atacantes
+para explorar cada falha.
+
+O mapeamento realizado foi:
+
+\begin{itemize}
+  \item \textbf{SQL Injection}
+    \begin{itemize}
+      \item OWASP: A03:2021 -- Injection
+      \item Justificativa OWASP: a aplicação aceita entradas do usuário sem
+        validação adequada, permitindo inserção de comandos SQL capazes de
+        manipular consultas ao banco de dados e comprometer informações
+        sensíveis.
+
+      \item MITRE Tática: Initial Access
+      \item MITRE Técnica: T1190 -- Exploit Public-Facing Application
+
+      \item Justificativa MITRE: a vulnerabilidade pode ser explorada
+        diretamente pela interface web exposta da aplicação, permitindo que um
+        atacante obtenha acesso inicial por meio de requisições maliciosas
+        identificadas pelo OWASP ZAP.
+    \end{itemize}
+
+  \item \textbf{Cross Site Scripting (Reflected)}
+    \begin{itemize}
+      \item OWASP: A03:2021 -- Injection
+      \item Justificativa OWASP: entradas refletidas sem tratamento adequado
+        permitem a execução de código JavaScript no navegador da vítima,
+        podendo resultar em roubo de sessão ou manipulação do conteúdo exibido.
+
+      \item MITRE Tática: Initial Access
+      \item MITRE Técnica: T1189 -- Drive-by Compromise
+
+      \item Justificativa MITRE: o ataque ocorre quando a vítima acessa uma URL
+        manipulada contendo o script malicioso identificado nos alertas do ZAP,
+        caracterizando execução automática de conteúdo malicioso no navegador.
+    \end{itemize}
+
+  \item \textbf{Path Traversal}
+    \begin{itemize}
+      \item OWASP: A01:2021 -- Broken Access Control
+      \item Justificativa OWASP: a aplicação permite acesso inadequado a
+        diretórios e arquivos internos, possibilitando que usuários acessem
+        recursos restritos fora do diretório previsto pela aplicação.
+
+      \item MITRE Tática: Initial Access
+      \item MITRE Técnica: T1190 -- Exploit Public-Facing Application
+
+      \item Justificativa MITRE: a exploração ocorre diretamente sobre a
+        aplicação web pública, permitindo acesso indevido a arquivos do
+        servidor através de parâmetros manipulados detectados pelo OWASP ZAP.
+    \end{itemize}
+
+  \item \textbf{External Redirect}
+    \begin{itemize}
+      \item OWASP: A01:2021 -- Broken Access Control
+      \item Justificativa OWASP: a aplicação redireciona usuários para URLs
+        externas sem validação adequada, possibilitando campanhas de phishing e
+        envio da vítima para páginas maliciosas.
+
+      \item MITRE Tática: Initial Access
+      \item MITRE Técnica: T1189 -- Drive-by Compromise
+
+      \item Justificativa MITRE: a vulnerabilidade pode induzir usuários a
+        acessarem páginas controladas por atacantes, facilitando
+        comprometimento inicial através de navegação maliciosa identificada
+        durante a análise no ZAP.
+    \end{itemize}
+\end{itemize}
+
+\newpage
+
+Em forma de tabela temos:
+
+\begin{table}[H]
+  \centering
+  \caption{Mapeamento entre vulnerabilidades, OWASP 2021 e MITRE ATT\&CK}
+  \label{tab:owasp_mitre}
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabular}{|p{2.6cm}|p{1.9cm}|p{2.1cm}|p{2.5cm}|p{4.25cm}|}
+    \hline
+    \textbf{Vulnerabilidade (nome no ZAP)} &
+    \textbf{Categoria OWASP 2021} &
+    \textbf{MITRE ATT\&CK -- Tática} &
+    \textbf{MITRE ATT\&CK -- Técnica (ID + nome)} &
+    \textbf{Justificativa (1--2 linhas, baseada na evidência)} \\
+    \hline
+
+    SQL Injection &
+    A03:2021 -- Injection &
+    Initial Access &
+    T1190 -- Exploit Public-Facing Application &
+    A aplicação aceita entradas sem validação adequada, permitindo manipulação
+    de consultas SQL através de parâmetros identificados nos alertas do OWASP
+    ZAP. \\
+    \hline
+
+    Cross Site Scripting (Reflected) &
+    A03:2021 -- Injection &
+    Initial Access &
+    T1189 -- Drive-by Compromise &
+    Entradas refletidas sem sanitização permitem execução de JavaScript no
+    navegador da vítima ao acessar URLs manipuladas identificadas pelo ZAP. \\
+    \hline
+
+    Path Traversal &
+    A01:2021 -- Broken Access Control &
+    Initial Access &
+    T1190 -- Exploit Public-Facing Application &
+    A aplicação permite acesso indevido a diretórios e arquivos internos por
+    meio de parâmetros manipulados detectados durante a análise no OWASP ZAP.
+    \\
+    \hline
+
+    External Redirect &
+    A01:2021 -- Broken Access Control &
+    Initial Access &
+    T1189 -- Drive-by Compromise &
+    A vulnerabilidade possibilita redirecionamento para páginas externas
+    maliciosas, favorecendo ataques de phishing e comprometimento inicial do
+    usuário. \\
+    \hline
+
+  \end{tabular}
+\end{table}
+
+Durante a análise, foi observado que a maior parte das vulnerabilidades estava
+relacionada à fase de \textit{Initial Access}, indicando que as falhas
+encontradas poderiam ser exploradas logo no primeiro contato do atacante com a
+aplicação web.
+
+Também foi possível identificar predominância de falhas relacionadas a injeção
+e controle inadequado de acesso, demonstrando ausência de validação adequada
+das entradas fornecidas pelo usuário.
+
+As evidências utilizadas foram obtidas diretamente na seção \textit{Alertas} do
+OWASP ZAP, incluindo nome do alerta, URL afetada e detalhes técnicos
+apresentados pela ferramenta.
+
+\newpage
+
+\question[Atividade 4]{Análise de Resultados e Ações de Mitigação}
+
+\textbf{Cross Site Scripting (Reflected)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.96\textwidth]{./fig/fig3.png}
+    \caption{Detecção da vulnerabilidade de Cross Site Scripting refletido no OWASP ZAP.}
+    \label{fig:xss}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{9cm}|}
+\hline
+\textbf{Risco} & Alto \\ \hline
+\textbf{Confiança} & Média \\ \hline
+\textbf{Parâmetro} & \texttt{tfText} \\ \hline
+\textbf{Payload} & \texttt{</div><scrIpt>alert(1);</scRipt><div>} \\ \hline
+\textbf{Evidência} & \texttt{</div><scrIpt>alert(1);</scRipt><div>} \\ \hline
+\textbf{CWE} & 79 \\ \hline
+\textbf{WASC} & 8 \\ \hline
+\end{tabular}
+\caption{Detalhes da vulnerabilidade Cross Site Scripting Refletido.}
+\label{tab:xss}
+\end{table}
+
+\newpage
+\textbf{External Redirect}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.96\textwidth]{./fig/fig4.png}
+    \caption{Redirecionamento externo identificado durante a análise.}
+    \label{fig:redirect}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{9cm}|}
+\hline
+\textbf{Risco} & Alto \\ \hline
+\textbf{Confiança} & Média \\ \hline
+\textbf{Parâmetro} & \texttt{RetURL} \\ \hline
+\textbf{Payload} & \texttt{https://8195536245220199150.owasp.org} \\ \hline
+\textbf{Evidência} & \texttt{https://8195536245220199150.owasp.org} \\ \hline
+\textbf{CWE} & 601 \\ \hline
+\textbf{WASC} & 38 \\ \hline
+\end{tabular}
+\caption{Detalhes da vulnerabilidade External Redirect.}
+\label{tab:redirect}
+\end{table}
+
+\newpage
+\textbf{Path Traversal}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.96\textwidth]{./fig/fig5.png}
+    \caption{Exploração de diretórios através da vulnerabilidade Path Traversal.}
+    \label{fig:pathtraversal}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{9cm}|}
+\hline
+\textbf{Risco} & Alto \\ \hline
+\textbf{Confiança} & Média \\ \hline
+\textbf{Parâmetro} & \texttt{item} \\ \hline
+\textbf{Payload} & \texttt{../../../../../../../../Windows/system.ini} \\ \hline
+\textbf{Evidência} & \texttt{[drivers]} \\ \hline
+\textbf{CWE} & 22 \\ \hline
+\textbf{WASC} & 33 \\ \hline
+\end{tabular}
+\caption{Detalhes da vulnerabilidade Path Traversal.}
+\label{tab:pathtraversal}
+\end{table}
+
+\newpage
+\textbf{SQL Injection}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.96\textwidth]{./fig/fig6.png}
+    \caption{Possível exploração de SQL Injection detectada pelo OWASP ZAP.}
+    \label{fig:sqli}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{9cm}|}
+\hline
+\textbf{Risco} & Alto \\ \hline
+\textbf{Confiança} & Baixa \\ \hline
+\textbf{Parâmetro} & \texttt{tfSearch} \\ \hline
+\textbf{Payload} & \texttt{ZAP'} \\ \hline
+\textbf{Evidência} & \texttt{HTTP/1.1 500 Internal Server Error} \\ \hline
+\textbf{CWE} & 89 \\ \hline
+\textbf{WASC} & 19 \\ \hline
+\end{tabular}
+\caption{Detalhes da vulnerabilidade SQL Injection.}
+\label{tab:sqli}
+\end{table}
+
+\newpage
+\textbf{Absence of Anti-CSRF Tokens}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.96\textwidth]{./fig/fig7.png}
+    \caption{Formulário sem proteção Anti-CSRF identificado na aplicação.}
+    \label{fig:csrf}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{9cm}|}
+\hline
+\textbf{Risco} & Médio \\ \hline
+\textbf{Confiança} & Baixa \\ \hline
+\textbf{Evidência} & \texttt{<form action="" method="post"...>} \\ \hline
+\textbf{CWE} & 352 \\ \hline
+\textbf{WASC} & 9 \\ \hline
+\end{tabular}
+\caption{Ausência de tokens Anti-CSRF.}
+\label{tab:csrf}
+\end{table}
+
+\newpage
+\textbf{Content Security Policy (CSP) Header Not Set}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.96\textwidth]{./fig/fig8.png}
+    \caption{Ausência do cabeçalho CSP identificada pelo OWASP ZAP.}
+    \label{fig:csp}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{9cm}|}
+\hline
+\textbf{Risco} & Médio \\ \hline
+\textbf{Confiança} & Alta \\ \hline
+\textbf{CWE} & 693 \\ \hline
+\textbf{WASC} & 15 \\ \hline
+\end{tabular}
+\caption{Ausência do cabeçalho Content Security Policy.}
+\label{tab:csp}
+\end{table}
+
+\newpage
+\textbf{Missing Anti-clickjacking Header}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.96\textwidth]{./fig/fig9.png}
+    \caption{Cabeçalhos de proteção contra Clickjacking ausentes.}
+    \label{fig:clickjacking}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{9cm}|}
+\hline
+\textbf{Risco} & Médio \\ \hline
+\textbf{Confiança} & Média \\ \hline
+\textbf{CWE} & 693 \\ \hline
+\textbf{WASC} & 15 \\ \hline
+\end{tabular}
+\caption{Ausência de proteção contra Clickjacking.}
+\label{tab:clickjacking}
+\end{table}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|p{5cm}|c|c|c|}
+\hline
+\textbf{Vulnerabilidade} & \textbf{Risco} & \textbf{CWE} & \textbf{WASC} \\ \hline
+Application Error Disclosure & Baixo & 550 & 13 \\ \hline
+Cookie No HttpOnly Flag & Baixo & 1004 & 13 \\ \hline
+Cookie without SameSite Attribute & Baixo & 1275 & 13 \\ \hline
+Information Disclosure - Debug Error Messages & Baixo & 1295 & 13 \\ \hline
+Server Leaks Information via X-Powered-By & Baixo & 497 & 13 \\ \hline
+Server Leaks Version Information via Server Header & Baixo & 497 & 13 \\ \hline
+X-Content-Type-Options Header Missing & Baixo & 693 & 15 \\ \hline
+Session Management Response Identified & Informativo & -- & -- \\ \hline
+User Controllable HTML Element Attribute & Informativo & 20 & 20 \\ \hline
+\end{tabular}
+\caption{Resumo das vulnerabilidades de baixo risco e informacionais.}
+\label{tab:lowrisk}
+\end{table}
