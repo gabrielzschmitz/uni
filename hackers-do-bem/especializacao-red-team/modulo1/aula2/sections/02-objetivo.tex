@@ -1,0 +1,30 @@
+\section{Objetivo}
+
+\paragraph{}
+O objetivo deste teste de penetração é avaliar a segurança da aplicação web
+disponibilizada no Laboratório de Segurança, identificando vulnerabilidades que
+possam comprometer a confidencialidade, integridade e disponibilidade das
+informações processadas pelo sistema.
+
+\paragraph{}
+A análise tem como base os resultados obtidos na atividade de varredura de
+vulnerabilidades realizada com a ferramenta OWASP ZAP sobre o alvo
+\texttt{http://testasp.vulnweb.com}. Durante a avaliação foram identificadas
+falhas de alta severidade, incluindo \textit{SQL Injection}, \textit{Cross Site
+Scripting (Reflected)}, \textit{Path Traversal} e \textit{External Redirect},
+além de vulnerabilidades relacionadas à ausência de mecanismos de proteção como
+Anti-CSRF, Content Security Policy (CSP) e proteção contra Clickjacking.
+
+\paragraph{}
+O teste buscará validar o impacto dessas vulnerabilidades, verificando a
+possibilidade de acesso não autorizado a dados sensíveis, execução de código
+malicioso no navegador dos usuários, manipulação de consultas ao banco de
+dados, acesso indevido a arquivos internos do servidor e realização de ataques
+de engenharia social por meio de redirecionamentos maliciosos.
+
+\paragraph{}
+Além da identificação e validação das vulnerabilidades encontradas, o teste tem
+como finalidade avaliar a eficácia dos controles de segurança implementados na
+aplicação e fornecer recomendações para mitigação dos riscos identificados,
+contribuindo para o fortalecimento da postura de segurança do ambiente
+analisado.

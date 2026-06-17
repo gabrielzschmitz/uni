@@ -1,0 +1,81 @@
+\section{Escopo}
+
+\paragraph{}
+O escopo deste teste de penetração foi definido com base nas informações
+obtidas durante a varredura de vulnerabilidades realizada com a ferramenta
+OWASP ZAP no ambiente disponibilizado pelo Laboratório de Segurança.
+
+\subsection{Itens incluídos no escopo}
+
+\begin{itemize}
+\item \textbf{Aplicação Web Principal}
+\begin{itemize}
+\item URL: \texttt{http://testasp.vulnweb.com}
+\item Tipo: Aplicação web pública de demonstração.
+\item Tecnologias observadas: ASP clássico e servidor web Windows.
+\item Objetivo: Avaliação de vulnerabilidades em funcionalidades, parâmetros,
+  formulários, mecanismos de autenticação e controle de acesso.
+\end{itemize}
+
+\item \textbf{Páginas e funcionalidades identificadas durante o mapeamento}
+\begin{itemize}
+    \item \texttt{/Search.asp}
+    \item \texttt{/showthread.asp}
+    \item \texttt{/Templatize.asp}
+    \item \texttt{/Login.asp}
+    \item Demais rotas descobertas durante o processo de spider e varredura
+      automatizada.
+\end{itemize}
+
+\item \textbf{Parâmetros vulneráveis identificados}
+\begin{itemize}
+    \item \texttt{tfSearch} (SQL Injection);
+    \item \texttt{tfText} (Cross Site Scripting Refletido);
+    \item \texttt{item} (Path Traversal);
+    \item \texttt{RetURL} (External Redirect).
+\end{itemize}
+
+\item \textbf{Controles de segurança da aplicação}
+\begin{itemize}
+    \item Proteções contra CSRF;
+    \item Cabeçalhos HTTP de segurança;
+    \item Configurações de cookies;
+    \item Políticas de Content Security Policy (CSP);
+    \item Proteções contra Clickjacking.
+\end{itemize}
+
+\end{itemize}
+
+\subsection{Áreas prioritárias do teste}
+
+As principais áreas de interesse do Pentest são aquelas que apresentaram
+vulnerabilidades classificadas como de alto risco durante a análise com o OWASP
+ZAP:
+
+\begin{itemize}
+\item SQL Injection (CWE-89);
+\item Cross Site Scripting Refletido -- XSS (CWE-79);
+\item Path Traversal (CWE-22);
+\item External Redirect (CWE-601).
+\end{itemize}
+
+Essas vulnerabilidades possuem potencial para comprometer a confidencialidade,
+integridade e disponibilidade das informações da aplicação, sendo consideradas
+prioritárias durante a execução dos testes.
+
+\subsection{Itens excluídos do escopo}
+
+\begin{itemize}
+\item Sistemas externos ao domínio \texttt{testasp.vulnweb.com};
+\item Infraestruturas de terceiros não relacionadas ao laboratório;
+\item Equipamentos pessoais dos participantes;
+\item Redes externas à aplicação avaliada;
+\item Ataques de negação de serviço (DoS/DDoS);
+\item Engenharia social;
+\item Qualquer sistema não explicitamente autorizado pela atividade.
+\end{itemize}
+
+\paragraph{}
+Dessa forma, o escopo concentra-se na avaliação de segurança da aplicação web e
+de seus componentes diretamente relacionados, priorizando as áreas em que a
+varredura inicial identificou vulnerabilidades de maior criticidade.

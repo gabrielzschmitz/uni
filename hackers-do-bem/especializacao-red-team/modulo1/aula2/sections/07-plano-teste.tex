@@ -1,0 +1,169 @@
+\section{Plano de Teste de Penetração}
+
+\subsection{Objetivos do Pentest}
+
+O teste de penetração tem como principais objetivos:
+
+\begin{itemize}
+\item Identificar vulnerabilidades presentes nos sistemas e aplicações do
+  Laboratório de Segurança;
+\item Validar a exploração das falhas identificadas durante a varredura de
+  vulnerabilidades;
+\item Avaliar os impactos das vulnerabilidades sobre a confidencialidade,
+  integridade e disponibilidade das informações;
+\item Verificar a eficácia dos controles de segurança implementados;
+\item Produzir evidências técnicas que auxiliem na correção das falhas
+  identificadas;
+\item Elaborar recomendações para mitigação dos riscos encontrados.
+\end{itemize}
+
+\subsection{Metodologia}
+
+O Pentest será conduzido seguindo boas práticas reconhecidas pela indústria,
+incluindo referências do OWASP Testing Guide, PTES (Penetration Testing
+Execution Standard) e MITRE ATT&CK.
+
+As etapas previstas são:
+
+\begin{enumerate}
+\item Planejamento e validação do escopo;
+\item Reconhecimento e coleta de informações;
+\item Mapeamento de ativos, páginas e serviços;
+\item Identificação de vulnerabilidades;
+\item Validação técnica dos achados;
+\item Exploração controlada das vulnerabilidades;
+\item Avaliação dos impactos e riscos;
+\item Registro das evidências obtidas;
+\item Elaboração do relatório técnico final;
+\item Apresentação dos resultados e recomendações.
+\end{enumerate}
+
+\subsection{Ferramentas Utilizadas}
+
+As principais ferramentas previstas para execução dos testes são:
+
+\begin{itemize}
+\item OWASP ZAP;
+\item Navegadores web para validação manual dos achados;
+\item Ferramentas de inspeção de tráfego HTTP;
+\item Ferramentas auxiliares de análise e documentação.
+\end{itemize}
+
+\subsection{Vulnerabilidades Prioritárias}
+
+Com base na varredura realizada anteriormente com o OWASP ZAP, foram
+identificadas vulnerabilidades que serão priorizadas durante o Pentest:
+
+\begin{itemize}
+\item SQL Injection (CWE-89);
+\item Cross Site Scripting Refletido -- XSS (CWE-79);
+\item Path Traversal (CWE-22);
+\item External Redirect (CWE-601);
+\item Ausência de proteção Anti-CSRF (CWE-352);
+\item Ausência de Content Security Policy (CWE-693);
+\item Ausência de proteção contra Clickjacking (CWE-693).
+\end{itemize}
+
+Essas vulnerabilidades foram identificadas na aplicação
+\texttt{http://testasp.vulnweb.com} e representam os principais pontos de
+atenção durante a execução do teste.
+
+\subsection{Registro das Atividades}
+
+Todas as atividades realizadas deverão ser registradas em diário de execução,
+contendo:
+
+\begin{itemize}
+\item Data e horário da atividade;
+\item Ferramenta utilizada;
+\item Ação executada;
+\item Sistema ou funcionalidade analisada;
+\item Resultado obtido;
+\item Evidências coletadas;
+\item Observações relevantes.
+\end{itemize}
+
+\subsection{Modelo de Registro de Atividades}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|p{2.2cm}|p{1.0cm}|p{2.0cm}|p{4.25cm}|X|}
+\hline
+\textbf{Data} &
+\textbf{Hora} &
+\textbf{Ferramenta} &
+\textbf{Atividade} &
+\textbf{Resultado} \\
+\hline
+
+DD/MM/AAAA &
+00:00 &
+OWASP ZAP &
+Varredura de vulnerabilidades &
+Vulnerabilidades identificadas e registradas. \\
+\hline
+
+\end{tabularx}
+\caption{Modelo de registro das atividades executadas durante o Pentest.}
+\label{tab:registro_atividades}
+\end{table}
+
+\subsection{Documentação das Vulnerabilidades}
+
+Cada vulnerabilidade identificada deverá ser documentada contendo:
+
+\begin{itemize}
+\item Nome da vulnerabilidade;
+\item Descrição técnica;
+\item Sistema ou URL afetada;
+\item Evidência da exploração;
+\item Classificação de risco;
+\item CWE e WASC associados;
+\item Impacto potencial;
+\item Recomendação de correção.
+\end{itemize}
+
+\subsection{Evidências}
+
+As evidências deverão incluir:
+
+\begin{itemize}
+\item Capturas de tela;
+\item Requisições e respostas HTTP;
+\item Payloads utilizados;
+\item Logs relevantes;
+\item Resultados obtidos pelas ferramentas empregadas.
+\end{itemize}
+
+\subsection{Relatório Final}
+
+Ao término do Pentest será elaborado um relatório consolidado contendo:
+
+\begin{itemize}
+\item Resumo executivo;
+\item Escopo do teste;
+\item Metodologia utilizada;
+\item Vulnerabilidades encontradas;
+\item Evidências técnicas;
+\item Avaliação de riscos;
+\item Recomendações de mitigação;
+\item Conclusões do trabalho realizado.
+\end{itemize}
+
+\subsection{Aspectos Contratuais}
+
+O contrato formal deverá estabelecer claramente:
+
+\begin{itemize}
+\item Escopo autorizado para os testes;
+\item Responsabilidades das partes envolvidas;
+\item Regras de comunicação;
+\item Limitações de responsabilidade;
+\item Requisitos de confidencialidade;
+\item Direitos sobre a propriedade intelectual dos relatórios e
+evidências produzidos.
+\end{itemize}
+
+Essas disposições deverão estar alinhadas ao Acordo de Não Divulgação (NDA) e
+às regras definidas para a execução do Pentest no Laboratório de Segurança.

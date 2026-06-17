@@ -1,0 +1,105 @@
+\section{Comunicação com os Envolvidos}
+
+\paragraph{}
+A comunicação entre as partes envolvidas no teste de penetração foi definida
+com o objetivo de garantir alinhamento contínuo, transparência na execução das
+atividades e rápida resposta a eventuais incidentes ou dúvidas relacionadas ao
+escopo do projeto.
+
+\subsection{Papéis e Responsabilidades}
+
+\begin{itemize}
+\item \textbf{Equipe de Pentest (Analistas):}
+responsável pela execução dos testes, coleta de evidências, análise das
+vulnerabilidades identificadas e elaboração dos relatórios técnicos.
+
+\item \textbf{Gerente de Projeto ou Responsável pelo Laboratório:}
+responsável pelo acompanhamento das atividades, aprovação de mudanças de escopo
+e mediação entre a equipe técnica e os responsáveis pelo ambiente.
+
+\item \textbf{Equipe Técnica do Laboratório:}
+responsável por esclarecer dúvidas relacionadas à infraestrutura, aplicações e
+serviços disponibilizados para avaliação.
+
+\item \textbf{Equipe Jurídica:}
+responsável pela validação do contrato formal de prestação dos serviços de
+Pentest e do Acordo de Não Divulgação (NDA).
+
+\item \textbf{Partes Interessadas (Stakeholders):}
+devem ser informadas sobre vulnerabilidades críticas, alterações de escopo e
+resultados relevantes identificados durante os testes.
+
+\end{itemize}
+
+\subsection{Canais de Comunicação}
+
+Os canais oficiais definidos para comunicação durante o Pentest são:
+
+\begin{itemize}
+\item E-mail institucional;
+\item Grupo oficial de comunicação da equipe (Teams, Slack ou equivalente);
+\item Reuniões periódicas de acompanhamento;
+\item Sistema de registro de chamados ou acompanhamento de atividades, quando
+disponível.
+\end{itemize}
+
+\subsection{Janelas de Contato e SLA}
+
+\begin{itemize}
+\item Horário de atendimento: segunda a sexta-feira, das 08h às 18h;
+\item Resposta para dúvidas operacionais: até 1 dia útil;
+\item Resposta para incidentes críticos: até 4 horas;
+\item Aprovação de mudanças de escopo: até 2 dias úteis;
+\item Comunicação de vulnerabilidades críticas: imediata após validação da
+evidência.
+\end{itemize}
+
+\subsection{Compartilhamento dos Resultados}
+
+Com base na varredura de vulnerabilidades realizada com o OWASP ZAP, foi
+elaborado um relatório resumido contendo as principais vulnerabilidades
+identificadas, incluindo:
+
+\begin{itemize}
+\item SQL Injection;
+\item Cross Site Scripting (Reflected);
+\item Path Traversal;
+\item External Redirect;
+\item Ausência de proteção Anti-CSRF;
+\item Ausência de cabeçalhos de segurança CSP e Anti-Clickjacking.
+\end{itemize}
+
+Os resultados deverão ser apresentados aos responsáveis pelo laboratório em
+reunião de alinhamento, permitindo a discussão dos riscos identificados, dos
+impactos potenciais e das próximas etapas do teste de penetração.
+
+\subsection{Contrato e Acordo de NDA}
+
+A equipe de Pentest colaborará na elaboração e revisão do contrato formal e do
+Acordo de Não Divulgação (NDA), fornecendo informações técnicas necessárias
+para delimitação do escopo, responsabilidades das partes e requisitos de
+confidencialidade.
+
+O NDA deverá proteger informações sensíveis obtidas durante os testes,
+incluindo evidências técnicas, vulnerabilidades identificadas, credenciais,
+informações de infraestrutura e quaisquer dados internos acessados durante a
+execução das atividades.
+
+\subsection{Gatilhos para Interrupção dos Testes (Stop-Test)}
+
+A execução do Pentest deverá ser imediatamente interrompida e comunicada ao
+responsável pelo laboratório caso ocorra alguma das seguintes situações:
+
+\begin{itemize}
+\item Indisponibilidade crítica dos sistemas avaliados;
+\item Acesso acidental a dados pessoais reais ou informações sensíveis não
+previstas no escopo;
+\item Identificação de impacto operacional relevante ao ambiente;
+\item Necessidade de alteração significativa do escopo aprovado;
+\item Qualquer atividade que ultrapasse os limites previamente acordados.
+\end{itemize}
+
+\paragraph{}
+Todas as comunicações relevantes deverão ser registradas e mantidas durante o
+ciclo do projeto, garantindo rastreabilidade das decisões, aprovações e ações
+executadas ao longo do teste de penetração.

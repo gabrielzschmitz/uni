@@ -1,0 +1,39 @@
+\section{Contexto}
+
+\paragraph{}
+O Laboratório de Segurança disponibiliza um ambiente controlado destinado à
+realização de atividades práticas de segurança ofensiva e testes de penetração.
+O ambiente permite a execução de procedimentos de reconhecimento, análise de
+vulnerabilidades e validação de falhas de segurança em sistemas propositalmente
+disponibilizados para fins educacionais.
+
+\paragraph{}
+Durante a atividade de reconhecimento foi analisada a aplicação web
+\texttt{http://testasp.vulnweb.com}, utilizada como alvo para a realização da
+varredura automatizada de vulnerabilidades com a ferramenta OWASP ZAP. A
+aplicação apresentou diversas páginas, rotas e parâmetros acessíveis por meio
+de requisições HTTP, permitindo o mapeamento de funcionalidades e superfícies
+de ataque disponíveis para análise.
+
+\paragraph{}
+A avaliação identificou componentes típicos de aplicações web dinâmicas,
+incluindo mecanismos de autenticação, formulários de entrada de dados,
+funcionalidades de pesquisa e páginas com parâmetros manipuláveis pelo usuário.
+Também foram observados cabeçalhos HTTP, mensagens de erro e informações do
+servidor que auxiliaram na caracterização do ambiente e de seus controles de
+segurança.
+
+\paragraph{}
+Os resultados da varredura apontaram vulnerabilidades relevantes, entre elas
+\textit{SQL Injection}, \textit{Cross Site Scripting (Reflected)}, \textit{Path
+Traversal}, \textit{External Redirect}, ausência de proteção contra
+\textit{Cross-Site Request Forgery (CSRF)} e falta de cabeçalhos de segurança
+como \textit{Content Security Policy (CSP)} e mecanismos de proteção contra
+\textit{Clickjacking}. Essas evidências indicam que a principal área de risco
+do ambiente encontra-se na camada de aplicação web.
+
+\paragraph{}
+Por se tratar de um laboratório destinado ao treinamento e capacitação em
+segurança da informação, todas as atividades são executadas em ambiente
+controlado e isolado de sistemas de produção, permitindo a realização de testes
+de forma segura e sem impactos a infraestruturas reais.
