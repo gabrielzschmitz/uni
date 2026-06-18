@@ -1,0 +1,17 @@
+\section{Conclusão}
+
+\paragraph{}
+Os testes realizados demonstraram que mecanismos de validação baseados
+exclusivamente em informações fornecidas pelo cliente podem ser facilmente
+contornados por um atacante utilizando ferramentas de interceptação de tráfego.
+
+\paragraph{}
+Mesmo com o nível de segurança configurado como \textit{Medium}, foi possível
+realizar o envio de um arquivo PHP através da alteração do tipo MIME da
+requisição, evidenciando uma falha no processo de validação do upload.
+
+\paragraph{}
+Para mitigar esse tipo de vulnerabilidade, recomenda-se validar o conteúdo real
+do arquivo no lado do servidor, restringir extensões permitidas, armazenar
+arquivos fora do diretório acessível pela aplicação web e impedir a execução de
+código em diretórios destinados a uploads.
