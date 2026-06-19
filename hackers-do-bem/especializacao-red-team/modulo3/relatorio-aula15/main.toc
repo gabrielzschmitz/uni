@@ -1,0 +1,32 @@
+\babel@toc {brazilian}{}\relax 
+\contentsline {section}{\numberline {1}Resumo Executivo}{2}{section.1}%
+\contentsline {paragraph}{}{2}{paragraph*.1}%
+\contentsline {paragraph}{}{2}{paragraph*.2}%
+\contentsline {paragraph}{}{2}{paragraph*.3}%
+\contentsline {section}{\numberline {2}Escopo}{2}{section.2}%
+\contentsline {paragraph}{}{2}{paragraph*.4}%
+\contentsline {paragraph}{}{2}{paragraph*.5}%
+\contentsline {section}{\numberline {3}Metodologia}{2}{section.3}%
+\contentsline {paragraph}{}{2}{paragraph*.6}%
+\contentsline {section}{\numberline {4}Achados}{2}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Achado 01 -- Exposição de Conteúdo em Diretórios Públicos}{2}{subsection.4.1}%
+\contentsline {paragraph}{}{2}{paragraph*.7}%
+\contentsline {paragraph}{}{3}{paragraph*.8}%
+\contentsline {subsection}{\numberline {4.2}Achado 02 -- Credenciais Fracas em Serviço FTP}{3}{subsection.4.2}%
+\contentsline {paragraph}{}{3}{paragraph*.9}%
+\contentsline {paragraph}{}{3}{paragraph*.10}%
+\contentsline {subsection}{\numberline {4.3}Achado 03 -- Exposição de Chave Privada SSH}{3}{subsection.4.3}%
+\contentsline {paragraph}{}{3}{paragraph*.11}%
+\contentsline {paragraph}{}{3}{paragraph*.12}%
+\contentsline {paragraph}{}{4}{paragraph*.13}%
+\contentsline {subsection}{\numberline {4.4}Achado 04 -- Senha Previsível Baseada em Padrão Conhecido}{4}{subsection.4.4}%
+\contentsline {paragraph}{}{4}{paragraph*.14}%
+\contentsline {paragraph}{}{4}{paragraph*.15}%
+\contentsline {subsection}{\numberline {4.5}Achado 05 -- Utilização de Hash MD5 para Armazenamento de Senhas}{5}{subsection.4.5}%
+\contentsline {paragraph}{}{5}{paragraph*.16}%
+\contentsline {paragraph}{}{5}{paragraph*.17}%
+\contentsline {section}{\numberline {5}Conclusão}{5}{section.5}%
+\contentsline {paragraph}{}{5}{paragraph*.18}%
+\contentsline {paragraph}{}{5}{paragraph*.19}%
+\contentsline {paragraph}{}{5}{paragraph*.20}%
+\contentsline {paragraph}{}{5}{paragraph*.21}%

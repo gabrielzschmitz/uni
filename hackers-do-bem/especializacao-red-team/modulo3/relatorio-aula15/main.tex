@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}     
+\usepackage[T1]{fontenc}        
+\usepackage[brazilian]{babel}   
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{style}
+\usepackage{pdfpages}
+
+\usepackage{url, hyperref}
+\usepackage{array}
+\usepackage{paralist}
+\usepackage{tabularx}
+\usepackage[
+	style=numeric,
+	sorting=none,
+	maxbibnames=10]{biblatex}
+\addbibresource{ref.bib}
+\bibliography{ref.bib}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+
+  \vspace*{1cm}
+
+  \includegraphics[width=0.30\textwidth]{./HACKERSDOBEM.png}
+
+  \vspace{1.8cm}
+
+  {\Huge\bfseries Security Assessment Report\par}
+
+  \vspace{0.4cm}
+
+  {\Large Ataques de Força Bruta e Comprometimento de Credenciais\par}
+
+  \vspace{2.5cm}
+
+  \begin{flushleft}
+    \large
+    \textbf{Programa:} Hackers do Bem -- Especialização Red Team\\[0.3cm]
+    \textbf{Módulo:} Módulo 03\\[0.3cm]
+    \textbf{Projeto:} Aula 15 -- Escrita de Relatórios\\[0.3cm]
+    \textbf{Analista:} Gabriel dos Santos Schmitz\\[0.3cm]
+    \textbf{Data:} 19 de Junho de 2026
+  \end{flushleft}
+
+  \vfill
+
+  \rule{\textwidth}{1pt}
+
+  \vspace{0.5cm}
+
+  \textbf{Resumo}
+
+  \vspace{0.3cm}
+
+  \parbox{0.85\textwidth}{
+    Relatório de avaliação de segurança realizado em ambiente
+    controlado de laboratório, abrangendo atividades de
+    reconhecimento, enumeração de serviços, ataques de força
+    bruta, comprometimento de credenciais, autenticação por
+    chaves SSH e análise de impacto das vulnerabilidades
+    identificadas.
+  }
+
+  \vspace{0.5cm}
+
+  \rule{\textwidth}{1pt}
+
+  \vfill
+
+  \small
+  Classificação: Uso Acadêmico \hfill Versão 1.0
+
+  \vspace{0.2cm}
+
+  Documento gerado em 19/06/2026
+
+\end{titlepage}
+
+\newpage
+\section*{Controle do Documento}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+Versão & 1.0 \\ \hline
+Data & 19/06/2026 \\ \hline
+Autor & Gabriel dos Santos Schmitz \\ \hline
+Projeto & Aula 15 -- Escrita de Relatórios \\ \hline
+Classificação & Uso Acadêmico \\ \hline
+Status & Final \\ \hline
+\end{tabular}
+\end{table}
+\tableofcontents
+\listoffigures
+
+\newpage
+\input{./sections/01-resumo-executivo.tex}
+\input{./sections/02-escopo.tex}
+\input{./sections/03-metodologia.tex}
+\input{./sections/04-achados.tex}
+\input{./sections/05-conclusao.tex}
+
+\newpage
+\printbibliography[title=Referências]
+
+\end{document}
