@@ -1,0 +1,30 @@
+\section{Conclusão}
+
+\paragraph{}
+A atividade permitiu aplicar diferentes técnicas de reconhecimento e
+escalonamento de privilégios em sistemas Linux, utilizando tanto ferramentas
+automatizadas quanto análise manual das informações obtidas.
+
+\paragraph{}
+Durante os testes foram identificadas e exploradas configurações inseguras
+relacionadas a arquivos críticos do sistema, permissões inadequadas em
+configurações do \texttt{sudo}, utilização indevida do grupo \texttt{docker} e
+tarefas agendadas pelo \texttt{cron} executadas com privilégios elevados.
+
+\paragraph{}
+As ferramentas \texttt{LinEnum} e \texttt{PEASS} demonstraram sua utilidade na
+fase de enumeração, auxiliando na identificação de potenciais vetores de ataque
+e reduzindo significativamente o tempo necessário para o levantamento de
+informações relevantes.
+
+\paragraph{}
+Os resultados obtidos evidenciam como erros de configuração aparentemente
+simples podem permitir o comprometimento completo de um sistema Linux,
+possibilitando a obtenção de privilégios administrativos por usuários não
+autorizados.
+
+\paragraph{}
+O exercício reforçou a importância da correta configuração de permissões,
+controle adequado de acesso a recursos privilegiados, revisão periódica de
+tarefas automatizadas e aplicação do princípio do menor privilégio como medidas
+essenciais para a segurança de ambientes Linux.
