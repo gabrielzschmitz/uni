@@ -26,6 +26,10 @@ Materials related to the Electrical Circuits I course:
 
 Assignments, notes, and materials related to Ordinary Differential Equations.
 
+### 📈 Cálculo 3 (`calc3`)
+
+Assignments, notes, and materials related to Calculus 3.
+
 ### 💼 Engenharia de Software (`eng-soft`)
 
 Software Engineering coursework, reports, and exercise lists.
