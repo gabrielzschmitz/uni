@@ -11,6 +11,7 @@
 \RequirePackage{minted}
 \RequirePackage{booktabs}
 \RequirePackage{paralist} 
+\RequirePackage{tcolorbox}
 
 \def\refname{Referências}
 \def\figurename{Fig.}
@@ -22,6 +23,7 @@
 % Color definitions
 \definecolor{whitesmoke}{rgb}{0.96, 0.96, 0.96}
 \definecolor{ghostwhite}{rgb}{0.97, 0.97, 1.0}
+\definecolor{ghostyellow}{rgb}{0.9961, 0.8000, 0.0000}
 
 % Listing theme 
 \usemintedstyle{pastie}
@@ -89,4 +91,30 @@
 		#1
 		\hfill $\square$
 	\end{quote}
+}
+
+% Definition environment
+\newenvironment{definitionbox}[1]{
+	\vspace{0.5em}
+	\begin{tcolorbox}[
+		colback=ghostyellow!5!white,
+		colframe=darkgray,
+		boxrule=0.5pt,
+		arc=2pt,
+		left=8pt,
+		right=8pt,
+		top=6pt,
+		bottom=6pt,
+	]
+	\noindent\textbf{Definição --- #1}\par
+	\vspace{0.3em}
+}{
+	\end{tcolorbox}
+	\vspace{0.5em}
+}
+
+\newcommand{\definition}[2]{
+	\begin{definitionbox}{#1}
+		#2
+	\end{definitionbox}
 }

@@ -1,0 +1,192 @@
+\section{Notas de aulas}
+
+As aulas foram acompanhadas por definições, observações e problemas destinados
+à introdução e à revisão dos conceitos fundamentais de Equações Diferenciais
+Ordinárias (EDOs). Nesta seção, são reunidos os principais conteúdos
+desenvolvidos ao longo das aulas, incluindo a classificação das EDOs quanto à
+ordem, ao grau, à linearidade e às variáveis dependente e independente, bem
+como exemplos e problemas utilizados para ilustrar esses conceitos. Também são
+apresentados procedimentos de resolução e aplicações das definições estudadas,
+servindo como referência para o desenvolvimento dos exercícios e das listas da
+disciplina.
+
+\question{
+  Considere a equação diferencial:
+  \[
+    f'(x) + \sin{x} = 0.
+  \]
+  Determine \(y = f(x)\), sabendo que \(f(0) = 2\).
+}
+
+\answer{
+  Partindo da equação diferencial,
+  \begin{align*}
+    f'(x) + \sin{x} &= 0 \\
+    f'(x) &= -\sin{x}.
+  \end{align*}
+
+  Como \(f'(x) = \dfrac{dy}{dx}\), integra-se ambos os lados em relação a
+  \(x\):
+  \begin{align*}
+    \frac{dy}{dx} &= -\sin{x} \\
+    \int dy &= \int -\sin{x}\,dx \\
+  \end{align*}
+
+  Dessa forma conseguimos a solução geral:
+  \begin{align*}
+    y &= \cos{x} + C
+  \end{align*}
+
+  Aplicando a condição inicial \(f(0) = 2\),
+  \begin{align*}
+    f(0) &= \cos{0} + C \\
+    2 &= 1 + C \\
+    C &= 1
+  \end{align*}
+
+  Portanto, a solução particular é:
+  \[
+    \boxed{y = \cos{x} + 1}.
+  \]
+}
+
+\newpage
+
+\question{
+  Encontre o valor de \(A\) para que
+  \[
+    y = A\sin{3t}
+  \]
+  seja solução da equação diferencial
+  \[
+    \frac{d^{2}y}{dt^{2}} + 2y = 4\sin{3t}
+  \]
+}
+
+\answer{
+  Calculando as derivadas de \(y = A\sin{3t}\), obtém-se
+  \begin{align*}
+    \frac{dy}{dt} &= 3A\cos{3t} \\
+    \frac{d^{2}y}{dt^{2}} &= -9A\sin{3t}
+  \end{align*}
+
+  Substituindo \(y\) e sua segunda derivada na equação diferencial,
+  \begin{align*}
+    -9A\sin{3t} + 2A\sin{3t} &= 4\sin{3t} \\
+    -7A\sin{3t} &= 4\sin{3t} \\
+    -7A &= 4,
+  \end{align*}
+
+  portanto,
+  \[
+    \boxed{A = -\frac{4}{7}}.
+  \]
+}
+
+\section*{Ordem, Grau, Linearidade e Variáveis}
+
+\definition{Variável Independente}{
+	A \textbf{variável independente} é aquela em função da qual a variável
+	dependente é determinada. Em geral, é representada por $x$ ou $t$.
+
+	Por exemplo, na função
+	\[
+		y=y(x),
+	\]
+	a variável $x$ é a \textbf{variável independente}.
+}
+
+\definition{Variável Dependente}{
+	A \textbf{variável dependente} é aquela cujo valor depende da variável
+	independente. Em geral, é representada por $y$.
+
+	Por exemplo, na função
+	\[
+		y=y(x),
+	\]
+	a variável $y$ é a \textbf{variável dependente}, pois seu valor depende de $x$.
+}
+
+\definition{Ordem}{
+	A \textbf{ordem} de uma EDO é determinada pela maior derivada da variável
+	dependente que aparece na equação.
+
+	Por exemplo,
+	\[
+		y'''-5xy'+y=e^x
+	\]
+	é uma EDO de \textbf{terceira ordem}, pois a maior derivada presente é $y'''$.
+}
+
+\definition{Grau}{
+	O \textbf{grau} de uma EDO é o expoente da maior derivada, desde que a equação
+	esteja escrita como um polinômio em relação às derivadas da variável
+	dependente.
+
+	Por exemplo,
+	\[
+		(y'')^3+2y'-y=x
+	\]
+	é uma EDO de \textbf{grau 3}, pois a maior derivada, $y''$, está elevada à
+	terceira potência.
+}
+
+\definition{Linearidade}{
+	Uma EDO de ordem $n$ é dita \textbf{linear} quando pode ser escrita na forma
+
+	\[
+		a_n(x)\frac{d^n y}{dx^n}
+		+a_{n-1}(x)\frac{d^{n-1}y}{dx^{n-1}}
+		+\cdots
+		+a_1(x)\frac{dy}{dx}
+		+a_0(x)y
+		=g(x),
+	\]
+
+	onde $a_0(x),a_1(x),\ldots,a_n(x)$ e $g(x)$ são funções conhecidas da variável
+	independente $x$, com $a_n(x)\neq 0$.
+
+	Uma EDO é \textbf{linear} se:
+
+	\begin{enumerate}
+		\item Os coeficientes de $y$ e de suas derivadas dependem somente da
+		variável independente $x$ ou são constantes;
+
+		\item A variável dependente $y$ e todas as suas derivadas aparecem apenas
+		na primeira potência, isto é, com expoente igual a $1$;
+
+		\item Não existem produtos entre $y$ e suas derivadas, nem entre suas
+		próprias derivadas.
+	\end{enumerate}
+
+	Por exemplo,
+	\[
+		x^2y''+3xy'-5y=e^x
+	\]
+	é uma EDO linear, enquanto
+	\[
+		y''+y^2=0
+	\]
+	não é linear, pois $y$ aparece elevado ao quadrado.
+}
+
+\question{
+  Qual função satisfaz a EDO seguinte:
+  \[
+    y'' + y = 0
+  \]
+}
+
+\answer{
+  A solução geral da EDO
+  \[
+    y''+y=0
+  \]
+  é dada por uma combinação linear de $\sin x$ e $\cos x$:
+
+  \[
+    \boxed{y(x)=C_1\sin x+C_2\cos x},
+  \]
+
+  onde $C_1,C_2\in\mathbb{R}$ são constantes arbitrárias.
+}
