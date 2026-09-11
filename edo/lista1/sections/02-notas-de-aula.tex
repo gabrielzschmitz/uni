@@ -190,3 +190,319 @@ disciplina.
 
   onde $C_1,C_2\in\mathbb{R}$ são constantes arbitrárias.
 }
+
+\section*{Algumas Aplicações Envolvendo EDOs}
+
+\subsection*{Crescimento Populacional: Modelo de Malthus}
+
+\question{
+  Quais são os modelos matemáticos que descrevem o crescimento populacional?
+}
+
+\subquestion{
+  Como podemos considerar os recursos do local para que não ocorra extinção de
+  uma espécie?
+}
+
+\answer{
+  Inicialmente, vamos entender que o problema pode ser modelado por meio de uma
+  Equação Diferencial Ordinária (EDO).
+
+	\begin{itemize}
+    \item $t$: tempo (variável independente);
+    \item $P(t)$: tamanho da população no tempo $t$ (variável dependente);
+    \item $\dfrac{dP}{dt}$: variação da população em relação ao tempo.
+	\end{itemize}
+
+  Seguimos, agora, para a modelagem da EDO que governa o problema do
+  crescimento populacional descrito por Malthus. Perceba que a aplicação diz
+  que ``a taxa de variação da população em relação ao tempo é proporcional ao
+  tamanho da população presente no tempo $t$''. Portanto,
+
+	\[
+		\frac{dP}{dt} = kP(t),
+	\]
+
+  onde $k$ é uma constante de proporcionalidade que depende das características
+  da população em estudo.
+
+  Neste ponto, já temos a capacidade de reconhecer algumas características da
+  EDO desta aplicação:
+
+	\begin{itemize}
+		\item É uma EDO de primeira ordem;
+		\item O grau é $1$;
+		\item É linear.
+	\end{itemize}
+
+  De modo muito parecido com o exemplo 1 deste material, vamos aplicar
+  separação de variáveis para resolver esta EDO.
+
+	\[
+		\frac{dP}{dt}=kP(t)
+		\quad\Longrightarrow\quad
+		\frac{dP}{P}=k\,dt.
+	\]
+
+	Aplicando a integral em ambos os lados, temos:
+
+	\[
+		\int\frac{dP}{P}
+		=
+		\int k\,dt,
+	\]
+
+	o que resulta em
+
+	\[
+		\ln|P|=kt+c_1.
+	\]
+
+  Como queremos obter a função para $P$, precisamos eliminar a função logaritmo
+  natural. Isto é feito por meio da função inversa, a exponencial de base $e$.
+
+	\[
+		P(t)=e^{kt+c_1}.
+	\]
+
+	Utilizando a propriedade da exponencial, obtemos:
+
+	\[
+		P(t)=e^{kt}e^{c_1}.
+	\]
+
+	Como $e^{c_1}$ é uma constante, podemos definir
+
+	\[
+		c=e^{c_1}.
+	\]
+
+	Assim, a solução geral da EDO é
+
+	\[
+		\boxed{P(t)=ce^{kt}}.
+	\]
+}
+
+\subsection*{Crescimento Populacional: Modelo Logístico}
+
+\subquestion{
+Como podemos considerar os recursos disponíveis no local para que o crescimento
+de uma população não seja ilimitado?
+}
+
+\answer{
+Inicialmente, vamos entender que o problema pode ser modelado por meio de uma
+Equação Diferencial Ordinária (EDO).
+
+O modelo logístico considera que o crescimento de uma população não ocorre
+indefinidamente. À medida que a população aumenta, os recursos disponíveis
+tornam-se mais escassos, fazendo com que a taxa de crescimento diminua.
+
+O modelo é descrito pela EDO
+
+$$
+  \frac{dP}{dt}=P(a-bP),
+$$
+
+onde:
+
+\begin{itemize}
+  \item $t$: tempo (variável independente);
+  \item $P(t)$: tamanho da população no tempo $t$ (variável dependente);
+  \item $\dfrac{dP}{dt}$: variação da população em relação ao tempo;
+  \item $a$: taxa média de crescimento da população, uma constante positiva;
+  \item $b$: taxa média de óbitos, uma constante positiva;
+  \item $(a-bP)$: termo responsável por representar a redução da taxa de
+    crescimento à medida que a população aumenta.
+\end{itemize}
+
+Perceba que, diferentemente do modelo de Malthus, a taxa de crescimento agora
+depende do tamanho da população. Quando a população é pequena, o termo $(a-bP)$
+é positivo e a população tende a crescer. Entretanto, à medida que $P$ aumenta,
+esse termo diminui, reduzindo a velocidade de crescimento da população.
+
+Portanto, a EDO
+
+$$
+  \frac{dP}{dt}=Pa-bP^2
+$$
+
+representa um modelo de crescimento populacional no qual os recursos
+disponíveis impõem um limite ao crescimento da população.
+
+\begin{align*}
+  \frac{dP}{dt}&=P(a-bP) \\
+  \int{\frac{dP}{P(a-bP)}}&=\int{{dt}} \\
+  \int{\frac{1}{P(a-bP)}}&=t \\
+  \int{\frac{A}{P} + \frac{B}{a-bP}}&=t \\
+  \int{\frac{A}{P} + \frac{B}{a-bP}}&=t \\
+  aA - bAP + BP&=1 \\
+  1&=aA \therefore A=\frac{1}{a} \\
+  -bA + B &= 0 \therefore B=\frac{b}{a} \\
+  \int{\frac{dP}{P(a-bP)}}&=\int{\frac{\frac{1}{a}}{P}} dP + \frac{\frac{b}{a}}{{a - bP}} = \int{dt} \\
+  \frac{1}{a}\int{\frac{1}{P}} + \frac{b}{a} \int{\frac{dP}{a-bP}} &= \int{dt} \\
+  \frac{1}{a}ln|{P}| - \frac{1}{a} ln|{a-bP}| &= t + C_1 \\
+  \frac{1}{a}[ln|{P}| - ln|{a-bP}|] &= t + C_1 \\
+  [ln|{P}| - ln|{a-bP}|] &= a(t + C_1) \\
+  ln|\frac{P}{a-bP}| &= a(t + C_1) \\
+  \frac{P}{a-bP} &= Ce^{at} \\
+  P(1 + bCe^{at}) &= aCe^{at} \\
+\end{align*}
+
+Portanto,
+
+\[
+  \boxed{P(t) = \frac{aCe^{at}}{1 + bCe^{at}}} \\
+\]
+}
+
+\section*{EDOs Separáveis}
+
+\definition{EDO Separável}{
+Uma Equação Diferencial Ordinária (EDO) é dita \textbf{separável} quando pode
+ser escrita de modo que os termos que dependem da variável independente e da
+variável dependente possam ser separados.
+
+Em particular, considere uma EDO na forma
+
+\[
+	M(t)+N(y)\frac{dy}{dt}=0,
+\]
+
+onde $M$ é uma função que depende apenas de $t$ e $N$ é uma função que depende
+apenas de $y$.
+
+Multiplicando a equação por $dt$, obtemos
+
+\[
+	M(t)\,dt+N(y)\,dy=0.
+\]
+
+Podemos, então, separar as variáveis:
+
+\[
+	M(t)\,dt=-N(y)\,dy.
+\]
+
+Essa forma permite integrar separadamente os termos que dependem de $t$ e de
+$y$:
+
+\[
+	\int M(t)\,dt+\int N(y)\,dy=0.
+\]
+
+Portanto, uma EDO é separável quando pode ser manipulada de modo a obter uma
+expressão na qual as variáveis estejam separadas, permitindo a resolução por
+meio de integrações.
+}
+
+\question{
+Determine a solução da EDO
+
+\[
+	y'=\frac{1}{y}.
+\]
+}
+
+\answer{
+Inicialmente, fazemos a separação das variáveis. Escrevendo a derivada
+como uma razão de diferenciais, temos
+
+\[
+	\frac{dy}{dx}=\frac{1}{y}.
+\]
+
+Multiplicando ambos os lados por $y\,dx$, obtemos
+
+\[
+	y\,dy=x\,dx.
+\]
+
+Agora podemos integrar ambos os lados:
+
+\[
+	\int y\,dy=\int x\,dx.
+\]
+
+Calculando as integrais,
+
+\[
+	\boxed{\frac{y^2}{2}
+	=
+	x+c_1}.
+\]
+}
+
+\question{
+Determine a solução da EDO
+
+\[
+  e^yy' - t - tln|t| = e^t\ \ \ \text{Para}\,t>0
+\]
+}
+
+\answer{
+\begin{align*}
+  e^y\frac{dy}{dx} - t - tln|t| &= e^t \\
+  e^y\frac{dy}{dx} &= t + tln|t| + e^t \\
+  \int{e^ydy} &= \int{t dt} + \int{tln|t| dt} + \int{e^t dt} \\
+\end{align*}
+
+Portanto,
+
+\[
+	\boxed{
+    e^y &= \frac{t^2}{2} + \frac{t^2}{2} ln|t| - \frac{t^2}{4} + e^t + C
+  }.
+\]
+}
+
+\question{
+Construa a solução geral e determine o domínio do PVI.
+
+\[
+  \begin{cases}
+    y' = (1 - 2x)y^2 \case \\
+    y(0) = \frac{-1}{6} \case
+  \end{cases}
+\]
+}
+
+\answer{
+\begin{align*}
+  \frac{dy}{dx} &= (1 - 2x)y^2 \\
+  \frac{dy}{y^2} &= (1 - 2x)dx \\
+  \int{y^{-2}dy} &= \int{(1 - 2x)dx} \\
+  \frac{y^{-1}}{-1} &= x - x^2 + C \\
+  \frac{1}{y} &= -x + x^2 - C \\
+\end{align*}
+
+Portanto,
+
+\[
+	\boxed{
+  y &= \frac{1}{x^2 - x - C}
+  }.
+\]
+
+Aplicando $y(0)$,
+
+\begin{align*}
+  \frac{-1}{6} &= \frac{1}{- C} \therefore C=6
+\end{align*}
+
+Sendo assim, o domínio de $Y_1$ é dado por
+
+\begin{align*}
+  x^2-x-6 &\neq 0 \\
+  (x-3)(x+2) &\neq 0 \\
+  x &\neq -2,\,3.
+\end{align*}
+
+Portanto,
+
+\[
+  D_y = \mathbb{R} \setminus \{-2,3\}.
+\]
+}
