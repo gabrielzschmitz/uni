@@ -1,0 +1,239 @@
+\section{Exercícios da Lista 1}
+
+Os exercícios desta lista foram selecionados do livro
+\citetitle{zill2001equacoes}, de Dennis G. Zill e Michael R. Cullen, Terceira
+Edição \cite{zill2001equacoes}. São eles: o exercício \texttt{29} da página
+\texttt{59} e o exercício \texttt{23} da página \texttt{77}.
+
+\question{
+  (x^2 + xy + y^2)\, dx - xy\, dy=0.
+}
+
+\answer{
+\textbf{Classificação}
+
+\begin{itemize}
+\item \textbf{Ordem:} 1ª ordem.
+\item \textbf{Grau:} 1º grau.
+\item \textbf{Linearidade:} não linear.
+\item \textbf{Separabilidade:} não separável diretamente.
+\item \textbf{Homogeneidade:} homogênea, pois
+
+$$
+  \frac{dy}{dx}
+  =
+  \frac{x^2+xy+y^2}{xy}
+  =
+  \frac{x}{y}+1+\frac{y}{x}
+  =
+  F\left(\frac{y}{x}\right).
+$$
+
+\end{itemize}
+
+\textbf{Resolução}
+
+Fazendo
+
+$$
+  y=vx,
+  \qquad
+  \frac{dy}{dx}=v+x\frac{dv}{dx},
+$$
+
+temos
+
+\begin{align*}
+  v+x\frac{dv}{dx}
+  &=\frac{1}{v}+1+v\
+  x\frac{dv}{dx}
+  &=\frac{1+v}{v}.
+\end{align*}
+
+Separando as variáveis,
+
+$$
+  \frac{v}{1+v}\,dv=\frac{dx}{x}.
+$$
+
+Como
+
+$$
+  \frac{v}{1+v}
+  =
+  1-\frac{1}{1+v},
+$$
+
+segue que
+
+\begin{align*}
+  \int\left(1-\frac{1}{1+v}\right)dv
+  &=\int\frac{dx}{x}\
+  v-\ln|1+v|
+  &=\ln|x|+C.
+\end{align*}
+
+Substituindo $v=\dfrac{y}{x}$,
+
+$$
+  \frac{y}{x}
+  -\ln\left|1+\frac{y}{x}\right|
+  =
+  \ln|x|+C.
+$$
+
+Como
+
+$$
+  \ln\left|1+\frac{y}{x}\right|
+  =
+  \ln|x+y|-\ln|x|,
+$$
+
+obtemos
+
+$$
+  \frac{y}{x}-\ln|x+y|=C.
+$$
+
+Assim,
+
+$$
+  \ln|x+y|
+  =
+  \frac{y}{x}-C,
+$$
+
+e, portanto,
+
+$$
+  \boxed{x+y=Ce^{y/x}}.
+$$
+
+\textbf{Solução adicional}
+
+Durante a separação, dividimos por $1+v$. Logo, verificamos
+
+$$
+  1+v=0
+  \quad\Longrightarrow\quad
+  v=-1.
+$$
+
+Como $y=vx$,
+
+$$
+  y=-x.
+$$
+
+Portanto, as soluções são
+
+$$
+ \boxed{x+y=Ce^{y/x}}
+$$
+
+e
+
+$$
+ \boxed{y=-x}.
+$$
+
+}
+
+
+\question{
+  \cos^2{x} \sin{x}\, dy + (y \cos^3{x} - 1)\, dx = 0.
+}
+
+\answer{
+\textbf{Classificação:}
+
+\begin{itemize}
+\item \textbf{Ordem:} 1ª ordem, pois a maior derivada é $\dfrac{dy}{dx}$.
+\item \textbf{Grau:} 1º grau, pois $\dfrac{dy}{dx}$ aparece na primeira
+potência.
+\item \textbf{Linearidade:} linear, pois pode ser escrita na forma
+
+$$
+  \frac{dy}{dx}+P(x)y=Q(x).
+$$
+
+\item \textbf{Separabilidade:} não é separável diretamente.
+\item \textbf{Homogeneidade:} não homogênea, pois possui o termo independente
+$-1$.
+\end{itemize}
+
+Dividindo a equação por $dx$ e por $\cos^2x\sin x$, obtemos
+
+\begin{align*}
+  \frac{dy}{dx}
+  +
+  \frac{y\cos^3x}{\cos^2x\sin x}
+  &=
+  \frac{1}{\cos^2x\sin x}\
+  \frac{dy}{dx}+y\frac{\cos x}{\sin x}
+  &=
+  \frac{1}{\cos^2x\sin x}.
+\end{align*}
+
+Logo,
+
+$$
+  \frac{dy}{dx}+y\cot x
+  =
+  \sec^2x\csc x.
+$$
+
+Como a equação é linear, utilizamos o \textbf{fator integrante}
+
+$$
+  \mu(x)=e^{\int\cot x\,dx}
+  =e^{\ln|\sin x|}
+  =\sin x.
+$$
+
+Multiplicando toda a equação por $\sin x$,
+
+\begin{align*}
+  \sin x\frac{dy}{dx}+y\sin x\cot x
+  &=\sin x\sec^2x\csc x\
+  \sin x\frac{dy}{dx}+y\cos x
+  &=\sec^2x.
+\end{align*}
+
+O lado esquerdo é a derivada do produto:
+
+$$
+  \frac{d}{dx}(y\sin x)=\sec^2x.
+$$
+
+Integrando,
+
+\begin{align*}
+  \int\frac{d}{dx}(y\sin x),dx
+  &=\int\sec^2x,dx\
+  y\sin x&=\tan x+C.
+\end{align*}
+
+Portanto,
+
+$$
+  y=\frac{\tan x+C}{\sin x}.
+$$
+
+Como
+
+$$
+  \frac{\tan x}{\sin x}
+  =
+  \frac{\sin x}{\cos x\sin x}
+  =
+  \sec x,
+$$
+
+obtemos
+
+$$
+ \boxed{y=\sec x+C\csc x}.
+$$
+}
