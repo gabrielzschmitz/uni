@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{style}
+
+\usepackage{url, hyperref}
+\usepackage{array}
+\usepackage{paralist}
+\usepackage[
+	style=numeric,
+	sorting=none,
+	maxbibnames=10]{biblatex}
+\addbibresource{ref.bib}
+\bibliography{ref.bib}
+
+\begin{document}
+
+% University Logo, Course Name, Professor's Name, Date, Homework Title,
+% Homework Number, Student Name, Student Identifier, Source Code
+\cover{./UTFPR.png}{EDO}{Prof. Dra. Jocelaine Cargnelutti}
+{28/10/2026}{CCH}{2}{Gabriel dos Santos Schmitz \& Bruno Marco Barros Cari}{2487438 \& 2523230}
+{https://github.com/gabrielzschmitz/uni/tree/main/edo/cch2}
+
+\input{./sections/01-introducao.tex}
+\input{./sections/02-solucao.tex}
+
+\newpage
+\printbibliography\
+
+\end{document}
